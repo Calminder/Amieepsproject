@@ -1,0 +1,56 @@
+<mat-toolbar>
+    <span>{{svc.form.controls['id'].value?"Aanpassen quiz vraag":"Nieuwe quiz vraag"}}</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1">
+        <mat-icon>clear</mat-icon>
+    </button>
+</mat-toolbar>
+<form [formGroup]="svc.form" class="normal-form" (submit)="onSubmit()">
+    <mat-grid-list cols='2' rowHeight='300px'>
+        <mat-grid-tile>
+            <div class="controles-container">
+                <input type="hidden" formControlName='id'>
+                <mat-form-field>
+                    <input formControlName='title' matInput placeholder="Title">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select formControlName='type' placeholder="Keuze">
+                        <mat-option>None</mat-option>
+                        <ng-container *ngFor="let option of options; let i = index">
+                            <mat-option (click)="chosenOne(i)" value='{{option.value}}'>{{option.value}}
+                            </mat-option>
+                        </ng-container>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input type='number' formControlName='score' matInput placeholder="Score">
+                </mat-form-field>
+
+
+
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="controles-container">
+
+                <mat-form-field class="add-top-padding">
+                    <input formControlName='source' matInput placeholder="Source" [readonly]="disableSource">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input class="whiteinput" formControlName='correctAnswer' matInput placeholder="Correct Answer"
+                        [readonly]="disableCA">
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName='possibleAnswers' matInput placeholder="PossibleAnswers"
+                        [readonly]="disablePA">
+                </mat-form-field>
+
+                <div class='button-row'>
+                    <button mat-raised-button color='warn' type='submit' [disabled]="svc.form.invalid">Submit</button>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</form>
