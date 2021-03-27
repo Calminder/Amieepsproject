@@ -9,7 +9,7 @@ const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectLoggedInToItems = () => redirectLoggedInTo(['home']);
 
 const routes: Routes = [
-  { path: '**', redirectTo: '/login' },
+
   {
     path: '', component: SideNavComponent,
     canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin },
@@ -21,7 +21,10 @@ const routes: Routes = [
   {
     path: 'login', component: LoginComponent, canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectLoggedInToItems }
-  }
+  },
+  { path: '**', redirectTo: 'login', pathMatch: 'full' },
+  { path: '*', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];
 
 @NgModule({

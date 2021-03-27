@@ -33,13 +33,15 @@ import { MatInputModule } from '@angular/material/input';
 
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { QuestionsComponent } from './questions/questions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SideNavComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,

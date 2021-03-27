@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { LoaderService } from '../services/loaderService/loader.service';
+import { AuthService } from '../services/authService/auth.service';
 
 @Component({
   selector: 'app-side-nav',
@@ -19,7 +20,7 @@ export class SideNavComponent
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, public loaderService: LoaderService) { }
+  constructor(private authService: AuthService, private breakpointObserver: BreakpointObserver, public loaderService: LoaderService) { }
 
   ngOnInit()
   {
@@ -31,4 +32,8 @@ export class SideNavComponent
     localStorage.setItem('theme', this.isDarkTheme ? "Dark" : "Light");
   }
 
+  Logout()
+  {
+    this.authService.SignOut();
+  }
 }
