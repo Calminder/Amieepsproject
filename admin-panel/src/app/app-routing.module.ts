@@ -6,6 +6,7 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { AngularFireAuthGuard, redirectLoggedInTo, redirectUnauthorizedTo, } from '@angular/fire/auth-guard';
 import { QuestionComponent } from './questions/question/question.component';
 import { QuestionsComponent } from './questions/questions.component';
+import { ExercisesComponent } from './exercises/exercises.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectLoggedInToItems = () => redirectLoggedInTo(['home']);
@@ -28,7 +29,13 @@ const routes: Routes = [
         component: QuestionsComponent,
         canActivate: [AngularFireAuthGuard],
         data: { authGuardPipe: redirectUnauthorizedToLogin }
-      }
+      },
+      {
+        path: 'exercise',
+        component: ExercisesComponent,
+        canActivate: [AngularFireAuthGuard],
+        data: { authGuardPipe: redirectUnauthorizedToLogin }
+      },
     ]
   },
   {

@@ -48,6 +48,9 @@ import { QuestionComponent } from './questions/question/question.component';
 import { QuestionListComponent } from './questions/question-list/question-list.component';
 import { PopupConfirmationComponent } from './popup-confirmation/popup-confirmation.component';
 import { from } from 'rxjs';
+import { ExercisesComponent } from './exercises/exercises.component';
+import { ExerciseListComponent } from './exercises/exercise-list/exercise-list.component';
+import { ExerciseComponent } from './exercises/exercise/exercise.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +61,10 @@ import { from } from 'rxjs';
     QuestionsComponent,
     QuestionComponent,
     QuestionListComponent,
-    PopupConfirmationComponent
+    PopupConfirmationComponent,
+    ExercisesComponent,
+    ExerciseListComponent,
+    ExerciseComponent
   ],
   imports: [
     BrowserModule,
