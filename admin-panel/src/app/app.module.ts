@@ -10,6 +10,7 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -24,16 +25,29 @@ import { MatMenuModule } from '@angular/material/menu';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
+
+
+
 
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { QuestionsComponent } from './questions/questions.component';
+import { QuestionComponent } from './questions/question/question.component';
+import { QuestionListComponent } from './questions/question-list/question-list.component';
+import { PopupConfirmationComponent } from './popup-confirmation/popup-confirmation.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -41,7 +55,10 @@ import { QuestionsComponent } from './questions/questions.component';
     SideNavComponent,
     HomeComponent,
     LoginComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    QuestionComponent,
+    QuestionListComponent,
+    PopupConfirmationComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +67,7 @@ import { QuestionsComponent } from './questions/questions.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    MatSidenavModule,
+    AngularFireDatabaseModule,
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
@@ -61,6 +78,7 @@ import { QuestionsComponent } from './questions/questions.component';
     MatSnackBarModule,
     MatSlideToggleModule,
     FormsModule,
+    ReactiveFormsModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatButtonModule,
@@ -68,7 +86,14 @@ import { QuestionsComponent } from './questions/questions.component';
     HttpClientModule,
     FlexLayoutModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDividerModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatSelectModule,
+    MatSortModule,
+    MatDialogModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],

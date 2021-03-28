@@ -11,7 +11,8 @@ export const environment = {
     storageBucket: "calminder-6e144.appspot.com",
     messagingSenderId: "342163801680",
     appId: "1:342163801680:web:f712357e317badd1a7f355",
-    measurementId: "G-BNTDH7TYPX"
+    measurementId: "G-BNTDH7TYPX",
+    databaseURL: "https://calminder-6e144-default-rtdb.europe-west1.firebasedatabase.app"
   }
 };
 

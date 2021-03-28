@@ -1,0 +1,32 @@
+<mat-toolbar>
+    <span>{{this.svc.questionForm.controls['$key'].value?"Update question":"New question"}}</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1">
+        <mat-icon>clear</mat-icon>
+    </button>
+</mat-toolbar>
+<form [formGroup]="this.svc.questionForm" class="normal-form" (submit)="onSubmit()">
+    <mat-grid-list cols='2' rowHeight='300px'>
+        <mat-grid-tile>
+            <div class="controles-container">
+                <input type="hidden" formControlName='$key'>
+                <mat-form-field>
+                    <input formControlName='title' matInput placeholder="Title">
+                </mat-form-field>
+
+
+                <mat-form-field>
+                    <input type='text' formControlName='answer' matInput placeholder="answer">
+                </mat-form-field>
+
+                <div class='button-row'>
+                    <button mat-raised-button color='warn' type='submit'
+                        [disabled]="this.svc.questionForm.invalid">Submit</button>
+                </div>
+
+
+            </div>
+        </mat-grid-tile>
+
+    </mat-grid-list>
+</form>
