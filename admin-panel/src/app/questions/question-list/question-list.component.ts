@@ -69,7 +69,7 @@ export class QuestionListComponent implements OnInit
   }
   onEdit(row: any)
   {
-    this.svc.poulateForm(row);
+    this.svc.poulatequestionForm(row);
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;

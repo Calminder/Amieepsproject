@@ -6,7 +6,7 @@
     </button>
 </mat-toolbar>
 <form [formGroup]="this.svc.questionForm" class="normal-form" (submit)="onSubmit()">
-    <mat-grid-list cols='2' rowHeight='300px'>
+    <mat-grid-list cols='1' rowHeight='200px' class="g1">
         <mat-grid-tile>
             <div class="controles-container">
                 <input type="hidden" formControlName='$key'>
@@ -16,7 +16,7 @@
 
 
                 <mat-form-field>
-                    <input type='text' formControlName='answer' matInput placeholder="answer">
+                    <textarea type='text' formControlName='answer' matInput placeholder="answer"></textarea>
                 </mat-form-field>
 
                 <div class='button-row'>

@@ -1,1 +1,54 @@
-<p>exercise works!</p>
+<mat-toolbar>
+    <span>{{this.svc.exerciseForm.controls['$key'].value?"Update exercise":"New exercise"}}</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1">
+        <mat-icon>clear</mat-icon>
+    </button>
+</mat-toolbar>
+<form [formGroup]="this.svc.exerciseForm" class="normal-form" (submit)="onSubmit()">
+    <mat-grid-list cols='2' rowHeight='450px'>
+        <mat-grid-tile>
+            <div class="controles-container">
+                <input type="hidden" formControlName='$key'>
+                <mat-form-field>
+                    <input type='text' formControlName='title' matInput placeholder="Title">
+                </mat-form-field>
+
+
+                <mat-form-field>
+                    <input type='text' formControlName='age' matInput placeholder="Age">
+                </mat-form-field>
+                <mat-form-field>
+                    <input type='text' formControlName='wonder' matInput placeholder="Wonder">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input type='text' formControlName='materials' matInput placeholder="Materials">
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="controles-container">
+
+
+                <mat-form-field>
+                    <textarea type='text' formControlName='description' matInput placeholder="Description"></textarea>
+                </mat-form-field>
+
+
+                <mat-form-field>
+                    <textarea type='text' formControlName='instructions' matInput placeholder="Instructions"></textarea>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <textarea type='text' formControlName='extra' matInput placeholder="Extra"></textarea>
+                </mat-form-field>
+
+                <div class='button-row'>
+                    <button mat-raised-button color='warn' type='submit'
+                        [disabled]="this.svc.exerciseForm.invalid">Submit</button>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</form>
