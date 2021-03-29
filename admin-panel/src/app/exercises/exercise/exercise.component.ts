@@ -27,7 +27,8 @@ export class ExerciseComponent implements OnInit
       if (!this.svc.exerciseForm.get('$key')?.value) {
         var exercisepost: IExercise = {
           title: this.svc.exerciseForm.value.title,
-          age: String(this.svc.exerciseForm.value.age),
+          date: this.svc.exerciseForm.value.date,
+          age: this.svc.exerciseForm.value.age,
           description: this.svc.exerciseForm.value.description,
           wonder: this.svc.exerciseForm.value.wonder,
           materials: this.svc.exerciseForm.value.materials,
@@ -42,7 +43,8 @@ export class ExerciseComponent implements OnInit
         var exerciseupdate: IExercise = {
           $key: this.svc.exerciseForm.value.$key,
           title: this.svc.exerciseForm.value.title,
-          age: String(this.svc.exerciseForm.value.age),
+          date: this.svc.exerciseForm.value.date,
+          age: this.svc.exerciseForm.value.age,
           description: this.svc.exerciseForm.value.description,
           wonder: this.svc.exerciseForm.value.wonder,
           materials: this.svc.exerciseForm.value.materials,

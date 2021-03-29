@@ -32,6 +32,7 @@ export class RealtimeDatabaseService
   exerciseForm: FormGroup = new FormGroup({
     $key: new FormControl(null),
     title: new FormControl('', Validators.required),
+    date: new FormControl('', Validators.required),
     age: new FormControl(''),
     description: new FormControl('', Validators.required),
     wonder: new FormControl('', Validators.required),
@@ -45,6 +46,7 @@ export class RealtimeDatabaseService
     this.exerciseForm.setValue({
       $key: null,
       title: '',
+      date: '',
       age: '',
       description: '',
       wonder: '',
@@ -101,6 +103,7 @@ export class RealtimeDatabaseService
   {
     this.exerciseList.push({
       title: exercise.title,
+      date: exercise.date,
       age: exercise.age,
       description: exercise.description,
       wonder: exercise.wonder,
@@ -114,6 +117,7 @@ export class RealtimeDatabaseService
   {
     this.exerciseList.update(exercise.$key, {
       title: exercise.title,
+      date: exercise.date,
       age: exercise.age,
       description: exercise.description,
       wonder: exercise.wonder,
