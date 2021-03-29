@@ -1,6 +1,7 @@
 import { Component, OnInit, Optional } from '@angular/core';
 import { IExercise } from 'src/app/services/interfaces/exercise';
 import { RealtimeDatabaseService } from 'src/app/services/realtimeDatabaseService/realtime-database.service';
+import { DatabaseService } from 'src/app/services/databaseService/database.service';
 import { NotificationService } from 'src/app/services/notificationService/notification.service';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ExerciseListComponent } from '../exercise-list/exercise-list.component';
