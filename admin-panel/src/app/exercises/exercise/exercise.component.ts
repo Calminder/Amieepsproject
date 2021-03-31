@@ -38,7 +38,9 @@ export class ExerciseComponent implements OnInit
         };
         console.log(exercisepost);
 
-        this.svc.createExercise(exercisepost);
+        // this.svc.createExercise(exercisepost);
+        this.svc.updateExercise(exercisepost);
+
         this.note.succes('was successfully added!');
       } else {
         var exerciseupdate: IExercise = {

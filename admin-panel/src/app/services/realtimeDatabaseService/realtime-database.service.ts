@@ -95,7 +95,7 @@ export class RealtimeDatabaseService
 
   getExercise()
   {
-    this.exerciseList = this.firebase.list('exercise');
+    this.exerciseList = this.firebase.list('Calminder-exercise');
     return this.exerciseList.snapshotChanges();
   }
 
@@ -115,7 +115,7 @@ export class RealtimeDatabaseService
 
   updateExercise(exercise: IExercise)
   {
-    this.exerciseList.update(exercise.$key, {
+    this.exerciseList.update(exercise.date, {
       title: exercise.title,
       date: exercise.date,
       age: exercise.age,

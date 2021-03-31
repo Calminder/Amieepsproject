@@ -105,7 +105,7 @@ export class DatabaseService
 
   getExercise()
   {
-    return this.angularFirestore.collection('exercise')
+    return this.angularFirestore.collection('Calminder-exercise')
       .snapshotChanges();
   }
 
@@ -113,7 +113,7 @@ export class DatabaseService
   {
     return new Promise<any>(() =>
     {
-      this.angularFirestore.collection('exercise')
+      this.angularFirestore.collection('Calminder-exercise')
         .add(exercise)
         .then(response => { console.log(response); }, error => console.log
           (error));
@@ -122,7 +122,7 @@ export class DatabaseService
 
   updateExercise(exercise: IExercise)
   {
-    return this.angularFirestore.collection('exercise')
+    return this.angularFirestore.collection('Calminder-exercise')
       .doc(exercise.$key)
       .update({
         title: exercise.title,
@@ -138,7 +138,7 @@ export class DatabaseService
 
   deleteExercise(id: any)
   {
-    return this.angularFirestore.collection('exercise')
+    return this.angularFirestore.collection('Calminder-exercise')
       .doc(id).delete();
   };
 }
