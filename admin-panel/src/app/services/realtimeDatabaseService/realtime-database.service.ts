@@ -13,7 +13,9 @@ export class RealtimeDatabaseService
   questionForm: FormGroup = new FormGroup({
     $key: new FormControl(null),
     title: new FormControl('', Validators.required),
-    answer: new FormControl('', Validators.required)
+    answer: new FormControl('', Validators.required),
+    source: new FormControl(''),
+    sourceCheck: new FormControl(false)
   });
 
   initializequestionFrom()
@@ -21,7 +23,9 @@ export class RealtimeDatabaseService
     this.questionForm.setValue({
       $key: null,
       title: '',
-      answer: ''
+      answer: '',
+      source: '',
+      sourceCheck: false
     });
   }
   poulatequestionForm(Faq: any)
@@ -34,6 +38,7 @@ export class RealtimeDatabaseService
     title: new FormControl('', Validators.required),
     date: new FormControl('', Validators.required),
     age: new FormControl(''),
+    category: new FormControl(''),
     description: new FormControl('', Validators.required),
     wonder: new FormControl('', Validators.required),
     materials: new FormControl('', Validators.required),
@@ -48,6 +53,7 @@ export class RealtimeDatabaseService
       title: '',
       date: '',
       age: '',
+      category: '',
       description: '',
       wonder: '',
       materials: '',
@@ -76,7 +82,10 @@ export class RealtimeDatabaseService
   {
     this.questionList.push({
       title: question.title,
-      answer: question.answer
+      answer: question.answer,
+      source: question.source,
+      sourceCheck: question.sourceCheck
+
     });
   }
 
@@ -84,7 +93,9 @@ export class RealtimeDatabaseService
   {
     this.questionList.update(question.$key, {
       title: question.title,
-      answer: question.answer
+      answer: question.answer,
+      source: question.source,
+      sourceCheck: question.sourceCheck
     });
   }
 
@@ -105,6 +116,7 @@ export class RealtimeDatabaseService
       title: exercise.title,
       date: exercise.date,
       age: exercise.age,
+      category: exercise.category,
       description: exercise.description,
       wonder: exercise.wonder,
       materials: exercise.materials,
@@ -119,6 +131,7 @@ export class RealtimeDatabaseService
       title: exercise.title,
       date: exercise.date,
       age: exercise.age,
+      category: exercise.category,
       description: exercise.description,
       wonder: exercise.wonder,
       materials: exercise.materials,

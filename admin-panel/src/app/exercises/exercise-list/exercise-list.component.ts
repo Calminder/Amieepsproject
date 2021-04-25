@@ -47,7 +47,7 @@ export class ExerciseListComponent implements OnInit
         //console.log("Rr", this.dataSource.filteredData.length);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
-        this.displayedColumns = ["id", "title", "actions"];
+        this.displayedColumns = ["id", "title",  "actions"];
       });
 
   }

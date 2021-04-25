@@ -4,6 +4,7 @@ export interface IExercise
     title: string;
     date: string;
     age: string;
+    category: string;
     description: string;
     wonder: string;
     materials: string;

@@ -20,6 +20,7 @@ export class QuestionComponent implements OnInit
   ngOnInit(): void
   {
     this.svc.getQuestions();
+
   }
 
   onSubmit()
@@ -28,7 +29,9 @@ export class QuestionComponent implements OnInit
       if (!this.svc.questionForm.get('$key')?.value) {
         var questionpost: IQuestion = {
           title: this.svc.questionForm.value.title,
-          answer: this.svc.questionForm.value.answer
+          answer: this.svc.questionForm.value.answer,
+          source: this.svc.questionForm.value.source,
+          sourceCheck: this.svc.questionForm.value.sourceCheck
         };
         this.svc.createQuestion(questionpost);
         this.note.succes('was successfully added!');
@@ -36,7 +39,10 @@ export class QuestionComponent implements OnInit
         var questionupdate: IQuestion = {
           $key: this.svc.questionForm.value.$key,
           title: this.svc.questionForm.value.title,
-          answer: this.svc.questionForm.value.answer
+          answer: this.svc.questionForm.value.answer,
+          source: this.svc.questionForm.value.source,
+          sourceCheck: this.svc.questionForm.value.sourceCheck
+
         };
         this.svc.updateQuestion(questionupdate);
         this.note.succes('was successfully updated!');

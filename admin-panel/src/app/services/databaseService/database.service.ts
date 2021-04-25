@@ -12,17 +12,21 @@ import { IExercise } from '../interfaces/exercise';
 export class DatabaseService
 {
   questionForm: FormGroup = new FormGroup({
-    id: new FormControl(null),
+    $key: new FormControl(null),
     title: new FormControl('', Validators.required),
-    answer: new FormControl('', Validators.required)
+    answer: new FormControl('', Validators.required),
+    source: new FormControl(''),
+    sourceCheck: new FormControl(false)
   });
 
   initializequestionFrom()
   {
     this.questionForm.setValue({
-      id: null,
+      $key: null,
       title: '',
-      answer: ''
+      answer: '',
+      source: '',
+      sourceCheck: false
     });
   }
 
@@ -36,6 +40,7 @@ export class DatabaseService
     title: new FormControl('', Validators.required),
     date: new FormControl('', Validators.required),
     age: new FormControl(''),
+    category: new FormControl(''),
     description: new FormControl('', Validators.required),
     wonder: new FormControl('', Validators.required),
     materials: new FormControl('', Validators.required),
@@ -50,6 +55,7 @@ export class DatabaseService
       title: '',
       date: '',
       age: '',
+      category: '',
       description: '',
       wonder: '',
       materials: '',
@@ -99,7 +105,8 @@ export class DatabaseService
       .doc(question.$key)
       .update({
         title: question.title,
-        answer: question.answer
+        answer: question.answer,
+        source: question.source
       });
   }
 
@@ -128,10 +135,11 @@ export class DatabaseService
         title: exercise.title,
         date: exercise.date,
         age: exercise.age,
+        category: exercise.category,
         description: exercise.description,
         wonder: exercise.wonder,
         materials: exercise.materials,
-        instructions: exercise.materials,
+        instructions: exercise.instructions,
         extra: exercise.extra
       });
   }

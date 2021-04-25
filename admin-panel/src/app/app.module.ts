@@ -37,7 +37,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MAT_DATE_FORMATS } from '@angular/material/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 
@@ -51,6 +54,10 @@ import { from } from 'rxjs';
 import { ExercisesComponent } from './exercises/exercises.component';
 import { ExerciseListComponent } from './exercises/exercise-list/exercise-list.component';
 import { ExerciseComponent } from './exercises/exercise/exercise.component';
+import { MY_DATE_FORMATS } from './my-date-formats';
+
+
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 @NgModule({
   declarations: [
@@ -99,9 +106,12 @@ import { ExerciseComponent } from './exercises/exercise/exercise.component';
     MatSelectModule,
     MatSortModule,
     MatDialogModule,
-
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCheckboxModule,
+    NgxDropzoneModule
   ],
-  providers: [],
+  providers: [{ provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS }],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
