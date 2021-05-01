@@ -16,6 +16,18 @@
     }
 }
 
+.example-container{
+    width:120px !important;
+ }
+ .example-container2{
+    width:120px !important;
+    margin-left: 10px;
+ }
+ .inline{
+    display:inline-block;
+    width:100%;
+  }
+
 #fileUpload {
     position: absolute;
     z-index: 9;

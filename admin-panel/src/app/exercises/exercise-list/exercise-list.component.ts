@@ -9,6 +9,7 @@ import { DialogService } from 'src/app/services/dialogService/dialog.service';
 import { NotificationService } from 'src/app/services/notificationService/notification.service';
 import { IExercise } from 'src/app/services/interfaces/exercise';
 import { ExerciseComponent } from '../exercise/exercise.component';
+import firebase from 'firebase';
 
 @Component({
   selector: 'app-exercise-list',
@@ -47,7 +48,7 @@ export class ExerciseListComponent implements OnInit
         //console.log("Rr", this.dataSource.filteredData.length);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
-        this.displayedColumns = ["id", "title",  "actions"];
+        this.displayedColumns = ["id", "title", "actions"];
       });
 
   }
@@ -84,6 +85,14 @@ export class ExerciseListComponent implements OnInit
     this.dialogsvc.openConfirmDialog('Are you sure you want to delete the question').afterClosed().subscribe(res =>
     {
       if (res) {
+       var desertRef = firebase.storage().ref().child('images/desert.jpg');
+
+        // Delete the file
+        desertRef.delete().then(() => {
+          // File deleted successfully
+        }).catch((error) => {
+          // Uh-oh, an error occurred!
+        });
         this.svc.deleteExercise(key);
         this.notif.warn('Deleted');
       }

@@ -36,8 +36,9 @@ export class RealtimeDatabaseService
   exerciseForm: FormGroup = new FormGroup({
     $key: new FormControl(null),
     title: new FormControl('', Validators.required),
-    date: new FormControl('', Validators.required),
+    date: new FormControl(Date, Validators.required),
     age: new FormControl(''),
+    duration: new FormControl('', Validators.required),
     category: new FormControl(''),
     description: new FormControl('', Validators.required),
     wonder: new FormControl('', Validators.required),
@@ -53,6 +54,7 @@ export class RealtimeDatabaseService
       title: '',
       date: '',
       age: '',
+      duration: '',
       category: '',
       description: '',
       wonder: '',
@@ -116,27 +118,31 @@ export class RealtimeDatabaseService
       title: exercise.title,
       date: exercise.date,
       age: exercise.age,
+      duration: exercise.duration,
       category: exercise.category,
       description: exercise.description,
       wonder: exercise.wonder,
       materials: exercise.materials,
       instructions: exercise.instructions,
-      extra: exercise.extra
+      extra: exercise.extra,
+      url: exercise.url
     });
   }
 
   updateExercise(exercise: IExercise)
   {
-    this.exerciseList.update(exercise.date, {
+    this.exerciseList.update(String(exercise.date), {
       title: exercise.title,
       date: exercise.date,
       age: exercise.age,
+      duration: exercise.duration,
       category: exercise.category,
       description: exercise.description,
       wonder: exercise.wonder,
       materials: exercise.materials,
       instructions: exercise.instructions,
-      extra: exercise.extra
+      extra: exercise.extra,
+      url: exercise.url
     });
   }
 
@@ -144,4 +150,18 @@ export class RealtimeDatabaseService
   {
     this.exerciseList.remove(id);
   };
+
+
+  // formatDate(date: Date): string
+  // {
+  //   const day = date.getDate();
+  //   const month = date.getMonth() + 1;
+  //   const year = date.getFullYear();
+  //   return `${ day }-${ month }-${ year }`;
+
+  //   //date.setDate(date.getDate() + 2);
+  //   //console.log(date);
+
+  //   //return String(date);
+  // }
 }

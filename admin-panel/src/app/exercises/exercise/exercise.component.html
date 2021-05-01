@@ -24,10 +24,18 @@
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
+                <div class="inline">
+                    <mat-form-field class="example-container">
+                        <input type='text' formControlName='age' matInput placeholder="Age">
+                    </mat-form-field>
+                    <mat-form-field class="example-container2">
+                        <input type='text' formControlName='duration' matInput placeholder="Duration">
+                    </mat-form-field>
+                </div>
 
-                <mat-form-field>
-                    <input type='text' formControlName='age' matInput placeholder="Age">
-                </mat-form-field>
+
+
+
                 <mat-form-field>
                     <input type='text' formControlName='wonder' matInput placeholder="Wonder">
                 </mat-form-field>
@@ -68,6 +76,7 @@
                     </ngx-dropzone-preview>
                 </ngx-dropzone>
             </div>
+
         </mat-grid-tile>
         <mat-grid-tile colspan='2'>
 

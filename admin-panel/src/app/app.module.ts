@@ -11,6 +11,13 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import
+  {
+    AngularFireStorageModule,
+    AngularFireStorageReference,
+    AngularFireUploadTask,
+    BUCKET
+  } from "@angular/fire/storage";
 import { environment } from '../environments/environment';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -39,7 +46,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MAT_DATE_FORMATS } from '@angular/material/core';
+import { MAT_DATE_FORMATS, DateAdapter } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
@@ -55,9 +62,10 @@ import { ExercisesComponent } from './exercises/exercises.component';
 import { ExerciseListComponent } from './exercises/exercise-list/exercise-list.component';
 import { ExerciseComponent } from './exercises/exercise/exercise.component';
 import { MY_DATE_FORMATS } from './my-date-formats';
-
+import { AppDateAdapter, APP_DATE_FORMATS } from 'src/app/format-datepicker';
 
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { DropzoneDirective } from './dropzone.directive';
 
 @NgModule({
   declarations: [
@@ -71,7 +79,8 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     PopupConfirmationComponent,
     ExercisesComponent,
     ExerciseListComponent,
-    ExerciseComponent
+    ExerciseComponent,
+    DropzoneDirective
   ],
   imports: [
     BrowserModule,
@@ -111,10 +120,14 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     MatCheckboxModule,
     NgxDropzoneModule
   ],
-  providers: [{ provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS }],
+  providers: [{ provide: DateAdapter, useClass: AppDateAdapter },
+  { provide: MAT_DATE_FORMATS, useValue: APP_DATE_FORMATS },
+  { provide: BUCKET, useValue: "your" }],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ]
 })
+
+//{ provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS }
 export class AppModule { }
