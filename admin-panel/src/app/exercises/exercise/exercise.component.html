@@ -69,7 +69,7 @@
         </mat-grid-tile>
         <mat-grid-tile colspan='2' rowspan='4'>
             <div class="controles-container">
-                <ngx-dropzone (change)="onSelect($event)" [expandable]="true">
+                <ngx-dropzone  (change)="onSelect($event)" [expandable]="true">
                     <ngx-dropzone-label>Drop you picture</ngx-dropzone-label>
                     <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
                         <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>

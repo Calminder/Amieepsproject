@@ -36,7 +36,7 @@ export class RealtimeDatabaseService
   exerciseForm: FormGroup = new FormGroup({
     $key: new FormControl(null),
     title: new FormControl('', Validators.required),
-    date: new FormControl(Date, Validators.required),
+    date: new FormControl(Date),
     age: new FormControl(''),
     duration: new FormControl('', Validators.required),
     category: new FormControl(''),
@@ -44,7 +44,8 @@ export class RealtimeDatabaseService
     wonder: new FormControl('', Validators.required),
     materials: new FormControl('', Validators.required),
     instructions: new FormControl('', Validators.required),
-    extra: new FormControl('')
+    extra: new FormControl(''),
+    url: new FormControl('')
   });
 
   initializeexerciseFrom()
@@ -60,7 +61,8 @@ export class RealtimeDatabaseService
       wonder: '',
       materials: '',
       instructions: '',
-      extra: ''
+      extra: '',
+      url: ''
     });
   }
   poulateexerciseForm(exercise: any)

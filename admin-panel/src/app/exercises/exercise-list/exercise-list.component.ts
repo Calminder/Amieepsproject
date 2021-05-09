@@ -72,7 +72,10 @@ export class ExerciseListComponent implements OnInit
   }
   onEdit(row: any)
   {
+    console.log(row);
+
     this.svc.poulateexerciseForm(row);
+
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
@@ -85,12 +88,14 @@ export class ExerciseListComponent implements OnInit
     this.dialogsvc.openConfirmDialog('Are you sure you want to delete the question').afterClosed().subscribe(res =>
     {
       if (res) {
-       var desertRef = firebase.storage().ref().child('images/desert.jpg');
+        var desertRef = firebase.storage().ref().child('images/desert.jpg');
 
         // Delete the file
-        desertRef.delete().then(() => {
+        desertRef.delete().then(() =>
+        {
           // File deleted successfully
-        }).catch((error) => {
+        }).catch((error) =>
+        {
           // Uh-oh, an error occurred!
         });
         this.svc.deleteExercise(key);
