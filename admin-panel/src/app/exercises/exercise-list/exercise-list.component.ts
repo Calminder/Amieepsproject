@@ -43,7 +43,7 @@ export class ExerciseListComponent implements OnInit
           //console.log("item");
         });
 
-
+        //console.log("array",array)
         this.dataSource = new MatTableDataSource(array);
         //console.log("Rr", this.dataSource.filteredData.length);
         this.dataSource.sort = this.sort;
@@ -72,7 +72,7 @@ export class ExerciseListComponent implements OnInit
   }
   onEdit(row: any)
   {
-    console.log(row);
+    //console.log(row);
 
     this.svc.poulateexerciseForm(row);
 
@@ -83,21 +83,28 @@ export class ExerciseListComponent implements OnInit
     this.dialog.open(ExerciseComponent, dialogConfig);
   }
 
-  onDelete(key: any)
+  onDelete(key: any, row: any)
   {
     this.dialogsvc.openConfirmDialog('Are you sure you want to delete the question').afterClosed().subscribe(res =>
     {
       if (res) {
-        var desertRef = firebase.storage().ref().child('images/desert.jpg');
+        if (row.url != '') {
+          var httpsReference = firebase.storage().refFromURL(`${ row.url }`);
+          //this.files.push(httpsReference);
+          //console.log('dataform url', httpsReference);
+          var desertRef = firebase.storage().ref().child(httpsReference.name);
 
-        // Delete the file
-        desertRef.delete().then(() =>
-        {
-          // File deleted successfully
-        }).catch((error) =>
-        {
-          // Uh-oh, an error occurred!
-        });
+          // Delete the file
+          desertRef.delete().then(() =>
+          {
+            // File deleted successfully
+          }).catch((error) =>
+          {
+            // Uh-oh, an error occurred!
+          });
+          
+        }
+       
         this.svc.deleteExercise(key);
         this.notif.warn('Deleted');
       }

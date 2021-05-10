@@ -25,6 +25,103 @@ export class ExerciseComponent implements OnInit
   downloadURL!: string;
   uploadTask: any;
   test: boolean = false;
+  
+
+  constructor(public svc: RealtimeDatabaseService, private note: NotificationService,
+    @Optional() public dialogRef: MatDialogRef<ExerciseListComponent>,
+    private storage: AngularFireStorage) { }
+  
+
+  ngOnInit(): void
+  {
+    this.svc.getExercise().subscribe(r =>
+    {
+    });
+    //console.log(this.svc.exerciseForm.value.date);
+
+    if (this.svc.exerciseForm.value.url != '') {
+      var httpsReference = firebase.storage().refFromURL(`${ this.svc.exerciseForm.value.url }`);
+      //this.files.push(httpsReference);
+      //console.log('dataform url', httpsReference);
+      this.files.push(httpsReference);
+      this.downloadURL = this.svc.exerciseForm.value.url;
+    }
+
+  }
+
+
+  onSubmit()
+  {
+
+    //this.fileChangeEvent(this.imageToFirebase[0]);
+    if (this.svc.exerciseForm.valid) {
+      if (!this.svc.exerciseForm.get('$key')?.value) {
+        var exercisepost: IExercise = {
+          title: this.svc.exerciseForm.value.title,
+          date: this.svc.exerciseForm.value.date,
+          age: this.svc.exerciseForm.value.age,
+          duration: this.svc.exerciseForm.value.duration,
+          category: this.svc.exerciseForm.value.category,
+          description: this.svc.exerciseForm.value.description,
+          wonder: this.svc.exerciseForm.value.wonder,
+          materials: this.svc.exerciseForm.value.materials,
+          instructions: this.svc.exerciseForm.value.instructions,
+          extra: this.svc.exerciseForm.value.extra,
+          url: this.downloadURL
+        };
+        console.log(exercisepost);
+
+        this.svc.createExercise(exercisepost);
+        
+
+        this.note.succes('was successfully added!');
+      } else {
+        var exerciseupdate: IExercise = {
+          $key: this.svc.exerciseForm.value.$key,
+          title: this.svc.exerciseForm.value.title,
+          date: this.svc.exerciseForm.value.date,
+          age: this.svc.exerciseForm.value.age,
+          duration: this.svc.exerciseForm.value.duration,
+          category: this.svc.exerciseForm.value.category,
+          description: this.svc.exerciseForm.value.description,
+          wonder: this.svc.exerciseForm.value.wonder,
+          materials: this.svc.exerciseForm.value.materials,
+          instructions: this.svc.exerciseForm.value.instructions,
+          extra: this.svc.exerciseForm.value.extra,
+          url: this.downloadURL
+        };
+        //console.log(this.svc.exerciseForm.value.date);
+
+        this.svc.updateExercise(exerciseupdate);
+        // if (String(this.svc.exerciseForm.value.date) != this.date) {
+        //   this.svc.deleteExercise(this.date);
+        // }
+
+        //this.fileChangeEvent(this.imageToFirebase[0]);
+        this.note.succes('was successfully updated!');
+      }
+      this.downloadURL = '';
+      this.files.length = 0;
+      //this.imageToFirebase.length = 0;
+      //this.onRemove(this.imageToFirebase[0]);
+      this.svc.exerciseForm.reset();
+      this.svc.initializeexerciseFrom();
+      this.dialogRef.close();
+      this.svc.exerciseForm.reset();
+      this.svc.initializeexerciseFrom();
+      //this.onClose();
+    }
+  }
+  onClose()
+  {
+    this.onRemove(this.files[0]);
+    this.downloadURL = '';
+    this.files.length = 0;
+    //this.imageToFirebase.length = 0;
+    this.svc.exerciseForm.reset();
+    this.svc.initializeexerciseFrom();
+    this.dialogRef.close();
+  }
   toggleHover(event: boolean)
   {
     this.isHovering = event;
@@ -85,116 +182,6 @@ export class ExerciseComponent implements OnInit
         });
       });
 
-  }
-
-  constructor(public svc: RealtimeDatabaseService, private note: NotificationService,
-    @Optional() public dialogRef: MatDialogRef<ExerciseListComponent>,
-    private storage: AngularFireStorage) { }
-  dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) =>
-  {
-    // Only highligh dates inside the month view.
-    if (view === 'month') {
-      const date = cellDate.getDate();
-
-      // Highlight the 1st and 20th day of each month.
-      return (date === 1 || date === 20) ? 'example-custom-date-class' : '';
-    }
-
-    return '';
-  };
-
-  ngOnInit(): void
-  {
-    this.svc.getExercise().subscribe(r =>
-    {
-    });
-    //console.log(this.svc.exerciseForm.value.date);
-
-    if (this.svc.exerciseForm.value.url != '') {
-      var httpsReference = firebase.storage().refFromURL(`${ this.svc.exerciseForm.value.url }`);
-      //this.files.push(httpsReference);
-      //console.log('dataform url', httpsReference);
-      this.files.push(httpsReference);
-      this.downloadURL = this.svc.exerciseForm.value.url;
-    }
-
-  }
-
-
-  onSubmit()
-  {
-
-    //this.fileChangeEvent(this.imageToFirebase[0]);
-    if (this.svc.exerciseForm.valid) {
-      if (!this.svc.exerciseForm.get('$key')?.value) {
-        var exercisepost: IExercise = {
-          title: this.svc.exerciseForm.value.title,
-          date: this.svc.exerciseForm.value.date,
-          age: this.svc.exerciseForm.value.age,
-          duration: this.svc.exerciseForm.value.duration,
-          category: this.svc.exerciseForm.value.category,
-          description: this.svc.exerciseForm.value.description,
-          wonder: this.svc.exerciseForm.value.wonder,
-          materials: this.svc.exerciseForm.value.materials,
-          instructions: this.svc.exerciseForm.value.instructions,
-          extra: this.svc.exerciseForm.value.extra,
-          url: this.downloadURL
-        };
-        //console.log(exercisepost);
-
-        // this.svc.createExercise(exercisepost);
-        this.svc.createExercise(exercisepost);
-        //console.log("this line 114", downloadURL);
-        console.log(this.svc.exerciseForm.value.date
-        );
-
-        this.note.succes('was successfully added!');
-      } else {
-        var exerciseupdate: IExercise = {
-          $key: this.svc.exerciseForm.value.$key,
-          title: this.svc.exerciseForm.value.title,
-          date: this.svc.exerciseForm.value.date,
-          age: this.svc.exerciseForm.value.age,
-          duration: this.svc.exerciseForm.value.duration,
-          category: this.svc.exerciseForm.value.category,
-          description: this.svc.exerciseForm.value.description,
-          wonder: this.svc.exerciseForm.value.wonder,
-          materials: this.svc.exerciseForm.value.materials,
-          instructions: this.svc.exerciseForm.value.instructions,
-          extra: this.svc.exerciseForm.value.extra,
-          url: this.downloadURL
-        };
-        //console.log(this.svc.exerciseForm.value.date);
-
-        this.svc.updateExercise(exerciseupdate);
-        // if (String(this.svc.exerciseForm.value.date) != this.date) {
-        //   this.svc.deleteExercise(this.date);
-        // }
-
-        //this.fileChangeEvent(this.imageToFirebase[0]);
-        this.note.succes('was successfully updated!');
-      }
-      this.downloadURL = '';
-      this.files.length = 0;
-      //this.imageToFirebase.length = 0;
-      //this.onRemove(this.imageToFirebase[0]);
-      this.svc.exerciseForm.reset();
-      this.svc.initializeexerciseFrom();
-      this.dialogRef.close();
-      this.svc.exerciseForm.reset();
-      this.svc.initializeexerciseFrom();
-      //this.onClose();
-    }
-  }
-  onClose()
-  {
-    this.onRemove(this.files[0]);
-    this.downloadURL = '';
-    this.files.length = 0;
-    //this.imageToFirebase.length = 0;
-    this.svc.exerciseForm.reset();
-    this.svc.initializeexerciseFrom();
-    this.dialogRef.close();
   }
 
 }

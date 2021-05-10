@@ -65,9 +65,22 @@ export class RealtimeDatabaseService
       url: ''
     });
   }
-  poulateexerciseForm(exercise: any)
+  poulateexerciseForm(exercise: IExercise)
   {
-    this.exerciseForm.setValue(exercise);
+    this.exerciseForm.setValue({
+      $key: exercise.$key,
+      age: exercise.age,
+      title: exercise.title,
+      date: new Date(exercise.date),
+      duration: exercise.duration,
+      category: exercise.category,
+      description: exercise.description,
+      wonder: exercise.wonder,
+      materials: exercise.materials,
+      instructions: exercise.instructions,
+      extra: exercise.extra,
+      url: exercise.url
+    });
   }
 
   questionList!: AngularFireList<any>;
@@ -118,7 +131,6 @@ export class RealtimeDatabaseService
   {
     this.exerciseList.push({
       title: exercise.title,
-      date: exercise.date,
       age: exercise.age,
       duration: exercise.duration,
       category: exercise.category,
@@ -127,9 +139,10 @@ export class RealtimeDatabaseService
       materials: exercise.materials,
       instructions: exercise.instructions,
       extra: exercise.extra,
-      url: exercise.url
+      url: exercise.url,
+      date: String(exercise.date),
+
     });
-    console.log(exercise.date);
 
   }
 

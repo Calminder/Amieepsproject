@@ -2,7 +2,7 @@ export interface IExercise
 {
     $key?: any;
     title: string;
-    date: Date;
+    date: string;
     age: string;
     duration: string;
     category: string;
