@@ -19,7 +19,7 @@ import { snapshotChanges } from '@angular/fire/database';
 export class ExerciseComponent implements OnInit
 {
   files: any[] = [];
-  deletedFiles:any[] = [];
+  deletedFiles: any[] = [];
   //imageToFirebase: any[] = [];
   isHovering!: boolean;
   selectedFile!: File;
@@ -27,12 +27,12 @@ export class ExerciseComponent implements OnInit
   uploadTask: any;
   test: boolean = false;
   submit: boolean = false;
-
+  onDelete: boolean = false;
 
   constructor(public svc: RealtimeDatabaseService, private note: NotificationService,
     @Optional() public dialogRef: MatDialogRef<ExerciseListComponent>,
     private storage: AngularFireStorage) { }
-  
+
 
   ngOnInit(): void
   {
@@ -47,8 +47,8 @@ export class ExerciseComponent implements OnInit
       //console.log('dataform url', httpsReference);
       this.files.push(httpsReference);
       this.downloadURL = this.svc.exerciseForm.value.url;
-    }else{
-      this.downloadURL='';
+    } else {
+      this.downloadURL = '';
     }
 
   }
@@ -76,7 +76,7 @@ export class ExerciseComponent implements OnInit
         console.log(exercisepost);
 
         this.svc.createExercise(exercisepost);
-        
+
 
         this.note.succes('was successfully added!');
       } else {
@@ -119,9 +119,13 @@ export class ExerciseComponent implements OnInit
   onClose()
   {
     if (this.submit) {
-      this.onRemove(this.files[0]);  
+      this.onRemove(this.files[0]);
     }
-    
+    if (this.onDelete) {
+      if (this.svc.exerciseForm.get('$key')?.value) {
+        this.fileAfterRemove();
+      }
+    }
     this.downloadURL = '';
     this.files.length = 0;
     //this.imageToFirebase.length = 0;
@@ -129,7 +133,7 @@ export class ExerciseComponent implements OnInit
     this.svc.initializeexerciseFrom();
     this.dialogRef.close();
   }
- 
+
 
 
   onSelect(event: any)
@@ -158,9 +162,50 @@ export class ExerciseComponent implements OnInit
     }
     // Delete the file
     this.deletedFiles.push(event);
+    this.onDelete = true;
     this.files.splice(this.files.indexOf(event), 1);
     //this.imageToFirebase.splice(this.imageToFirebase.indexOf(event), 1);
 
+  }
+  fileAfterRemove()
+  {
+    var uploadTask = firebase.storage().ref().child(`${ this.deletedFiles[0].name }`).put(this.deletedFiles[0]);
+    console.log(uploadTask);
+    uploadTask.on('state_changed', (snapshotChanges) =>
+    {
+
+    },
+      (error) =>
+      {
+        console.log(error);
+      },
+      () =>
+      {
+        uploadTask.snapshot.ref.getDownloadURL().then(async (downloadURL) =>
+        {
+          console.log('File available at', downloadURL);
+          this.downloadURL = await downloadURL;
+          this.submit = true;
+          var exerciseupdate: IExercise = {
+            $key: this.svc.exerciseForm.value.$key,
+            title: this.svc.exerciseForm.value.title,
+            date: this.svc.exerciseForm.value.date,
+            age: this.svc.exerciseForm.value.age,
+            duration: this.svc.exerciseForm.value.duration,
+            category: this.svc.exerciseForm.value.category,
+            description: this.svc.exerciseForm.value.description,
+            wonder: this.svc.exerciseForm.value.wonder,
+            materials: this.svc.exerciseForm.value.materials,
+            instructions: this.svc.exerciseForm.value.instructions,
+            extra: this.svc.exerciseForm.value.extra,
+            url: await downloadURL
+          };
+          //console.log(this.svc.exerciseForm.value.date);
+
+          this.svc.updateExercise(exerciseupdate);
+
+        });
+      });
   }
 
   fileChangeEvent()
