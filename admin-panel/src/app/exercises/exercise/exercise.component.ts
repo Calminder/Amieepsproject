@@ -45,6 +45,8 @@ export class ExerciseComponent implements OnInit
       //console.log('dataform url', httpsReference);
       this.files.push(httpsReference);
       this.downloadURL = this.svc.exerciseForm.value.url;
+    }else{
+      this.downloadURL='';
     }
 
   }
@@ -114,7 +116,10 @@ export class ExerciseComponent implements OnInit
   }
   onClose()
   {
-    this.onRemove(this.files[0]);
+    if (this.svc.exerciseForm.value.url != '') {
+      this.onRemove(this.files[0]);  
+    }
+    
     this.downloadURL = '';
     this.files.length = 0;
     //this.imageToFirebase.length = 0;
@@ -122,10 +127,7 @@ export class ExerciseComponent implements OnInit
     this.svc.initializeexerciseFrom();
     this.dialogRef.close();
   }
-  toggleHover(event: boolean)
-  {
-    this.isHovering = event;
-  }
+ 
 
 
   onSelect(event: any)
