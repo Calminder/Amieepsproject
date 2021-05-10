@@ -19,13 +19,15 @@ import { snapshotChanges } from '@angular/fire/database';
 export class ExerciseComponent implements OnInit
 {
   files: any[] = [];
+  deletedFiles:any[] = [];
   //imageToFirebase: any[] = [];
   isHovering!: boolean;
   selectedFile!: File;
   downloadURL!: string;
   uploadTask: any;
   test: boolean = false;
-  
+  submit: boolean = false;
+
 
   constructor(public svc: RealtimeDatabaseService, private note: NotificationService,
     @Optional() public dialogRef: MatDialogRef<ExerciseListComponent>,
@@ -116,7 +118,7 @@ export class ExerciseComponent implements OnInit
   }
   onClose()
   {
-    if (this.svc.exerciseForm.value.url != '') {
+    if (this.submit) {
       this.onRemove(this.files[0]);  
     }
     
@@ -155,7 +157,7 @@ export class ExerciseComponent implements OnInit
       });
     }
     // Delete the file
-
+    this.deletedFiles.push(event);
     this.files.splice(this.files.indexOf(event), 1);
     //this.imageToFirebase.splice(this.imageToFirebase.indexOf(event), 1);
 
@@ -179,7 +181,7 @@ export class ExerciseComponent implements OnInit
         {
           console.log('File available at', downloadURL);
           this.downloadURL = await downloadURL;
-
+          this.submit = true;
 
         });
       });
