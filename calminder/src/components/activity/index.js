@@ -5,17 +5,30 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 export const Activity = () => {
     const { id } = useParams();
+    const [cardOpened, setCardOpened] = useState(false);
 
     const card = getCardById(id);
 
     const { title, duration, requirmens, age, materials, description, goal } = card;
-
+    
     return (
     card &&
-    <div className={styles.shadow}>
+    <div className={styles.shadow}>s
         <Link to="/" className={styles.backBtn}>Back</Link>
 
+
         <div className={styles.wrapper}>
+            <div className={cardOpened ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
+                <div className={styles.cardActive}>
+                    <div className={styles.close} onClick={() => setCardOpened(false)}>X</div>
+                    <div className={styles.title}>
+                        Activity name ({goal.title})
+                    </div>
+                    <div className={styles.value}>
+                        {goal.value}
+                    </div>
+                </div>
+            </div>
 
             <div className={styles.goal}>
                 <div className={styles.title}>
@@ -26,14 +39,12 @@ export const Activity = () => {
                 </div>
             </div>
 
-            <Card 
-                title={title}
-                description={description}
-                requirmens={requirmens}
-                age={age}
-                materials={materials}
-                goal={goal}
-            />
+            <section className={styles.card} onClick={() => setCardOpened(true)}>
+                <div className={styles.output}>
+                    <div className={styles.title}>{title}</div>
+                    <div className={styles.desc}>{description}</div>
+                </div>
+            </section>
 
             <div className={styles.info}>
                 <div className={styles.item}>

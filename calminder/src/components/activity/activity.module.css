@@ -41,8 +41,51 @@
 
 
 .shadow .wrapper .card {
+    position: relative;
     font-size: 16px;
+    border-radius: 8px;
+    width: 300px;
+    padding: 20px;
+    background-color: gray;
 }
+
+.shadow .wrapper .cardActiveWrapper {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0 ,0, .4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+.shadow .wrapper .cardCloseWrapper {
+    display: none;
+}
+
+.shadow .wrapper .cardActiveWrapper .cardActive {
+    font-size: 16px;
+    border-radius: 8px;
+    width: 600px;
+    height: 600px;
+    padding: 20px;
+    background-color: gray;
+    margin: auto
+}
+
+
+.shadow .wrapper .cardActiveWrapper .cardActive .close{
+    text-align: end;
+}
+
+.shadow .wrapper .card .title, .shadow .wrapper .cardActiveWrapper .cardActive .title {
+    text-align: center;
+    font-size: 30px;
+}
+
 
 .shadow .wrapper .info {
     padding: 0px 20px;

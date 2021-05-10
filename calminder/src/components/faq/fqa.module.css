@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 15px;
+}
+
+header h1 {
+    font-family: 'Baloo 2';
+    color:#FFAF20;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.logoHolder{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 15px;
+}
+.faqs {
+    margin: 0 auto;
+    padding: 25px;
+}
+
+.faqs .faq, .faqs .faqOpen {
+    margin: 15px;
+}
+
+
+.faqs .faq .faqQuestion {
+    background-color: #FFAF20;
+    font-family: 'Baloo 2';
+    position: relative;
+    font-size: 30px;
+    padding-right: 80px;
+    transition: all 0.4s ease;
+    color:white;
+}
+
+.faqs .faq .faqQuestion::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-image: url("../../resources/arrow.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.4s ease-out;
+}
+
+.faqs .faq .faqAnswer {
+    font-family:'Lato';
+    font-size:22px;
+    color:white;
+    background-color: #275E87;
+    opacity: 35%;
+    max-height: 0;
+    overflow-y: hidden;
+    transition: all 0.4s ease-out;
+}
+
+.faqs .faq .open .faqQuestion {
+
+    margin-bottom: 15px;
+}
+
+.faqs .faqOpen .faqQuestion::after{
+    transform:translateY(-50%) rotate(180deg);
+
+}
+
+.faqs .faqOpen .faqAnswer {
+    max-height: 1000px;
+    opacity: 1;
+}
