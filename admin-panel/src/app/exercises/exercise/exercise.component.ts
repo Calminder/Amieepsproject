@@ -73,7 +73,7 @@ export class ExerciseComponent implements OnInit
           extra: this.svc.exerciseForm.value.extra,
           url: this.downloadURL
         };
-        console.log(exercisepost);
+        //console.log(exercisepost);
 
         this.svc.createExercise(exercisepost);
 
@@ -170,7 +170,7 @@ export class ExerciseComponent implements OnInit
   fileAfterRemove()
   {
     var uploadTask = firebase.storage().ref().child(`${ this.deletedFiles[0].name }`).put(this.deletedFiles[0]);
-    console.log(uploadTask);
+    //console.log(uploadTask);
     uploadTask.on('state_changed', (snapshotChanges) =>
     {
 
@@ -183,7 +183,7 @@ export class ExerciseComponent implements OnInit
       {
         uploadTask.snapshot.ref.getDownloadURL().then(async (downloadURL) =>
         {
-          console.log('File available at', downloadURL);
+          //console.log('File available at', downloadURL);
           this.downloadURL = await downloadURL;
           this.submit = true;
           var exerciseupdate: IExercise = {
@@ -224,7 +224,7 @@ export class ExerciseComponent implements OnInit
       {
         uploadTask.snapshot.ref.getDownloadURL().then(async (downloadURL) =>
         {
-          console.log('File available at', downloadURL);
+          //console.log('File available at', downloadURL);
           this.downloadURL = await downloadURL;
           this.submit = true;
 
