@@ -24,7 +24,7 @@ export class ExerciseComponent implements OnInit
   selectedFile!: File;
   downloadURL!: string;
   uploadTask: any;
-  date!: string;
+  test: boolean = false;
   toggleHover(event: boolean)
   {
     this.isHovering = event;
@@ -107,18 +107,6 @@ export class ExerciseComponent implements OnInit
   {
     this.svc.getExercise().subscribe(r =>
     {
-      let array = r.map(item =>
-      {
-
-        return {
-          $key: item.key,
-          ...item.payload.val()
-        };
-        //console.log("item");
-      });
-      //console.log(array);
-
-      this.date = array[0].$key;
     });
     //console.log(this.svc.exerciseForm.value.date);
 
@@ -127,6 +115,7 @@ export class ExerciseComponent implements OnInit
       //this.files.push(httpsReference);
       //console.log('dataform url', httpsReference);
       this.files.push(httpsReference);
+      this.downloadURL = this.svc.exerciseForm.value.url;
     }
 
   }
@@ -154,8 +143,10 @@ export class ExerciseComponent implements OnInit
         //console.log(exercisepost);
 
         // this.svc.createExercise(exercisepost);
-        this.svc.updateExercise(exercisepost);
+        this.svc.createExercise(exercisepost);
         //console.log("this line 114", downloadURL);
+        console.log(this.svc.exerciseForm.value.date
+        );
 
         this.note.succes('was successfully added!');
       } else {
@@ -173,12 +164,12 @@ export class ExerciseComponent implements OnInit
           extra: this.svc.exerciseForm.value.extra,
           url: this.downloadURL
         };
-        console.log(this.svc.exerciseForm.value.date);
+        //console.log(this.svc.exerciseForm.value.date);
 
         this.svc.updateExercise(exerciseupdate);
-        if (String(this.svc.exerciseForm.value.date) != this.date) {
-          this.svc.deleteExercise(this.date);
-        }
+        // if (String(this.svc.exerciseForm.value.date) != this.date) {
+        //   this.svc.deleteExercise(this.date);
+        // }
 
         //this.fileChangeEvent(this.imageToFirebase[0]);
         this.note.succes('was successfully updated!');

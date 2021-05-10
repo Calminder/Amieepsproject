@@ -36,7 +36,7 @@ export class RealtimeDatabaseService
   exerciseForm: FormGroup = new FormGroup({
     $key: new FormControl(null),
     title: new FormControl('', Validators.required),
-    date: new FormControl(Date),
+    date: new FormControl(Date, Validators.required),
     age: new FormControl(''),
     duration: new FormControl('', Validators.required),
     category: new FormControl(''),
@@ -129,11 +129,13 @@ export class RealtimeDatabaseService
       extra: exercise.extra,
       url: exercise.url
     });
+    console.log(exercise.date);
+
   }
 
   updateExercise(exercise: IExercise)
   {
-    this.exerciseList.update(String(exercise.date), {
+    this.exerciseList.update(exercise.$key, {
       title: exercise.title,
       date: exercise.date,
       age: exercise.age,
