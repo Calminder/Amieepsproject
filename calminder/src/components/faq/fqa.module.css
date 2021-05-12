@@ -37,20 +37,52 @@ header h1 {
 
 .faqs .faq .faqQuestion {
     background-color: #FFAF20;
+    width: 1000px;
+    height: 80px;
+    border-top-right-radius: 35px;
+/*display: flex;
+    justify-content: space-between;*/
+    /*background-color: #FFAF20;*/
     font-family: 'Baloo 2';
-    position: relative;
+  /*  position: relative;*/
     font-size: 30px;
-    padding-right: 80px;
+    /*padding-right: 80px;*/
     transition: all 0.4s ease;
     color:white;
 }
+.faqs .faq .questionContainer{
+    display: flex;
+    justify-content: flex-start;
+  /*  background-color: #FFAF20;*/
+   /* justify-content: space-between;*/
+}
 
 .faqs .faq .faqQuestion::after {
+   /* content: '';*/
+    /*position: absolute;*/
+    /* top: 50%;
+     right: 0px;*/
+    transform: translateY(-50%);
+    /*  width: 30px;
+      height: 30px;*/
+    /* background-image: url("../../resources/arrow.png");
+     background-position: center;
+     background-size: contain;
+     background-repeat: no-repeat;
+     transition: all 0.4s ease-out;*/
+}
+.faqs .faq .imgContainerQuestion{
+    width: 222.5px;
+    height: 80px;
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
+    background-color:  #ff5a3a;
+}
+.faqs .faq .questionImg{
+
     content: '';
-    position: absolute;
     top: 50%;
     right: 0px;
-    transform: translateY(-50%);
     width: 30px;
     height: 30px;
     background-image: url("../../resources/arrow.png");
@@ -58,6 +90,19 @@ header h1 {
     background-size: contain;
     background-repeat: no-repeat;
     transition: all 0.4s ease-out;
+   /* position: absolute;*/
+}
+
+.faqs .faq .answerContainer{
+
+}
+
+.faqs .faq .imgContainerAnswer{
+
+}
+
+.faqs .faq .answerImg{
+
 }
 
 .faqs .faq .faqAnswer {
@@ -70,6 +115,7 @@ header h1 {
     overflow-y: hidden;
     transition: all 0.4s ease-out;
 }
+
 
 .faqs .faq .open .faqQuestion {
 

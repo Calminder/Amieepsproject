@@ -1,6 +1,8 @@
 export const cards = [
     {
         title: "Super title",
+        activeDay: "03/12/2021",
+        image: "https://preview.redd.it/rbsmpquusoy61.jpg?width=640&crop=smart&auto=webp&s=8322d4ee10be000a82a89885afb276e4be61b163",
         description: "Super description",
         background: "img/bg.png",
         duration: 10,
@@ -16,6 +18,8 @@ export const cards = [
     },
     {
         title: "Super title",
+        activeDay: "06/12/2021",
+        image: "https://preview.redd.it/rbsmpquusoy61.jpg?width=640&crop=smart&auto=webp&s=8322d4ee10be000a82a89885afb276e4be61b163",
         description: "Super description",
         background: "img/bg.png",
         duration: 10,
@@ -31,6 +35,8 @@ export const cards = [
     },
     {
         title: "Super title",
+        activeDay: "05/12/2021",
+        image: "https://preview.redd.it/rbsmpquusoy61.jpg?width=640&crop=smart&auto=webp&s=8322d4ee10be000a82a89885afb276e4be61b163",
         description: "Super description",
         background: "img/bg.png",
         duration: 10,
@@ -46,6 +52,8 @@ export const cards = [
     },
     {
         title: "Super title",
+        activeDay: "08/12/2021",
+        image: "https://preview.redd.it/rbsmpquusoy61.jpg?width=640&crop=smart&auto=webp&s=8322d4ee10be000a82a89885afb276e4be61b163",
         description: "Super description",
         background: "img/bg.png",
         duration: 10,
@@ -61,6 +69,8 @@ export const cards = [
     },
     {
         title: "Super title",
+        activeDay: "09/12/2021",
+        image: "https://preview.redd.it/rbsmpquusoy61.jpg?width=640&crop=smart&auto=webp&s=8322d4ee10be000a82a89885afb276e4be61b163",
         description: "Super description",
         background: "img/bg.png",
         duration: 10,
@@ -76,6 +86,8 @@ export const cards = [
     },
     {
         title: "Super title",
+        activeDay: "10/12/2021",
+        image: "https://preview.redd.it/rbsmpquusoy61.jpg?width=640&crop=smart&auto=webp&s=8322d4ee10be000a82a89885afb276e4be61b163",
         description: "Super description",
         background: "img/bg.png",
         duration: 10,
@@ -91,6 +103,8 @@ export const cards = [
     },
     {
         title: "Super title",
+        activeDay: "11/12/2021",
+        image: "https://preview.redd.it/rbsmpquusoy61.jpg?width=640&crop=smart&auto=webp&s=8322d4ee10be000a82a89885afb276e4be61b163",
         description: "Super description",
         background: "img/bg.png",
         duration: 10,
@@ -106,6 +120,8 @@ export const cards = [
     },
     {
         title: "Super title",
+        activeDay: "12/12/2021",
+        image: "https://preview.redd.it/rbsmpquusoy61.jpg?width=640&crop=smart&auto=webp&s=8322d4ee10be000a82a89885afb276e4be61b163",
         description: "Super description",
         background: "img/bg.png",
         duration: 10,
@@ -121,6 +137,8 @@ export const cards = [
     },
     {
         title: "Super title",
+        activeDay: "13/12/2021",
+        image: "https://preview.redd.it/rbsmpquusoy61.jpg?width=640&crop=smart&auto=webp&s=8322d4ee10be000a82a89885afb276e4be61b163",
         description: "Super description",
         background: "img/bg.png",
         duration: 10,
@@ -136,6 +154,8 @@ export const cards = [
     },
     {
         title: "Super title",
+        activeDay: "14/12/2021",
+        image: "https://preview.redd.it/rbsmpquusoy61.jpg?width=640&crop=smart&auto=webp&s=8322d4ee10be000a82a89885afb276e4be61b163",
         description: "Super description",
         background: "img/bg.png",
         duration: 10,
@@ -151,6 +171,8 @@ export const cards = [
     },
     {
         title: "Super title",
+        activeDay: "15/12/2021",
+        image: "https://preview.redd.it/rbsmpquusoy61.jpg?width=640&crop=smart&auto=webp&s=8322d4ee10be000a82a89885afb276e4be61b163",
         description: "Super description",
         background: "img/bg.png",
         duration: 10,
@@ -166,6 +188,8 @@ export const cards = [
     },
     {
         title: "Super title",
+        activeDay: "16/12/2021",
+        image: "https://preview.redd.it/rbsmpquusoy61.jpg?width=640&crop=smart&auto=webp&s=8322d4ee10be000a82a89885afb276e4be61b163",
         description: "Super description",
         background: "img/bg.png",
         duration: 10,

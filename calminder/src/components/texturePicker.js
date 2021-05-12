@@ -27,8 +27,10 @@ const seasons = {
         {
           name: 'Spring plants layout',
           value: plantsSpring,
+          static: true,
           style: {
-            zIndex: 7
+            zIndex: 7,
+            bottom: '0px',
           },
         },
         {
@@ -51,8 +53,10 @@ const seasons = {
       {
         name: 'Winter plants layout',
         value: plantsSpring,
+        static: true,
         style: {
-          zIndex: 7
+          zIndex: 7,
+          bottom: '0px',
         },
       },
       {
@@ -75,8 +79,10 @@ const seasons = {
       {
         name: 'Summer plants layout',
         value: plantsSpring,
+        static: true,
         style: {
-          zIndex: 7
+          zIndex: 7,
+          bottom: '0px',
         },
       },
       {
@@ -106,8 +112,10 @@ const seasons = {
       {
         name: 'Autumn plants layout',
         value: plantsSpring,
+        static: true,
         style: {
-          zIndex: 7
+          zIndex: 7,
+          bottom: '0px',
         },
       },
       {
