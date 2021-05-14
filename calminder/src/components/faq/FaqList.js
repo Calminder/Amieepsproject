@@ -1,34 +1,38 @@
-/*import React,{Component} from 'react';
+import React,{ Component } from 'react';
 import FaqCard from "./FaqCard";
+import { loadJson } from "../../utils";
+import { useEffect, useState } from 'react';
+import styles from './fqa.module.css';
+export const FaqList = (props) => {
+    const [questions, setQuestions] = useState([]);
+    const [loading, setLoading] = useState(false);
+    useEffect(async () => {
+        setLoading(true);
+        const result = await loadJson('/questions.json');
+        console.log(result);
+        setQuestions(result);
+        setLoading(false)
+    }, []);
 
-class FaqList extends Component{
- constructor(props) {
-     super(props);
-     this.state = {
-         questions: []
-     }
- };
-
- renderQuestions = () => {
-     const { questions } = this.state;
-     return questions.map((question) =>{
-         return (
-             <li key={question.id}>
-                <FaqCard question={question}/>
-             </li>
-         );
-     });
- };
-
-render() {
     return (
-        <ol>
+        <>
             {
-                this.renderQuestions()
+                loading && <div>Loading...</div>
             }
-        </ol>
-    );
-}
-}
+            {
+                !loading && 
+                <ol className={styles.faqs}>
+                    {
+                        questions.map((question, index) =>(
+                            <li key={question.id}>
+                                <FaqCard question={question} index={index}/>
+                            </li>
+                        )) 
+                    }
+                </ol>
+            }
+        </>
+    )
+};
 
-export default FaqList;*//
+export default FaqList;

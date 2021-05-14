@@ -1,30 +1,51 @@
-/*import React from 'react';
+import React from 'react';
 import styles from "./fqa.module.css";
-import Header from "./header";
-import {FAQ} from "./FAQ";
-//верстка карточки вопроса и ответа
+import { useEffect, useState } from 'react';
+
+
 function FaqCard(props) {
-    const { question } = props;
+    const [question, setQuestion] = useState({});
+    const [index] = useState(props.index);
 
+    useEffect(() => {
+        setQuestion(props.question);
+        console.log(props);
+    }, []);
 
-
-    const toggleFAQ = index => {
-        let previousArray = [...question];
-        previousArray[index].open = !previousArray[index].open;
-        setquestion(previousArray)
+    const toggleFAQ  = () => {
+        setQuestion({...question, open: !question.open})
     };
 
-    return    <div>
-        <div className={styles.faqs} >
-            {question.map((faq, i) => (
-                <div className={styles.faq}>
+    const toggleClass = question.open ? styles.faqOpen : styles.faq;
 
-                    <FAQ faq={faq} index={i} toggleFAQ={toggleFAQ}/>
+        return (
 
+            <div
+                className={toggleClass}
+                key={index}
+                onClick={toggleFAQ}
+            >
+
+                <div className={styles.questionContainer}>
+                    <div className={styles.imgContainerQuestion}>
+                    </div>
+                    <div className={styles.faqQuestion}>
+                        {question.question}
+                    </div>
                 </div>
-            ))}
-        </div>
-    </div>;
-}
+                
+                <div className={styles.answerContainer}>
+                    <div className={styles.shadow}></div>
+                    <div className={styles.imgContainerAnswer}>
 
-export default FaqCard;*//
+                    </div>
+                    <div className={styles.faqAnswer} >
+                        {question.answer}
+                    </div>
+                </div>
+            </div>
+        )
+    };
+
+
+    export default FaqCard;
