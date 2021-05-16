@@ -18,4 +18,4 @@ export const Card = ({title, description, image, activeDay}) => {
         </div>
     </div>
     )
-}
+};

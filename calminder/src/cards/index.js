@@ -7,6 +7,7 @@ import btn_simple from '../resources/btn_simple.png';
 import btn_rotate from '../resources/btn_rotate.png';
 import btn_multiple from '../resources/btn_multiple.png';
 import { getFullDate } from '../helpers/dateHendlers'; 
+import { CardsWeek } from "./CardsWeek";
 
 export const List = () => {
     const [mode, setMode] = useState('MULTIPLE');
@@ -17,14 +18,14 @@ export const List = () => {
             const elem = cards.findIndex(card => card.activeDay === currentDay);
             cards.unshift(...cards.splice(elem, cards.length));
         }
-    }, [mode])
+    }, [mode]);
 
     const getRotate = (index) => {
         if(index % 2 === 0) {
             return index * 45 + index * 10;
         }
         return index * -45 + index * 10;
-    }
+    };
 
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
@@ -74,6 +75,7 @@ export const List = () => {
                             activeDay={card.activeDay}
                             goal={card.goal}
                         />
+
                 </Link>
                 )}
             </div>
@@ -88,7 +90,7 @@ export const List = () => {
     </div>
     )
     
-}
+};
 
 
 // const controls = () => {

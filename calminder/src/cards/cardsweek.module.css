@@ -1,0 +1,48 @@
+.wrapper {
+    justify-content: center;
+    margin-left: auto;
+    width: 50%;
+    vertical-align: middle;
+    display: grid;
+    grid-template-columns: 175px 1fr 175px;
+    grid-template-areas: "item1 item2 item3"
+    "item4 item2 item5";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+
+.item1, .item2, .item3, .item4, .item5{
+    margin: 15px;
+    padding: 50px 10px;
+    box-sizing: border-box;
+    background: gray;
+
+}
+
+.item1{
+    grid-area:item1;
+}
+
+.item2{
+    grid-area:item2;
+}
+
+.item3{
+    grid-area:item3;
+}
+
+.item4{
+    grid-area:item4;
+}
+
+.item5{
+    grid-area:item5;
+}
+
+.item1{
+    grid-area:item1;
+}
