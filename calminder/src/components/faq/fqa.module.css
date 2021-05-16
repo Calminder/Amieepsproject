@@ -28,6 +28,7 @@ header h1 {
 .faqs {
     margin: 0 auto;
     padding: 25px;
+    width: calc(100% / 8 * 6 - 20px);
 }
 
 .faqs .faq, .faqs .faqOpen {
@@ -35,82 +36,77 @@ header h1 {
 }
 
 
-.faqs .faq .faqQuestion {
+.faqs .faq .faqQuestion, .faqs .faqOpen .faqQuestion {
+    padding:20px 0px;
     background-color: #FFAF20;
-    width: 1000px;
-    height: 80px;
     border-top-right-radius: 35px;
-/*display: flex;
-    justify-content: space-between;*/
-    /*background-color: #FFAF20;*/
     font-family: 'Baloo 2';
-  /*  position: relative;*/
-    font-size: 30px;
-    /*padding-right: 80px;*/
+    font-size: 20px;
+    transition: all 0.4s ease;
+    width: 100%;
     transition: all 0.4s ease;
     color:white;
 }
-.faqs .faq .questionContainer{
+
+.faqs .faq .questionContainer, .faqs .faqOpen .questionContainer {
     display: flex;
-    justify-content: flex-start;
-  /*  background-color: #FFAF20;*/
-   /* justify-content: space-between;*/
 }
 
 .faqs .faq .faqQuestion::after {
-   /* content: '';*/
-    /*position: absolute;*/
-    /* top: 50%;
-     right: 0px;*/
     transform: translateY(-50%);
-    /*  width: 30px;
-      height: 30px;*/
-    /* background-image: url("../../resources/arrow.png");
-     background-position: center;
-     background-size: contain;
-     background-repeat: no-repeat;
-     transition: all 0.4s ease-out;*/
 }
-.faqs .faq .imgContainerQuestion{
+
+.faqs .faq .imgContainerQuestion, .faqs .faqOpen .imgContainerQuestion {
     width: 222.5px;
     height: 80px;
-    border-top-left-radius: 35px;
     border-bottom-left-radius: 35px;
     background-color:  #ff5a3a;
-}
-.faqs .faq .questionImg{
-
     content: '';
-    top: 50%;
-    right: 0px;
-    width: 30px;
-    height: 30px;
     background-image: url("../../resources/arrow.png");
     background-position: center;
-    background-size: contain;
+    background-size: 40px;
     background-repeat: no-repeat;
     transition: all 0.4s ease-out;
-   /* position: absolute;*/
 }
 
-.faqs .faq .answerContainer{
-
+.faqs .faqOpen .answerContainer{
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
 }
 
-.faqs .faq .imgContainerAnswer{
-
+.faqs .faqOpen .answerContainerHidden {
+    opacity: 1;
 }
 
-.faqs .faq .answerImg{
-
+.faqs .faqOpen .imgContainerAnswer{
+    background-color: #275E87;
+    width: 222.5px;
+    content: '';
+    background-image: url("../../resources/star.png");
+    background-position: center;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    transition: all 0.4s ease-out;
+    border-bottom-left-radius: 35px;
 }
+
+/*.faqs .faq .faqOpen .answerImg {
+  /*  width: 222.5px;
+    content: '';
+    background-image: url("../../resources/star.png");
+    background-position: center;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    transition: all 0.4s ease-out;
+}*/
 
 .faqs .faq .faqAnswer {
     font-family:'Lato';
     font-size:22px;
     color:white;
     background-color: #275E87;
-    opacity: 35%;
+    opacity: 20%;
     max-height: 0;
     overflow-y: hidden;
     transition: all 0.4s ease-out;
@@ -119,7 +115,7 @@ header h1 {
 
 .faqs .faq .open .faqQuestion {
 
-    margin-bottom: 15px;
+   margin-bottom: 15px;
 }
 
 .faqs .faqOpen .faqQuestion::after{
@@ -128,6 +124,17 @@ header h1 {
 }
 
 .faqs .faqOpen .faqAnswer {
+    color: white;
     max-height: 1000px;
-    opacity: 1;
+    background-color: rgba(39,94,135, .80);
+    width: 100%;
+}
+
+.faqs .faqOpen .answerContainer .shadow {
+    position: absolute;
+    width: 100%;
+    background-color: rgb(39,94,135);
+    height: 48px;
+    top: -48px;
+    z-index: -1;
 }

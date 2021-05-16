@@ -7,10 +7,8 @@ import clouds_winterUrl from "../resources/clouds_winter.png";
 import clouds_autumnUrl from "../resources/clouds_autumn.png";//clouds
 import treesUrl from "../resources/trees.png";
 import trees_autumnUrl from "../resources/trees_autumn.png";
-import trees_winterUrl from "../resources/trees_winter.png";//trees
-import plantsUrl from "../resources/plants.png";
+import trees_winterUrl from "../resources/trees_winter.png";
 import plantsSpring from "../resources/plants spring.png";
-import snow_winterUrl from "../resources/snow_winter.png";
 import sun_flare_summerUrl from "../resources/sun_flare_summer.png";
 
 const seasons = {

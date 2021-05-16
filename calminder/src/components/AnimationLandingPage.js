@@ -3,14 +3,15 @@ import { debounce } from "lodash";
 import { getSeasonTextures } from "./texturePicker.js";
 import { getSeason } from "./SeasonsArray.js";
 import { List }  from '../cards';
-import { Faq } from './faq';
 import { Activity } from './activity';
+import FaqList from "./faq/FaqList";
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
+
 
 const Layer = ({ texture, depth, parent, offset }) => {
   const ref = createRef();
@@ -85,7 +86,7 @@ export function AnimationLandingPage() {
             <List />
             </Route>
             <Route path="/faq" exact>
-              <Faq />
+              <FaqList />
             </Route>
             <Route path="/activity/:id" exact>
               <Activity />
