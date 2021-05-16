@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import Header from './header';
 import { FAQ } from './FAQ';
 import styles from './fqa.module.css';
+import { getData } from "./faqData";
 
 
-
-export const Faq = () => {
-
+export const Faq = () =>
+{
+    const data = getData();
     const [faqs, setfaqs] = useState([
         {
             question: "Can mindfulness help with behavior problems?If so,in what way?",
@@ -30,7 +31,8 @@ export const Faq = () => {
         },
     ]);
 
-    const toggleFAQ = index => {
+    const toggleFAQ = index =>
+    {
         let previousArray = [...faqs];
         previousArray[index].open = !previousArray[index].open;
         setfaqs(previousArray)
@@ -47,7 +49,7 @@ export const Faq = () => {
                 {faqs.map((faq, i) => (
                     <div className={styles.faq}>
 
-                    <FAQ faq={faq} index={i} toggleFAQ={toggleFAQ}/>
+                        <FAQ faq={faq} index={i} toggleFAQ={toggleFAQ} />
 
                     </div>
                 ))}

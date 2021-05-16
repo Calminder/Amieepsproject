@@ -31,4 +31,4 @@ render() {
 }
 }
 
-export default FaqList;*//
+export default FaqList;*/

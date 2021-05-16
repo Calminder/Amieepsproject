@@ -27,4 +27,4 @@ function FaqCard(props) {
     </div>;
 }
 
-export default FaqCard;*//
+export default FaqCard;*/
