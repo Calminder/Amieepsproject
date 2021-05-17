@@ -29,6 +29,8 @@ header h1 {
     margin: 0 auto;
     padding: 25px;
     width: calc(100% / 8 * 6 - 20px);
+    list-style-type: none;
+
 }
 
 .faqs .faq, .faqs .faqOpen {
@@ -37,15 +39,16 @@ header h1 {
 
 
 .faqs .faq .faqQuestion, .faqs .faqOpen .faqQuestion {
-    padding:20px 0px;
+    padding:1% 2%;
     background-color: #FFAF20;
     border-top-right-radius: 35px;
     font-family: 'Baloo 2';
     font-size: 20px;
-    transition: all 0.4s ease;
     width: 100%;
     transition: all 0.4s ease;
     color:white;
+    height: 80px;
+    text-align: left;
 }
 
 .faqs .faq .questionContainer, .faqs .faqOpen .questionContainer {
@@ -125,9 +128,13 @@ header h1 {
 
 .faqs .faqOpen .faqAnswer {
     color: white;
+    font-family:'Lato';
+
     max-height: 1000px;
     background-color: rgba(39,94,135, .80);
     width: 100%;
+    padding: 2%;
+    border-bottom-right-radius: 35px;
 }
 
 .faqs .faqOpen .answerContainer .shadow {

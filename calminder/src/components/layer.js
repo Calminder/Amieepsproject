@@ -5,7 +5,7 @@ import { Plane, useTexture } from "@react-three/drei";
 
 export function Layer(props) {
   const scale = 1;
-  const planeSize = [200, 100];
+  const planeSize = [800, 400];
   const ref = useRef();
   const [movement] = useState(() => new THREE.Vector3());
   const [temp] = useState(() => new THREE.Vector3());
