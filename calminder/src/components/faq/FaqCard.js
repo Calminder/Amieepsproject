@@ -28,6 +28,7 @@ function FaqCard(props) {
 
                 <div className={styles.questionContainer}>
                     <div className={styles.imgContainerQuestion}>
+                        
                     </div>
                     <div className={styles.faqQuestion}>
                         {question.question}
