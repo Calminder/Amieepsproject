@@ -3,10 +3,8 @@ import styles from './activity.module.css';
 import { getCardById } from '../../services/card.service';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { getData } from './activityData';
 export const Activity = () =>
 {
-    const data = getData();
     const { id } = useParams();
     const [cardOpened, setCardOpened] = useState(false);
 

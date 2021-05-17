@@ -9,8 +9,8 @@ const componentData = exercise =>
         {
             exerciseList.push(snap.val());
         })
-        console.log(exercise);
-        return exercise;
+        console.log(exerciseList);
+        return exerciseList;
     });
 };
 
