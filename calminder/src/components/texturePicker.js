@@ -14,31 +14,37 @@ import sun_flare_summerUrl from "../resources/sun_flare_summer.png";
 const seasons = {
   Spring: {
     layouts: [
-        {
-          name: 'Spring background layout',
-          value: bg_springUrl
-        },
-        {
-          name: 'Spring clouds layout',
-          value: cloudsUrl
-        },
-        {
-          name: 'Spring plants layout',
-          value: plantsSpring,
-          static: true,
-          style: {
-            zIndex: 7,
-            bottom: '0px',
-          },
-        },
-        {
-          name: 'Spring trees layout',
-          value: treesUrl,
-          static: true
+      {
+        name: 'Spring background layout',
+        value: bg_springUrl,
+        style: {
+          width: 'auto',
         }
+      },
+      {
+        name: 'Spring clouds layout',
+        value: cloudsUrl
+      },
+      {
+        name: 'Spring plants layout',
+        value: plantsSpring,
+        static: true,
+        style: {
+          zIndex: 7,
+          bottom: '0px',
+        },
+      },
+      {
+        name: 'Spring trees layout',
+        value: treesUrl,
+        static: true,
+        style: {
+          height: '100%',
+        }
+      }
     ]
   },
-  Winter:{
+  Winter: {
     layouts: [
       {
         name: 'Winter background layout',
@@ -60,11 +66,14 @@ const seasons = {
       {
         name: 'Winter trees layout',
         value: trees_winterUrl,
-        static: true
+        static: true,
+        style: {
+          margin: '100000px',
+        }
       }
     ]
   },
-  Summer:{
+  Summer: {
     layouts: [
       {
         name: 'Summer background layout',
@@ -86,7 +95,10 @@ const seasons = {
       {
         name: 'Summer trees layout',
         value: treesUrl,
-        static: true
+        static: true,
+        style: {
+          margin: '100000px',
+        }
       },
       {
         name: 'Summer sun flare layout',
@@ -97,7 +109,7 @@ const seasons = {
       }
     ]
   },
-  Autumn:{
+  Autumn: {
     layouts: [
       {
         name: 'Autumn background layout',
@@ -119,7 +131,10 @@ const seasons = {
       {
         name: 'Autumn trees layout',
         value: trees_autumnUrl,
-        static: true
+        static: true,
+        style: {
+          margin: '100000px',
+        }
       },
     ]
   }
