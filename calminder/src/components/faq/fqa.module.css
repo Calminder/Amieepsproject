@@ -3,12 +3,21 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+.line {
+    background-image: url("../../resources/line_fo_mask.png");
+    background-color: #ff5a3a;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    
+    
+}
 header{
     display: flex;
     justify-content: center;
     align-content: center;
     padding: 15px;
+    
 }
 
 header h1 {
@@ -34,7 +43,7 @@ header h1 {
 }
 
 .faqs .faq, .faqs .faqOpen {
-    margin: 15px;
+    margin: 60px;
 }
 
 
