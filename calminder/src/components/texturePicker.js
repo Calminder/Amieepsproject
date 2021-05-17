@@ -18,7 +18,8 @@ const seasons = {
         name: 'Spring background layout',
         value: bg_springUrl,
         style: {
-          width: 'auto',
+          width: '100%',
+          height: '100%',
         }
       },
       {
