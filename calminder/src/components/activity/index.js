@@ -23,10 +23,10 @@ export const Activity = () =>
                     <div className={styles.cardActive}>
                         <div className={styles.close} onClick={() => setCardOpened(false)}>X</div>
                         <div className={styles.title}>
-                            Activity name ({goal.title})
+                            picture
                         </div>
                         <div className={styles.value}>
-                            {goal.value}
+
                         </div>
                     </div>
                 </div>
@@ -50,8 +50,8 @@ export const Activity = () =>
 
                 <section className={styles.card} onClick={() => setCardOpened(true)}>
                     <div className={styles.output}>
-                        <div className={styles.title}>{title}</div>
-                        <div className={styles.desc}>{description}</div>
+                        <div className={styles.title}>picture</div>
+                        <div className={styles.desc}></div>
                     </div>
                 </section>
 
