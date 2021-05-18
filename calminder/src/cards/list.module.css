@@ -45,3 +45,30 @@
     cursor: pointer;
     width: 90px;
 }
+
+.wrapper .listSimple {
+    width: 700px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+
+.wrapper .listSimple .item {
+    width: 150px;
+    background-color: gray;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.wrapper .list .column {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper .listSimple .itemSmall {
+    width: 300px;
+    height: 420px;
+    background-color: gray;
+}
