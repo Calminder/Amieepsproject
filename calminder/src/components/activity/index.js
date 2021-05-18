@@ -3,66 +3,58 @@ import styles from './activity.module.css';
 import { getCardById } from '../../services/card.service';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-export const Activity = () =>
-{
+export const Activity = () => {
     const { id } = useParams();
     const [cardOpened, setCardOpened] = useState(false);
 
     const card = getCardById(id);
 
-    const { title, duration, requirmens, age, materials, description, goal } = card;
+    const { title, duration, requirmens, age, materials, description, goal, image } = card;
 
     return (
         card &&
-        <div className={styles.shadow}>
+        <div className={styles.shadow}>s
             <Link to="/" className={styles.backBtn}>Back</Link>
 
 
             <div className={styles.wrapper}>
                 <div className={cardOpened ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
-                    <div className={styles.cardActive}>
+                    <div className={styles.cardActive}
+                         style={{
+                             backgroundImage:`url(${(image)})`,
+                             backgroundSize: "cover"
+                         }}
+                    >
                         <div className={styles.close} onClick={() => setCardOpened(false)}>X</div>
                         <div className={styles.title}>
-                            picture
+                            Activity name ({goal.title})
                         </div>
                         <div className={styles.value}>
-
+                            {goal.value}
                         </div>
                     </div>
                 </div>
 
                 <div className={styles.goal}>
-                    <h1 className={styles.title}>
-                        Activity name
-                    </h1>
-                    <div className={styles.pic}>
-
+                    <div className={styles.title}>
+                        Activity name ({goal.title})
                     </div>
-                    <div className={styles.title2}>
-                        <span className={styles.text2}>
-                            Goal
-                            </span>
-                    </div>
-                    <section className={styles.value}>
+                    <div className={styles.value}>
                         {goal.value}
-                    </section>
+                    </div>
                 </div>
 
                 <section className={styles.card} onClick={() => setCardOpened(true)}>
                     <div className={styles.output}>
-                        <div className={styles.title}>picture</div>
-                        <div className={styles.desc}></div>
+                        <div className={styles.title}>{title}</div>
+                        <div className={styles.desc}>{description}</div>
                     </div>
                 </section>
 
                 <div className={styles.info}>
                     <div className={styles.item}>
-
                         <div className={styles.title}>
-                            <span className={styles.text}>
-                                Title
-                            </span>
-
+                            Title
                         </div>
                         <div className={styles.desc}>
                             {title}
@@ -71,22 +63,16 @@ export const Activity = () =>
 
                     <div className={styles.item}>
                         <div className={styles.title}>
-                            <span className={styles.text}>
-                                Duration
-                            </span>
-
+                            Duration
                         </div>
                         <div className={styles.desc}>
-                            {duration} minutes
+                            {duration}
                         </div>
                     </div>
 
                     <div className={styles.item}>
                         <div className={styles.title}>
-                            <span className={styles.text}>
-                                Requirments
-                            </span>
-
+                            Requirments
                         </div>
                         <div className={styles.desc}>
                             {requirmens}
@@ -95,9 +81,7 @@ export const Activity = () =>
 
                     <div className={styles.item}>
                         <div className={styles.title}>
-                            <span className={styles.text}>
-                                Age
-                                     </span>
+                            Age
                         </div>
                         <div className={styles.desc}>
                             {age}
@@ -106,9 +90,7 @@ export const Activity = () =>
 
                     <div className={styles.item}>
                         <div className={styles.title}>
-                            <span className={styles.text}>
-                                Materials
-                                     </span>
+                            Materials
                         </div>
                         <div className={styles.desc}>
                             {materials}
@@ -117,14 +99,10 @@ export const Activity = () =>
 
                     <div className={styles.item}>
                         <div className={styles.title}>
-                            <span className={styles.text}>
-                                Description
-                            </span>
+                            Description
                         </div>
                         <div className={styles.desc}>
-                            <div className={styles.scrolltext}>
-                                {description}
-                            </div>
+                            {description}
                         </div>
                     </div>
                 </div>

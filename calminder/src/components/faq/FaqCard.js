@@ -31,7 +31,8 @@ function FaqCard(props) {
                         
                     </div>
                     <div className={styles.faqQuestion}>
-                        {question.question}
+                        <h1>{question.title}</h1>
+                        {question.source}
                     </div>
                 </div>
                 
