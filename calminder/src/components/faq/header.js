@@ -6,9 +6,9 @@ function Header()
         <>
             <header>
                 <h1>FAQ</h1>
-                <div className={styles.inline}>
+                <article >
 
-                </div>
+                </article>
             </header>
 
         </>

@@ -3,27 +3,32 @@
     padding: 0;
     box-sizing: border-box;
 }
-div .line {
+h1{
+    margin-top: 100px;
+
+}
+article{
+    margin-top: 240px;
+    position: fixed ;
     background-image: url("../../resources/line_fo_mask.png");
-    background-color: #ff5a3a;
-    background-position: center;
+    background-position: absolute;
     background-size: 100%;
     background-repeat: no-repeat;
-    
-    
+    height: 100%;
+    width: 95%;
+   
 }
 header{
     display: flex;
     justify-content: center;
     align-content: center;
     padding: 15px;
-    
 }
 
 header h1 {
     font-family: 'Baloo 2';
     color:#FFAF20;
-    font-size: 28px;
+    font-size: 80px;
     font-weight: 700;
     text-transform: uppercase;
 }
