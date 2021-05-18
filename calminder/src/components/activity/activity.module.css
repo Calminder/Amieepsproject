@@ -3,6 +3,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0 ,0, .4);
+    font-family: 'Baloo 2';
 }
 
 .shadow .backBtn {
@@ -11,16 +12,15 @@
     left: 150px;
     color: white;
     text-decoration: none;
-    font-weight: bold;
     font-size: 20px;
 }
 
 .shadow .wrapper {
-    width: 900px;
-    margin: auto;
+    margin: 0 auto;
     display: flex;
     color: white;
     margin-top: 150px;
+    width: 80%;
 }
 
 .shadow .wrapper .goal {
@@ -28,15 +28,42 @@
     flex-direction: column;
     padding: 0px 20px;
     flex: 1;
+    height: 80%;
+    overflow: auto;
 }
 
 .shadow .wrapper .goal .title {
     font-size: 40px;
-    font-weight: bolder;
+    width: 80%;
+    margin-bottom: 30px;
 }
+.shadow .wrapper .goal .pic {
+   background-image: url('../../resources/line.png');
+   background-repeat: no-repeat;
+   background-position: left;
+   background-size: 100%;
+   height: 20px;
+   width: 100%;
+   margin-bottom: 10px;
 
+}
+.shadow .wrapper .goal .title2 {
+    position: relative;
+    background-image: url('../../resources/star.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 30px;
+    margin-bottom: 10px;
+}
+.shadow .wrapper .goal .title2 .text2 {
+    font-size: 30px;
+    margin-left: 35px;
+
+}
 .shadow .wrapper .goal .value {
-    font-size: 16px;
+    font-size: 22px;
+    font-family:'Lato';
+    font-weight: 500;
 }
 
 
@@ -47,6 +74,7 @@
     width: 300px;
     padding: 20px;
     background-color: gray;
+    flex:1;
 }
 
 .shadow .wrapper .cardActiveWrapper {
@@ -89,6 +117,9 @@
 
 .shadow .wrapper .info {
     padding: 0px 20px;
+    flex: 1;
+    height: 80%;
+    overflow: auto;
 }
 
 .shadow .wrapper .item:nth-child(n+2) {
@@ -96,10 +127,25 @@
 }
 
 .shadow .wrapper .item .title {
-    font-size: 22px;
-    font-weight: bolder;
+    position: relative;
+    background-image: url('../../resources/star.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 30px;
+}
+
+.shadow .wrapper .item .title .text {
+    font-size: 30px;
+    margin-left: 35px;
 }
 
 .shadow .wrapper .item .desc {
-    font-size: 16px;
+    font-size: 22px;
+    font-weight: 500;
+    font-family:'Lato';
+
+}
+.shadow .wrapper .item .desc .scrolltext{
+    
+    height: 30px;
 }

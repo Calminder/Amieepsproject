@@ -14,8 +14,8 @@ export const Activity = () =>
 
     return (
         card &&
-        <div className={styles.shadow}>s
-        <Link to="/" className={styles.backBtn}>Back</Link>
+        <div className={styles.shadow}>
+            <Link to="/" className={styles.backBtn}>Back</Link>
 
 
             <div className={styles.wrapper}>
@@ -24,7 +24,7 @@ export const Activity = () =>
                         <div className={styles.close} onClick={() => setCardOpened(false)}>X</div>
                         <div className={styles.title}>
                             Activity name ({goal.title})
-                    </div>
+                        </div>
                         <div className={styles.value}>
                             {goal.value}
                         </div>
@@ -32,12 +32,20 @@ export const Activity = () =>
                 </div>
 
                 <div className={styles.goal}>
-                    <div className={styles.title}>
-                        Activity name ({goal.title})
-                </div>
-                    <div className={styles.value}>
-                        {goal.value}
+                    <h1 className={styles.title}>
+                        Activity name
+                    </h1>
+                    <div className={styles.pic}>
+
                     </div>
+                    <div className={styles.title2}>
+                        <span className={styles.text2}>
+                            Goal
+                            </span>
+                    </div>
+                    <section className={styles.value}>
+                        {goal.value}
+                    </section>
                 </div>
 
                 <section className={styles.card} onClick={() => setCardOpened(true)}>
@@ -49,9 +57,13 @@ export const Activity = () =>
 
                 <div className={styles.info}>
                     <div className={styles.item}>
+
                         <div className={styles.title}>
-                            Title
-                    </div>
+                            <span className={styles.text}>
+                                Title
+                            </span>
+
+                        </div>
                         <div className={styles.desc}>
                             {title}
                         </div>
@@ -59,17 +71,23 @@ export const Activity = () =>
 
                     <div className={styles.item}>
                         <div className={styles.title}>
-                            Duration
-                    </div>
+                            <span className={styles.text}>
+                                Duration
+                            </span>
+
+                        </div>
                         <div className={styles.desc}>
-                            {duration}
+                            {duration} minutes
                         </div>
                     </div>
 
                     <div className={styles.item}>
                         <div className={styles.title}>
-                            Requirments
-                    </div>
+                            <span className={styles.text}>
+                                Requirments
+                            </span>
+
+                        </div>
                         <div className={styles.desc}>
                             {requirmens}
                         </div>
@@ -77,8 +95,10 @@ export const Activity = () =>
 
                     <div className={styles.item}>
                         <div className={styles.title}>
-                            Age
-                    </div>
+                            <span className={styles.text}>
+                                Age
+                                     </span>
+                        </div>
                         <div className={styles.desc}>
                             {age}
                         </div>
@@ -86,8 +106,10 @@ export const Activity = () =>
 
                     <div className={styles.item}>
                         <div className={styles.title}>
-                            Materials
-                    </div>
+                            <span className={styles.text}>
+                                Materials
+                                     </span>
+                        </div>
                         <div className={styles.desc}>
                             {materials}
                         </div>
@@ -95,10 +117,14 @@ export const Activity = () =>
 
                     <div className={styles.item}>
                         <div className={styles.title}>
-                            Description
-                    </div>
+                            <span className={styles.text}>
+                                Description
+                            </span>
+                        </div>
                         <div className={styles.desc}>
-                            {description}
+                            <div className={styles.scrolltext}>
+                                {description}
+                            </div>
                         </div>
                     </div>
                 </div>
