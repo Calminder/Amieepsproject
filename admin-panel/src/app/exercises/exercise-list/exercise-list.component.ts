@@ -38,6 +38,7 @@ export class ExerciseListComponent implements OnInit
 
           return {
             $key: item.key,
+
             ...item.payload.val()
           };
           //console.log("item");
@@ -47,8 +48,9 @@ export class ExerciseListComponent implements OnInit
         this.dataSource = new MatTableDataSource(array);
         //console.log("Rr", this.dataSource.filteredData.length);
         this.dataSource.sort = this.sort;
+        //this.dataSource.sortingDataAccessor
         this.dataSource.paginator = this.paginator;
-        this.displayedColumns = ["id", "title", "date" ,"actions"];
+        this.displayedColumns = ["id", "title", "date", "actions"];
       });
 
   }
@@ -103,9 +105,9 @@ export class ExerciseListComponent implements OnInit
           {
             // Uh-oh, an error occurred!
           });
-          
+
         }
-       
+
         this.svc.deleteExercise(key);
         this.notif.warn('Deleted');
       }

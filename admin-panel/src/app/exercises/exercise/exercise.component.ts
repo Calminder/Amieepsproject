@@ -51,6 +51,7 @@ export class ExerciseComponent implements OnInit
       this.downloadURL = '';
     }
 
+
   }
 
 
@@ -62,7 +63,7 @@ export class ExerciseComponent implements OnInit
       if (!this.svc.exerciseForm.get('$key')?.value) {
         var exercisepost: IExercise = {
           title: this.svc.exerciseForm.value.title,
-          date: this.svc.exerciseForm.value.date,
+          date: this.svc.exerciseForm.value.date.toLocaleDateString(),
           age: this.svc.exerciseForm.value.age,
           duration: this.svc.exerciseForm.value.duration,
           category: this.svc.exerciseForm.value.category,
@@ -83,7 +84,7 @@ export class ExerciseComponent implements OnInit
         var exerciseupdate: IExercise = {
           $key: this.svc.exerciseForm.value.$key,
           title: this.svc.exerciseForm.value.title,
-          date: this.svc.exerciseForm.value.date,
+          date: this.svc.exerciseForm.value.date.toLocaleDateString(),
           age: this.svc.exerciseForm.value.age,
           duration: this.svc.exerciseForm.value.duration,
           category: this.svc.exerciseForm.value.category,
