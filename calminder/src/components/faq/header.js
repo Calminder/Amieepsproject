@@ -5,7 +5,7 @@ function Header()
     return (
         <>
             <header>
-                <div className={styles.popo}>FAQ</div>
+                <h1>FAQ</h1>
                 <article >
 
                 </article>

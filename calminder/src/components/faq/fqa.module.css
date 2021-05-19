@@ -3,12 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* h1{
+h1{
     margin-top: 100px;
 
-} */
-.popo{
-    margin-top: 100px; 
 }
 article{
     margin-top: 240px;
@@ -28,7 +25,7 @@ header{
     padding: 15px;
 }
 
-header .popo {
+header h1 {
     font-family: 'Baloo 2';
     color:#FFAF20;
     font-size: 80px;
