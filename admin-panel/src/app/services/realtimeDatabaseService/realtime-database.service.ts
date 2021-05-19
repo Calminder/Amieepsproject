@@ -41,7 +41,7 @@ export class RealtimeDatabaseService
     duration: new FormControl('', Validators.required),
     category: new FormControl(''),
     description: new FormControl('', Validators.required),
-    wonder: new FormControl('', Validators.required),
+    wonder: new FormControl(''),
     materials: new FormControl('', Validators.required),
     instructions: new FormControl('', Validators.required),
     extra: new FormControl(''),

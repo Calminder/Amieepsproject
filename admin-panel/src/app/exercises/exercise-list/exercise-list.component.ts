@@ -80,6 +80,7 @@ export class ExerciseListComponent implements OnInit
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = '60%';
+    dialogConfig.height = '90%';
     this.dialog.open(ExerciseComponent, dialogConfig);
   }
 
