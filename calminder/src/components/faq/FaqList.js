@@ -4,7 +4,6 @@ import { loadJson } from "../../utils";
 import { useEffect, useState } from 'react';
 import styles from './fqa.module.css';
 import Header from './header'
-import { getFaqs } from '../../services/firebase.service';
 export const FaqList = (props) =>
 {
     const [questions, setQuestions] = useState([]);
@@ -12,7 +11,7 @@ export const FaqList = (props) =>
     useEffect(async () =>
     {
         setLoading(true);
-        const result = await getFaqs();
+        const result = await loadJson('/questions.json');
         console.log(result);
         setQuestions(result);
         setLoading(false)
