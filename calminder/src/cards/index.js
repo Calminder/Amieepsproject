@@ -19,6 +19,7 @@ export const List = () => {
             const elem = cards.findIndex(card => card.activeDay === currentDay);
             cards.unshift(...cards.splice(elem, cards.length));
         }
+        await getCards();
     }, [mode]);
 
     const getRotate = (index) => {

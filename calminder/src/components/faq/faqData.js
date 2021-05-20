@@ -8,7 +8,7 @@ const componentFaq = fag =>
         snapshot.forEach(snap =>
         {
             faqList.push(snap.val());
-        })
+        });
         console.log(faqList);
         return faqList;
     });
