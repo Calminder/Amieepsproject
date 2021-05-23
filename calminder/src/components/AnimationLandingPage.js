@@ -1,16 +1,18 @@
-import React, { createRef, useEffect, useState } from "react";
-import { debounce } from "lodash";
-import { getSeasonTextures } from "./texturePicker.js";
-import { getSeason } from "./SeasonsArray.js";
+import React, { createRef, useEffect, useState } from 'react';
+import { debounce } from 'lodash';
+import { getSeasonTextures } from './texturePicker.js';
+import { getSeason } from './SeasonsArray.js';
 import { List }  from '../cards';
 import { Activity } from './activity';
-import FaqList from "./faq/FaqList";
+import FaqList from './faq/FaqList';
+import { Menu } from './Menu/Menu';
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-} from "react-router-dom";
+  useLocation
+} from 'react-router-dom';
 
 
 const Layer = ({ texture, depth, parent, offset }) => {
@@ -30,7 +32,7 @@ const Layer = ({ texture, depth, parent, offset }) => {
     }
   }, [offset]);
 
-  const  getRandomInt = (min, max) => {
+  const getRandomInt = (min, max) => {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
@@ -51,7 +53,7 @@ const Layer = ({ texture, depth, parent, offset }) => {
     }
   };
 
-  return <img src={texture.value} style={style} />
+  return <img src={texture.value} style={style} className={texture.className} />
 };
 
 export function AnimationLandingPage() {
@@ -59,6 +61,15 @@ export function AnimationLandingPage() {
   const season = getSeason();
   const textures = getSeasonTextures(season);
   const [offset, setOffset] = useState({x: 0, y: 0});
+  useEffect(() => {
+    setInterval(() => {
+      const isActivity = window.location.pathname.includes('/activity');
+      const plants = document.querySelector('.plants');
+      if(isActivity)  plants.style.zIndex = 5;
+      else plants.style.zIndex = 7;
+    }, 100);
+
+  }, [])
 
   return (
     <section 
@@ -68,6 +79,7 @@ export function AnimationLandingPage() {
       }}
       ref={ref}
     >
+      <Menu />
       {textures.layouts.map((texture, index) => {
         return (
           <Layer

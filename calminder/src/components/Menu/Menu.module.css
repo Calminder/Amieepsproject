@@ -1,0 +1,100 @@
+
+
+.container{
+    background-color: #737373;
+    width: 228px;
+    padding: 32px 22px;
+    box-sizing: border-box;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: absolute;
+    z-index: 9;
+}
+
+nav{
+    height:66px;
+    box-sizing: border-box;
+    display:flex;
+    align-items: center;
+    border-bottom: 2px solid white;
+    padding:0px 0px 32px 0px;
+}
+
+.burgerbtn {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.burgerbtn::before {
+    content: '';
+    position:absolute;
+    top:0;
+    width: 30px;
+    background-color: blue;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.burgerbtn span{
+    content: '';
+    position:absolute;
+    top:8px;
+    width: 30px;
+    background-color: blue;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.burgerbtn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 30px;
+    background-color: blue;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.menu{
+
+    display: flex;
+    flex-direction: column;
+}
+
+.menu_content{
+
+}
+ul{
+    list-style-type: none;
+    padding: 0px;
+
+}
+
+ul li a {
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+
+}
+
+li {
+    box-sizing: border-box;
+    margin-top: 56px;
+}
+
+
+.closeIcon {
+    display: none;
+    position:absolute;
+    right:10px;
+    top:10px;
+    color:red;
+    cursor:pointer;
+}
+
+.nothing{
+    display: none;
+}
