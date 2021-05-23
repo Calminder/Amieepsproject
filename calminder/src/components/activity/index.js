@@ -3,6 +3,39 @@ import styles from './activity.module.css';
 import { getCardById } from '../../services/card.service';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { PlayButton, Timer } from 'react-soundplayer/components';
+import { withSoundCloudAudio } from 'react-soundplayer/addons';
+
+const clientId = 'c5a171200f3a0a73a523bba14a1e0a29';
+const resolveUrl = 'https://soundcloud.com/qvenaozv6yzq/grapevocal/s-wSrH0TN9QJv?fbclid=IwAR1O9bmVk5v969rAe8tTv0-Njjs4cZgevTXZR9B_CwUhrseD1WzWdgo4NTg';
+
+const Player = withSoundCloudAudio(props =>
+{
+    let { track, currentTime } = props;
+
+    return (
+        <div className={styles.customplayer}>
+            <PlayButton
+                className={styles.customplayerbtn}
+                onPlayClick={() =>
+                {
+                    console.log('play button clicked!');
+                }}
+                {...props} />
+            <h2 className={styles.customplayertitle}>
+                {track ? track.title : 'Loading...'}
+            </h2>
+            <Timer
+                className={styles.customplayertimer}
+                duration={track ? track.duration / 1000 : 0}
+                currentTime={currentTime}
+                {...props} />
+        </div>
+    );
+});
+
 export const Activity = () =>
 {
     const { id } = useParams();
@@ -16,7 +49,10 @@ export const Activity = () =>
         card &&
         <div className={styles.shadow}>
             <Link to="/" className={styles.backBtn}>Back</Link>
-
+            <Player
+                clientId={clientId}
+                resolveUrl={resolveUrl}
+                onReady={() => console.log('track is loaded!')} />
 
             <div className={styles.wrapper}>
                 <div className={cardOpened ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
@@ -53,7 +89,9 @@ export const Activity = () =>
                         <div className={styles.title}>picture</div>
                         <div className={styles.desc}></div>
                     </div>
+
                 </section>
+
 
                 <div className={styles.info}>
                     <div className={styles.item}>

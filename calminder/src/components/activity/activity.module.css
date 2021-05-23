@@ -149,3 +149,45 @@
     
     height: 30px;
 }
+
+
+.customplayer{
+    display: inline-flex;
+    align-items: center;
+    color:#d3f1eb;
+    background-color: rgba(118, 234, 255, 0.2);
+    font-family: sans-serif;
+    width: fit-content;
+    border-radius: 15px;
+    margin: 0 auto;
+    bottom:0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:10;
+    margin-bottom: 135px;
+}
+.customplayertitle{
+    font-size: 18px;
+    font-weight: 100;
+    margin-left: 0px;
+    width: 100%;
+    text-align: center;
+}
+.customplayertimer{
+    text-align: right;
+    margin-right: 2%;
+    width: 200px;
+    font-size: 14px;
+    font-weight: 100;
+}
+.customplayerbtn{
+    background-color: transparent;
+    min-width: 70px;
+    text-align: center;
+    padding: 25px;
+    border:0px;
+    color:#d3f1eb;
+    margin-left: 1%;
+    align-items: center;
+}
