@@ -7,6 +7,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { PlayButton, Timer } from 'react-soundplayer/components';
 import { withSoundCloudAudio } from 'react-soundplayer/addons';
+import {getCards} from "../../services/firebase.service";
 
 const clientId = 'c5a171200f3a0a73a523bba14a1e0a29';
 const resolveUrl = 'https://soundcloud.com/qvenaozv6yzq/grapevocal/s-wSrH0TN9QJv?fbclid=IwAR1O9bmVk5v969rAe8tTv0-Njjs4cZgevTXZR9B_CwUhrseD1WzWdgo4NTg';
@@ -41,12 +42,23 @@ export const Activity = () =>
     const { id } = useParams();
     const [cardOpened, setCardOpened] = useState(false);
 
-    const card = getCardById(id);
+    /*const card = getCardById(id);*/
+    const [card, setCard] = useState([]);
+    const [loading, setLoading] = useState(false);
+    useEffect(async () =>
+    {
+        setLoading(true);
+        const cards = await getCards();
+        console.log(cards);
+        setCard(cards[id]);
+        setLoading(false)
+    }, []);
 
-    const { title, duration, requirmens, age, materials, description, goal } = card;
+
+   /* const { title, duration, requirmens, age, materials, description, goal } = card;*/
 
     return (
-        card &&
+        card ?
         <div className={styles.shadow}>
             <Link to="/" className={styles.backBtn}>Back</Link>
             <Player
@@ -80,7 +92,7 @@ export const Activity = () =>
                             </span>
                     </div>
                     <section className={styles.value}>
-                        {goal.value}
+                        {card?.goal?.value}
                     </section>
                 </div>
 
@@ -103,19 +115,19 @@ export const Activity = () =>
 
                         </div>
                         <div className={styles.desc}>
-                            {title}
+                            {card.title}
                         </div>
                     </div>
 
                     <div className={styles.item}>
                         <div className={styles.title}>
                             <span className={styles.text}>
-                                Duration
+                                duration
                             </span>
 
                         </div>
                         <div className={styles.desc}>
-                            {duration} minutes
+                            {card.duration} minutes
                         </div>
                     </div>
 
@@ -127,7 +139,7 @@ export const Activity = () =>
 
                         </div>
                         <div className={styles.desc}>
-                            {requirmens}
+                            {card.requirmens}
                         </div>
                     </div>
 
@@ -138,7 +150,7 @@ export const Activity = () =>
                                      </span>
                         </div>
                         <div className={styles.desc}>
-                            {age}
+                            {card.age}
                         </div>
                     </div>
 
@@ -149,7 +161,7 @@ export const Activity = () =>
                                      </span>
                         </div>
                         <div className={styles.desc}>
-                            {materials}
+                            {card.materials}
                         </div>
                     </div>
 
@@ -161,12 +173,14 @@ export const Activity = () =>
                         </div>
                         <div className={styles.desc}>
                             <div className={styles.scrolltext}>
-                                {description}
+                                {card.description}
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
+            :null
     )
 }

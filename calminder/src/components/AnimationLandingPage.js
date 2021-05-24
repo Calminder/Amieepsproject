@@ -56,6 +56,8 @@ const Layer = ({ texture, depth, parent, offset }) => {
   return <img src={texture.value} style={style} className={texture.className} />
 };
 
+
+
 export function AnimationLandingPage() {
   const ref = createRef();
   const season = getSeason();
@@ -63,13 +65,14 @@ export function AnimationLandingPage() {
   const [offset, setOffset] = useState({x: 0, y: 0});
   useEffect(() => {
     setInterval(() => {
-      const isActivity = window.location.pathname.includes('/activity');
+      const page = window.location.pathname.includes('/activity') || window.location.pathname.includes('/faq');
       const plants = document.querySelector('.plants');
-      if(isActivity)  plants.style.zIndex = 5;
+      if(page)  plants.style.zIndex = 5;
       else plants.style.zIndex = 7;
     }, 100);
 
   }, [])
+
 
   return (
     <section 
