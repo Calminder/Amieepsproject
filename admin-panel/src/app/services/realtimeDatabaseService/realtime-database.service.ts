@@ -45,7 +45,8 @@ export class RealtimeDatabaseService
     materials: new FormControl('', Validators.required),
     instructions: new FormControl('', Validators.required),
     extra: new FormControl(''),
-    url: new FormControl('')
+    url: new FormControl(''),
+    musicUrl: new FormControl('')
   });
 
   initializeexerciseFrom()
@@ -62,7 +63,8 @@ export class RealtimeDatabaseService
       materials: '',
       instructions: '',
       extra: '',
-      url: ''
+      url: '',
+      musicUrl: ''
     });
   }
   poulateexerciseForm(exercise: IExercise)
@@ -79,7 +81,8 @@ export class RealtimeDatabaseService
       materials: exercise.materials,
       instructions: exercise.instructions,
       extra: exercise.extra,
-      url: exercise.url
+      url: exercise.url,
+      musicUrl: exercise.musicUrl
     });
   }
 
@@ -141,7 +144,7 @@ export class RealtimeDatabaseService
       extra: exercise.extra,
       url: exercise.url,
       date: String(exercise.date),
-
+      musicUrl: exercise.musicUrl
     });
 
   }
@@ -150,7 +153,7 @@ export class RealtimeDatabaseService
   {
     this.exerciseList.update(exercise.$key, {
       title: exercise.title,
-      date: exercise.date,
+      date: String(exercise.date),
       age: exercise.age,
       duration: exercise.duration,
       category: exercise.category,
@@ -159,7 +162,9 @@ export class RealtimeDatabaseService
       materials: exercise.materials,
       instructions: exercise.instructions,
       extra: exercise.extra,
-      url: exercise.url
+      url: exercise.url,
+      musicUrl: exercise.musicUrl
+
     });
   }
 

@@ -41,10 +41,10 @@ export class ExerciseListComponent implements OnInit
 
             ...item.payload.val()
           };
-          //console.log("item");
+
         });
 
-        //console.log("array",array)
+        //console.log("array", array);
         this.dataSource = new MatTableDataSource(array);
         //console.log("Rr", this.dataSource.filteredData.length);
         this.dataSource.sort = this.sort;
@@ -70,6 +70,7 @@ export class ExerciseListComponent implements OnInit
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = '60%';
+    dialogConfig.height = '90%';
     this.dialog.open(ExerciseComponent, dialogConfig);
   }
   onEdit(row: any)

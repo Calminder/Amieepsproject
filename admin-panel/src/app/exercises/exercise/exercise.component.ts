@@ -72,7 +72,8 @@ export class ExerciseComponent implements OnInit
           materials: this.svc.exerciseForm.value.materials,
           instructions: this.svc.exerciseForm.value.instructions,
           extra: this.svc.exerciseForm.value.extra,
-          url: this.downloadURL
+          url: this.downloadURL,
+          musicUrl: this.svc.exerciseForm.value.musicUrl
         };
         //console.log(exercisepost);
 
@@ -93,7 +94,8 @@ export class ExerciseComponent implements OnInit
           materials: this.svc.exerciseForm.value.materials,
           instructions: this.svc.exerciseForm.value.instructions,
           extra: this.svc.exerciseForm.value.extra,
-          url: this.downloadURL
+          url: this.downloadURL,
+          musicUrl: this.svc.exerciseForm.value.musicUrl
         };
         //console.log(this.svc.exerciseForm.value.date);
 
@@ -199,7 +201,8 @@ export class ExerciseComponent implements OnInit
             materials: this.svc.exerciseForm.value.materials,
             instructions: this.svc.exerciseForm.value.instructions,
             extra: this.svc.exerciseForm.value.extra,
-            url: await downloadURL
+            url: await downloadURL,
+            musicUrl: this.svc.exerciseForm.value.musicUrl
           };
           //console.log(this.svc.exerciseForm.value.date);
 
