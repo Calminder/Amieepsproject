@@ -42,7 +42,7 @@ export class RealtimeDatabaseService
     category: new FormControl(''),
     description: new FormControl('', Validators.required),
     wonder: new FormControl(''),
-    materials: new FormControl('', Validators.required),
+    materials: new FormControl(''),
     instructions: new FormControl('', Validators.required),
     extra: new FormControl(''),
     url: new FormControl(''),
