@@ -122,12 +122,12 @@ export const Activity = () =>
                     <div className={styles.item}>
                         <div className={styles.title}>
                             <span className={styles.text}>
-                                duration
+                                Duration
                             </span>
 
                         </div>
                         <div className={styles.desc}>
-                            {card.duration} minutes
+                            {card.duration}
                         </div>
                     </div>
 
@@ -173,7 +173,7 @@ export const Activity = () =>
                         </div>
                         <div className={styles.desc}>
                             <div className={styles.scrolltext}>
-                                {card.description}
+                                {card.extra}
                             </div>
                         </div>
                     </div>

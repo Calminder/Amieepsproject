@@ -17,19 +17,23 @@ export const Menu = () =>
             href: '/faq',
         }
     ];
-    const [open, setOpen] = useState(true);
+    const [click, setClick] = useState(false);
+
+    const handleClick = () => setClick(!click);
 
     return (
         <div className={styles.container}>
             <div className={styles.closeIcon} >X</div>
             <div className={styles.menu}>
                 <nav>
-                    <div className={styles.burgerbtn} onClick={() => setOpen((currentOpen) => currentOpen = !currentOpen)}>
+                    <div className={styles.burgerbtn} onClick={handleClick}>
+                        <div className={click ? 'menuOpen' : 'menuClose'}>
                         <span></span>
+                            </div>
                     </div>
                 </nav>
 
-                <div className={styles.menu_content} style={{ display: open ? 'block' : 'none' }}>
+                <div >
                     <Link items={items} />
                 </div>
             </div>
