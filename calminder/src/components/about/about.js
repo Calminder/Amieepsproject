@@ -12,10 +12,11 @@ import artboard68 from '../../resources/Artboard68pingppongcharacters.png';
 import artboard78 from '../../resources/Artboard78pingppongcharacters.png';
 import artboard69 from '../../resources/Artboard78pingppongcharacters.png';
 
-export const About =() =>{
+export const About = () =>
+{
 
 
-    return(
+    return (
         <div className={styles.container}>
             <div className={styles.header}>
                 <h1> Why mindfulness in education?</h1>
@@ -62,16 +63,16 @@ export const About =() =>{
                     health problems in adulthood,is growing.
                 </div>
                 <div className={styles.richt1}>
-                    <img src={artboard69} />
-                        <img src={nine_leaf} />
-                            <img src={eight_leaf} />
-                                <img src={six_leaf} />
-                                    <img src={four_leaf} />
-                                        <img src={one_leaf}/>
+                    <img src={artboard69} style={{ width: '6.5%' }} />
+                    <img src={nine_leaf} style={{ width: '50%' }} />
+                    <img src={eight_leaf} style={{ width: '50%' }} />
+                    <img src={six_leaf} style={{ width: '50%' }} />
+                    <img src={four_leaf} style={{ width: '50%' }} />
+                    <img src={one_leaf} style={{ width: '50%' }} />
                 </div>
 
                 <div className={styles.left2}>
-                    <img src={artboard67} />
+                    <img src={artboard67} style={{ width: '50%' }} />
                 </div>
                 <div className={styles.right2}>
                     <h1>About the A.M.I.E. Project</h1>
@@ -94,9 +95,9 @@ export const About =() =>{
                 </div>
 
                 <div className={styles.container2}>
-                    <img src={artboard68} />
-                        <div className={styles.wh}>
-                            <h1>What is Calminder?</h1>
+                    <img src={artboard68} style={{ width: '50%' }} />
+                    <div className={styles.wh}>
+                        <h1>What is Calminder?</h1>
 
                             The name "Calminder" shows the different
                             elements of the project.You can recognize
@@ -134,11 +135,11 @@ export const About =() =>{
                             book titles as soon as they are available.)
                         </div>
 
-                        <img src={artboard78} />
+                    <img src={artboard78} style={{ width: '50%' }} />
 
                 </div>
             </div>
         </div>
-);
+    );
 
 };
