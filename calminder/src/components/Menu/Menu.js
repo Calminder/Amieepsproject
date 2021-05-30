@@ -21,38 +21,39 @@ export const Menu = () =>
 
     return (
         <>
+            <div className={styles.logo}></div>
             {
-            !open && 
-            <div className={styles.burgerWrapper}>
-                <div className={styles.burgerbtn}
-                    onClick={() => setOpen((currentOpen) => currentOpen = !currentOpen)}
-                >
-                    <span></span>
+                !open &&
+                <div className={styles.burgerWrapper}>
+                    <div className={styles.burgerbtn}
+                        onClick={() => setOpen((currentOpen) => currentOpen = !currentOpen)}
+                    >
+                        <span></span>
+                    </div>
                 </div>
-            </div>
 
             }
             {
-            open &&
-            <div className={styles.container}>
-                <div
-                className={styles.closeIcon}
-                onClick={() => setOpen((currentOpen) => currentOpen = !currentOpen)}
-                >
-                X
+                open &&
+                <div className={styles.container}>
+                    <div
+                        className={styles.closeIcon}
+                        onClick={() => setOpen((currentOpen) => currentOpen = !currentOpen)}
+                    >
+                        X
                 </div>
-                <div className={styles.menu}>
-                    <nav>
-                        <div className={styles.burgerbtn}>
-                            <span></span>
-                        </div>
-                    </nav>
+                    <div className={styles.menu}>
+                        <nav>
+                            <div className={styles.burgerbtn}>
+                                <span></span>
+                            </div>
+                        </nav>
 
-                    <div className={styles.menu_content} style={{ display: open ? 'block' : 'none' }}>
-                        <Link items={items} />
+                        <div className={styles.menu_content} style={{ display: open ? 'block' : 'none' }}>
+                            <Link items={items} />
+                        </div>
                     </div>
                 </div>
-            </div>
             }
         </>
     )

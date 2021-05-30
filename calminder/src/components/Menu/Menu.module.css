@@ -27,7 +27,20 @@ nav{
     cursor: pointer;
     border-radius: 2px;
 }
-
+.logo{
+    right: 0;
+    left: 0;
+    top: 10px;
+    margin: 0 auto;
+    position: absolute;
+    background-image: url("../../resources/logo3.png");
+    background-position: center;
+    background-size: 100px;
+    background-repeat: no-repeat;
+    z-index: 11;
+    width: 100px;
+    height: 100px;
+}
 .burgerbtn::before {
     content: '';
     position:absolute;

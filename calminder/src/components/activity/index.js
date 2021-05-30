@@ -7,8 +7,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { PlayButton, Timer } from 'react-soundplayer/components';
 import { withSoundCloudAudio } from 'react-soundplayer/addons';
-import {getCards} from "../../services/firebase.service";
-
+import { getCards } from "../../services/firebase.service";
+import Header from './header';
 const clientId = 'c5a171200f3a0a73a523bba14a1e0a29';
 // const resolveUrl = 'https://soundcloud.com/qvenaozv6yzq/grapevocal/s-wSrH0TN9QJv?fbclid=IwAR1O9bmVk5v969rAe8tTv0-Njjs4cZgevTXZR9B_CwUhrseD1WzWdgo4NTg';
 
@@ -55,10 +55,12 @@ export const Activity = () =>
     }, []);
 
 
-   /* const { title, duration, requirmens, age, materials, description, goal } = card;*/
+    /* const { title, duration, requirmens, age, materials, description, goal } = card;*/
 
     return (
+        
         card ?
+            
         <div className={styles.shadow}>
             <Link to="/" className={styles.backBtn}>Back</Link>
             <div className={styles.wrapper}>
@@ -181,6 +183,6 @@ export const Activity = () =>
 
             </div>
         </div>
-            :null
+        : null
     )
 }
