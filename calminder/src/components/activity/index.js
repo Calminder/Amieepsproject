@@ -10,7 +10,7 @@ import { withSoundCloudAudio } from 'react-soundplayer/addons';
 import {getCards} from "../../services/firebase.service";
 
 const clientId = 'c5a171200f3a0a73a523bba14a1e0a29';
-const resolveUrl = 'https://soundcloud.com/qvenaozv6yzq/grapevocal/s-wSrH0TN9QJv?fbclid=IwAR1O9bmVk5v969rAe8tTv0-Njjs4cZgevTXZR9B_CwUhrseD1WzWdgo4NTg';
+// const resolveUrl = 'https://soundcloud.com/qvenaozv6yzq/grapevocal/s-wSrH0TN9QJv?fbclid=IwAR1O9bmVk5v969rAe8tTv0-Njjs4cZgevTXZR9B_CwUhrseD1WzWdgo4NTg';
 
 const Player = withSoundCloudAudio(props =>
 {
@@ -61,11 +61,6 @@ export const Activity = () =>
         card ?
         <div className={styles.shadow}>
             <Link to="/" className={styles.backBtn}>Back</Link>
-            <Player
-                clientId={clientId}
-                resolveUrl={resolveUrl}
-                onReady={() => console.log('track is loaded!')} />
-
             <div className={styles.wrapper}>
                 <div className={cardOpened ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
                     <div className={styles.cardActive}>
@@ -73,6 +68,11 @@ export const Activity = () =>
                         <div className={styles.title}>
                             picture
                         </div>
+                        <Player
+                            clientId={clientId}
+                            resolveUrl={card.musicUrl}
+                            onReady={() => console.log('track is loaded!')}
+                        />
                         <div className={styles.value}>
 
                         </div>
@@ -139,7 +139,7 @@ export const Activity = () =>
 
                         </div>
                         <div className={styles.desc}>
-                            {card.requirmens}
+                            {card.requirment}
                         </div>
                     </div>
 

@@ -87,14 +87,20 @@ li {
 
 
 .closeIcon {
-    display: none;
     position:absolute;
     right:10px;
     top:10px;
-    color:red;
+    color:white;
     cursor:pointer;
 }
 
 .nothing{
     display: none;
+}
+
+.burgerWrapper .burgerbtn {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 9;
 }

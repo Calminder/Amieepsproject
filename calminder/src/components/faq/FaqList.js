@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import FaqCard from "./FaqCard";
-import { loadJson } from "../../utils";
 import { useEffect, useState } from 'react';
 import styles from './fqa.module.css';
 import Header from './header';

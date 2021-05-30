@@ -7,12 +7,14 @@ import { Activity } from './activity';
 import FaqList from './faq/FaqList';
 import { Menu } from './Menu/Menu';
 
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   useLocation
 } from 'react-router-dom';
+import {About} from "./about/about";
 
 
 const Layer = ({ texture, depth, parent, offset }) => {
@@ -105,6 +107,9 @@ export function AnimationLandingPage() {
             </Route>
             <Route path="/activity/:id" exact>
               <Activity />
+            </Route>
+            <Route path="/about">
+              <About />
             </Route>
           </Switch>
         </Router>
