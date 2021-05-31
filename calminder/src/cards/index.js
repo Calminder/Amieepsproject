@@ -9,6 +9,7 @@ import btn_multiple from '../resources/btn_multiple.png';
 import { getFullDate } from '../helpers/dateHendlers'; 
 import { CardsWeek } from "./CardsWeek";
 import {getCards} from '../services/firebase.service';
+import Header from './header';
 
 export const List = () => {
     const [mode, setMode] = useState('MULTIPLE');
@@ -45,7 +46,9 @@ export const List = () => {
       }
    
     return ( 
+        
     <div className={styles.wrapper}>
+        <Header></Header>
         <div className={styles.overflow}>
             {
                 mode === "MULTIPLE" &&

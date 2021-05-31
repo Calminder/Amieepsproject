@@ -62,6 +62,7 @@ export const Activity = () =>
         card ?
             
         <div className={styles.shadow}>
+            <Header></Header>
             <Link to="/" className={styles.backBtn}>Back</Link>
             <Player
                             clientId={clientId}

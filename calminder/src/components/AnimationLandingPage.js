@@ -7,7 +7,6 @@ import { Activity } from './activity';
 import FaqList from './faq/FaqList';
 import { Menu } from './Menu/Menu';
 
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -77,6 +76,7 @@ export function AnimationLandingPage() {
 
 
   return (
+    
     <section 
       style={{
         height: "100vh",
@@ -84,7 +84,10 @@ export function AnimationLandingPage() {
       }}
       ref={ref}
     >
+      
+      
       <Menu />
+    
       {textures.layouts.map((texture, index) => {
         return (
           <Layer
