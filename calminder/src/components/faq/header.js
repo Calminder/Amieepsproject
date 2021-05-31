@@ -4,6 +4,7 @@ function Header()
 {
     return (
         <>
+            <div className={styles.logo}></div>
             <header>
                 <div className={styles.popo}>FAQ</div>
                 <article >

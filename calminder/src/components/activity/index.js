@@ -63,6 +63,11 @@ export const Activity = () =>
             
         <div className={styles.shadow}>
             <Link to="/" className={styles.backBtn}>Back</Link>
+            <Player
+                            clientId={clientId}
+                            resolveUrl={card.musicUrl}
+                            onReady={() => console.log('track is loaded!')}
+                        />
             <div className={styles.wrapper}>
                 <div className={cardOpened ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
                     <div className={styles.cardActive}>
@@ -70,11 +75,7 @@ export const Activity = () =>
                         <div className={styles.title}>
                             picture
                         </div>
-                        <Player
-                            clientId={clientId}
-                            resolveUrl={card.musicUrl}
-                            onReady={() => console.log('track is loaded!')}
-                        />
+                        
                         <div className={styles.value}>
 
                         </div>

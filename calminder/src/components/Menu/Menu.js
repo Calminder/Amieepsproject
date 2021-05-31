@@ -21,7 +21,6 @@ export const Menu = () =>
 
     return (
         <>
-            <div className={styles.logo}></div>
             {
                 !open &&
                 <div className={styles.burgerWrapper}>
