@@ -9,7 +9,7 @@
     box-sizing: border-box;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    position: absolute;
+    position: fixed;
     z-index: 9;
     top: 116px;
     left: 244px;
