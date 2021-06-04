@@ -6,6 +6,7 @@ body{
     grid-gap: 20px;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: 100px 62px 1px 380px 260px 1px 25px 15px 260px 1px 35px 1px 580px;
+    margin-top: 100px;
 }
 .titel1{
     grid-column: 3/6;
@@ -129,4 +130,18 @@ body{
     object-fit: cover;
     width: 100%;
     max-height: 100%;
+}
+.logo{
+    right: 0;
+    left: 0;
+    top: 10px;
+    margin: 0 auto;
+    position: absolute;
+    background-image: url("../../resources/logo_calminder.png");
+    background-position: center;
+    background-size: 150px;
+    background-repeat: no-repeat;
+    z-index: 100;
+    width: 150px;
+    height: 150px;
 }
