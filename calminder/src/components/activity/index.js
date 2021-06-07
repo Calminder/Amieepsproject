@@ -63,7 +63,6 @@ export const Activity = () =>
             
         <div className={styles.shadow}>
             <Header></Header>
-            <Link to="/" className={styles.backBtn}>Back</Link>
             <Player
                             clientId={clientId}
                             resolveUrl={card.musicUrl}

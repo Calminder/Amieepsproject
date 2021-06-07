@@ -1,17 +1,18 @@
-import {useEffect, useState} from "react";
-import {getCards} from "../services/firebase.service";
-
-export const cards =()=>{
-    const [cards, setCards] = useState([]);
-    const [loading, setLoading] = useState(false);
-    useEffect(async () =>
+export const categories = [
     {
-        setLoading(true);
-        const result = await getCards();
-        console.log(result);
-        setCards(result);
-        setLoading(false)
-    }, []);
-
-};
-
+        name: 'Music',
+        image: 'categories/music.jpg'
+    },
+    {
+        name: 'Visual Art',
+        image: 'categories/visual-art.jpg'
+    },
+    {
+        name: 'Drama',
+        image: 'categories/drama.jpg'
+    },
+    {
+        name: 'Dance - Movement',
+        image: 'categories/dance-movement.jpg'
+    },
+];

@@ -35,15 +35,12 @@ export const Menu = () =>
             {
                 open &&
                 <div className={styles.container}>
-                    <div
-                        className={styles.closeIcon}
-                        onClick={() => setOpen((currentOpen) => currentOpen = !currentOpen)}
-                    >
-                        X
-                </div>
+
                     <div className={styles.menu}>
                         <nav>
-                            <div className={styles.burgerbtn}>
+                            <div className={styles.burgerbtnWhite}
+                                 onClick={() => setOpen((currentOpen) => currentOpen = !currentOpen)}
+                            >
                                 <span></span>
                             </div>
                         </nav>

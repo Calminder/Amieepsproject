@@ -1,22 +1,20 @@
 
 
-.container{
+.container {
     background-color:rgba(0, 0, 0,0.55);
-    
-
     width: 228px;
     padding: 32px 22px;
     box-sizing: border-box;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    position: fixed;
+    position: absolute;
     z-index: 9;
     top: 116px;
     left: 244px;
     font-family: 'lato';
 }
 
-nav{
+nav {
     height:66px;
     box-sizing: border-box;
     display:flex;
@@ -25,14 +23,14 @@ nav{
     padding:0px 0px 32px 0px;
 }
 
-.burgerbtn {
+.burgerbtn, .burgerbtnWhite {
     width: 30px;
     height: 20px;
-    position: fixed;
+    position: relative;
     cursor: pointer;
     border-radius: 2px;
 }
-.logo{
+.logo {
     right: 0;
     left: 0;
     top: 10px;
@@ -46,7 +44,7 @@ nav{
     width: 100px;
     height: 100px;
 }
-.burgerbtn::before {
+.burgerbtn::before, .burgerbtnWhite::before {
     content: '';
     position:absolute;
     top:0;
@@ -56,7 +54,11 @@ nav{
     border-radius: 2px;
 }
 
-.burgerbtn span{
+.burgerbtnWhite::before {
+    background-color: white;
+}
+
+.burgerbtn span, .burgerbtnWhite span {
     content: '';
     position:absolute;
     top:8px;
@@ -66,7 +68,11 @@ nav{
     border-radius: 2px;
 }
 
-.burgerbtn::after {
+.burgerbtnWhite span {
+    background-color: white;
+}
+
+.burgerbtn::after .burgerbtnWhite::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -76,16 +82,17 @@ nav{
     border-radius: 2px;
 }
 
-.menu{
+.burgerbtnWhite::after {
+    background-color: white;
 
+}
+
+.menu {
     display: flex;
     flex-direction: column;
 }
 
-.menu_content{
-
-}
-ul{
+ul {
     list-style-type: none;
     padding: 0px;
 
@@ -112,7 +119,7 @@ li {
     cursor:pointer;
 }
 
-.nothing{
+.nothing {
     display: none;
 }
 
