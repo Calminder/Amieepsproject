@@ -13,7 +13,6 @@ export const Card = ({ title, description, image, activeDay, style, category }) 
                     {activeDay}
                 </div>
                 <div className={styles.flipCardBack} style={{
-                    backgroundImage: `url(${(image)})`,
                     backgroundSize: "cover"
                 }}
                 >
