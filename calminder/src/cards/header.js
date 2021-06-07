@@ -6,7 +6,7 @@ function Header()
         <>
             <header>
                 <div className={styles.logo}></div>
-
+                <div className={styles.amielogo}></div>
             </header>
 
         </>

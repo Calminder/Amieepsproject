@@ -118,7 +118,6 @@
 .shadow .wrapper .info {
     padding: 0px 20px;
     flex: 1;
-    height: 80%;
     overflow: auto;
 }
 
@@ -204,4 +203,20 @@
     z-index: 11;
     width: 150px;
     height: 150px;
+}
+.amielogo{
+    top: -45px;
+    left:-20px;
+    
+  
+    position: fixed;
+    background-image: url("../../resources/logo_amie.png");
+    background-position: center;
+    background-size: 200px;
+    background-repeat: no-repeat;
+    
+    z-index: 100 !important;
+    width: 250px;
+    height: 150px;
+    overflow: hidden;
 }

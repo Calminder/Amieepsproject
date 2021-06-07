@@ -42,7 +42,14 @@
   }
 
   .flipCardBack {
-    background-color: dodgerblue;
+    background-color: rgb(72,100,199);
     color: white;
     transform: rotateY(180deg);
+  }
+  .flipCardBacktitle{
+    font-family:'Baloo 2' ;
+    font-size: 18px;
+  }
+  .flipCardBacktext{
+    font-family: 'Lato';
   }

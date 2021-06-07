@@ -4,7 +4,7 @@ export const categories = [
         image: 'categories/music.jpg'
     },
     {
-        name: 'Visual Art',
+        name: 'Visual Arts',
         image: 'categories/visual-art.jpg'
     },
     {

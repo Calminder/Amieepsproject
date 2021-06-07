@@ -1,19 +1,25 @@
 
 .wrapper {
-    position: absolute;
+    position: fixed;
     display: flex;
     top: 50px;
     width: 100%;
 }
+.overflowbackground{
+    margin: 0 auto;
+    background-color: rgba(255, 255 ,255, .4);
+    height: 85vh;
+    margin-top: 180px;
+
+}
 
 .wrapper .overflow {
-    height: 85vh;
+    height: 65vh;
     width: 900px;
     overflow: auto;
     margin: auto;
-    background-color: rgba(255, 255 ,255, .4);
-    margin-top: 180px;
-    
+    margin-top: 0px;
+    z-index: 11;
 }
 .wrapper .overflow .list {
     display: flex;

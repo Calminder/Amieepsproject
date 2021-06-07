@@ -71,10 +71,10 @@ export const Activity = () =>
                 <div className={styles.wrapper}>
                     <div className={cardOpened ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
                         <div className={styles.cardActive}
-                             style={{
-                                 backgroundImage:`url(${(card.url)})`,
-                                 backgroundSize: "cover"
-                             }}
+                            style={{
+                                backgroundImage: `url(${(card.url)})`,
+                                backgroundSize: "cover"
+                            }}
                         >
                             <div className={styles.close} onClick={() => setCardOpened(false)}>X</div>
                             <div className={styles.title}>
@@ -95,8 +95,8 @@ export const Activity = () =>
 
                         </div>
                         <div className={styles.title2}>
-                        <span className={styles.text2}>
-                            Goal
+                            <span className={styles.text2}>
+                                Goal
                             </span>
                         </div>
                         <section className={styles.value}>
@@ -105,11 +105,11 @@ export const Activity = () =>
                     </div>
 
                     <section className={styles.card}
-                             onClick={() => setCardOpened(true)}
-                             style={{
-                                 backgroundImage:`url(${(card.url)})`,
-                                 backgroundSize: "cover"
-                             }}
+                        onClick={() => setCardOpened(true)}
+                        style={{
+                            backgroundImage: `url(${(card.url)})`,
+                            backgroundSize: "cover"
+                        }}
                     >
                         <div className={styles.output}>
                             <div className={styles.title}></div>
@@ -123,8 +123,8 @@ export const Activity = () =>
                         <div className={styles.item}>
 
                             <div className={styles.title}>
-                            <span className={styles.text}>
-                                Title
+                                <span className={styles.text}>
+                                    Title
                             </span>
 
                             </div>
@@ -135,8 +135,8 @@ export const Activity = () =>
 
                         <div className={styles.item}>
                             <div className={styles.title}>
-                            <span className={styles.text}>
-                                Duration
+                                <span className={styles.text}>
+                                    Duration
                             </span>
 
                             </div>
@@ -145,7 +145,7 @@ export const Activity = () =>
                             </div>
                         </div>
 
-                        <div className={styles.item}>
+                        {/* <div className={styles.item}>
                             <div className={styles.title}>
                             <span className={styles.text}>
                                 Requirments
@@ -155,12 +155,12 @@ export const Activity = () =>
                             <div className={styles.desc}>
                                 {card.extra}
                             </div>
-                        </div>
+                        </div> */}
 
                         <div className={styles.item}>
                             <div className={styles.title}>
-                            <span className={styles.text}>
-                                Age
+                                <span className={styles.text}>
+                                    Age
                                      </span>
                             </div>
                             <div className={styles.desc}>
@@ -170,8 +170,8 @@ export const Activity = () =>
 
                         <div className={styles.item}>
                             <div className={styles.title}>
-                            <span className={styles.text}>
-                                Materials
+                                <span className={styles.text}>
+                                    Materials
                                      </span>
                             </div>
                             <div className={styles.desc}>
@@ -181,8 +181,8 @@ export const Activity = () =>
 
                         <div className={styles.item}>
                             <div className={styles.title}>
-                            <span className={styles.text}>
-                                Description
+                                <span className={styles.text}>
+                                    Description
                             </span>
                             </div>
                             <div className={styles.desc}>
