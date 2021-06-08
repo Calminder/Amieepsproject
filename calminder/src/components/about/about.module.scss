@@ -3,6 +3,8 @@
     margin: auto;
     background-color: rgba(0,0,0,.55);
     padding: 30px 10px 100px 10px;
+    margin-top: 150px;
+    border-radius: 15px;
     .first_screen {
         width: 100%;
         display: flex;
@@ -77,17 +79,33 @@
     }
     }
 
-.logo{
-    right: 0;
-    left: 0;
-    top: 10px;
-    margin: 0 auto;
-    position: absolute;
-    background-image: url("../../resources/logo_calminder.png");
-    background-position: center;
-    background-size: 150px;
-    background-repeat: no-repeat;
-    z-index: 100;
-    width: 150px;
-    height: 150px;
-}
+    .logo {
+        right: 0;
+        left: 0;
+        top: 10px;
+        margin: 0 auto;
+        position: absolute;
+        background-image: url("../../resources/logo_calminder.png");
+        background-position: center;
+        background-size: 150px;
+        background-repeat: no-repeat;
+        z-index: 100;
+        width: 150px;
+        height: 150px;
+    }
+    .amielogo {
+        top: -45px;
+        left:-20px;
+        
+      
+        position: fixed;
+        background-image: url("../../resources/logo_amie.png");
+        background-position: center;
+        background-size: 200px;
+        background-repeat: no-repeat;
+        
+        z-index: 100 !important;
+        width: 250px;
+        height: 150px;
+        overflow: hidden;
+    }
