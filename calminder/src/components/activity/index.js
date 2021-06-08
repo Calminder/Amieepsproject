@@ -96,12 +96,23 @@ export const Activity = () =>
                         </div>
                         <div className={styles.title2}>
                             <span className={styles.text2}>
-                                Goal
+                                Description
                             </span>
                         </div>
                         <section className={styles.value}>
                             {card.description}
                         </section>
+
+                        <div className={styles.title2}>
+                            <span className={styles.text2}>
+                                Instructions
+                            </span>
+
+                        </div>
+                        <div className={styles.value}>
+                            {card.instructions}
+                        </div>
+
                     </div>
 
                     <section className={styles.card}
@@ -145,17 +156,7 @@ export const Activity = () =>
                             </div>
                         </div>
 
-                        {/* <div className={styles.item}>
-                            <div className={styles.title}>
-                            <span className={styles.text}>
-                                Requirments
-                            </span>
 
-                            </div>
-                            <div className={styles.desc}>
-                                {card.extra}
-                            </div>
-                        </div> */}
 
                         <div className={styles.item}>
                             <div className={styles.title}>
@@ -182,7 +183,7 @@ export const Activity = () =>
                         <div className={styles.item}>
                             <div className={styles.title}>
                                 <span className={styles.text}>
-                                    Description
+                                    Extra
                             </span>
                             </div>
                             <div className={styles.desc}>

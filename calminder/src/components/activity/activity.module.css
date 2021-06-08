@@ -21,13 +21,12 @@
     color: white;
     margin-top: 10%;
     width: 80%;
-    
+    height: 60%;
 }
 
 .shadow .wrapper .goal {
     padding: 0px 20px;
     flex: 1;
-    height: 80%;
     overflow: auto;
 }
 
@@ -63,7 +62,7 @@
     font-size: 22px;
     font-family:'Lato';
     font-weight: 500;
-    height: 380px;
+    height: fit-content;
 }
 
 
