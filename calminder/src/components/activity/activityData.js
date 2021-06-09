@@ -9,7 +9,6 @@ const componentData = exercise =>
         {
             exerciseList.push(snap.val());
         })
-        console.log(exerciseList);
         return exerciseList;
     });
 };

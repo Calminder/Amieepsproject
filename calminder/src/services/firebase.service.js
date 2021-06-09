@@ -15,7 +15,6 @@ export const getCards = () => {
         firebase.database().ref('Calminder-exercise').on('value', snapshot => {
             let array = [];
             snapshot.forEach(snap => {
-                console.log(snap.val());
              array.push(snap.val())});
             return resolve(array);
         });

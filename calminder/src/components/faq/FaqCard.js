@@ -9,7 +9,6 @@ function FaqCard(props) {
 
     useEffect(() => {
         setQuestion(props.question);
-        console.log(props);
     }, []);
 
     const toggleFAQ  = () => {

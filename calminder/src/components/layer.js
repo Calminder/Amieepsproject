@@ -33,7 +33,7 @@ export function Layer(props) {
   });
 
   const texture = useTexture(props.texture);
-  console.log()
+
   return (
     <group ref={ref}>
       <Plane scale={scale} args={planeSize} position-z={props.z}>

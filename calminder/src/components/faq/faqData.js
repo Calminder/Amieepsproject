@@ -9,7 +9,6 @@ const componentFaq = fag =>
         {
             faqList.push(snap.val());
         });
-        console.log(faqList);
         return faqList;
     });
 };

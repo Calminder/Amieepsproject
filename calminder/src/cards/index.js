@@ -31,7 +31,6 @@ export const List = () =>
     {
         setLoading(true);
         const result = await getCards();
-        console.log(result);
         setCards(result);
         setLoading(false)
     }, []);

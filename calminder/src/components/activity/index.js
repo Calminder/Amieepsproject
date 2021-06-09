@@ -23,7 +23,7 @@ const Player = withSoundCloudAudio(props =>
                 className={styles.customplayerbtn}
                 onPlayClick={() =>
                 {
-                    console.log('play button clicked!');
+
                 }}
                 {...props} />
             <h2 className={styles.customplayertitle}>
@@ -64,7 +64,6 @@ export const Activity = () =>
     {
         setLoading(true);
         const cards = await getCards();
-        console.log(cards);
         setCard(cards[id]);
         setLoading(false)
     }, []);
@@ -81,8 +80,9 @@ export const Activity = () =>
                 <Player
                     clientId={clientId}
                     resolveUrl={card.musicUrl}
-                    onReady={() => console.log('track is loaded!')}
+                    onReady={() => console.log('') }
                 />
+
                 <div className={styles.wrapper}>
                     <div className={cardOpened ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
                         <Picture warn={card.url} />

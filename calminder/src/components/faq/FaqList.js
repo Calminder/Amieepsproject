@@ -13,7 +13,6 @@ export const FaqList = (props) =>
     {
         setLoading(true);
         const result = await getFaqs();
-        console.log(result);
         setQuestions(result);
         setLoading(false)
     }, []);
