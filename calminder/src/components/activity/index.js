@@ -12,8 +12,7 @@ import Header from './header';
 import Background from '../../resources/sky.jpg';
 const clientId = 'c5a171200f3a0a73a523bba14a1e0a29';
 // const resolveUrl = 'https://soundcloud.com/qvenaozv6yzq/grapevocal/s-wSrH0TN9QJv?fbclid=IwAR1O9bmVk5v969rAe8tTv0-Njjs4cZgevTXZR9B_CwUhrseD1WzWdgo4NTg';
-var boolPicture = true;
-var boolMusic = true;
+var testhaha = true;
 const Player = withSoundCloudAudio(props =>
 {
     let { track, currentTime } = props;
@@ -42,45 +41,15 @@ function Picture(props)
 {
     if (props.warn == "")
     {
-        boolPicture = true;
+        testhaha = true;
     }
     else
     {
-        boolPicture = false;
+        testhaha = false;
     }
-
     return (
         <div></div>
     );
-
-}
-function Music(props)
-{
-    console.log("begin", props.warn)
-    if (props.warn == "" || props.warn == undefined || props.warn == "/")
-    {
-        boolMusic = true;
-        console.log("true", props.warn)
-        return (
-            <div></div>
-
-        );
-    }
-    else
-    {
-        console.log("false", props.warn)
-        boolMusic = false;
-        return (
-            <Player
-                clientId={clientId}
-                resolveUrl={String(props.warn)}
-                onReady={() => console.log('')}
-            />
-
-        );
-    }
-
-
 
 }
 export const Activity = () =>
@@ -108,15 +77,18 @@ export const Activity = () =>
 
             <div className={styles.shadow}>
                 <Header></Header>
-                <Music warn={card.musicUrl} />
-
+                <Player
+                    clientId={clientId}
+                    resolveUrl={card.musicUrl}
+                    onReady={() => console.log('') }
+                />
 
                 <div className={styles.wrapper}>
                     <div className={cardOpened ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
                         <Picture warn={card.url} />
                         <div className={styles.cardActive}
                             style={{
-                                backgroundImage: boolPicture ? `url(${Background})` : `url(${(card.url)})`,
+                                backgroundImage: testhaha ? `url(${Background})` : `url(${(card.url)})`,
                                 backgroundSize: "cover",
                                 backgroundPosition: 'center'
                             }}
@@ -134,7 +106,7 @@ export const Activity = () =>
 
                     <div className={styles.goal}>
                         <h1 className={styles.title}>
-                            {card.title}
+                            Activity name
                         </h1>
                         <div className={styles.pic}>
 
@@ -163,7 +135,7 @@ export const Activity = () =>
                     <section className={styles.card}
                         onClick={() => setCardOpened(true)}
                         style={{
-                            backgroundImage: boolPicture ? `url(${Background})` : `url(${(card.url)})`,
+                            backgroundImage: testhaha ? `url(${Background})` : `url(${(card.url)})`,
                             backgroundSize: "cover",
                             backgroundPosition: 'center'
 
