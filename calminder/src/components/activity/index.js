@@ -79,9 +79,6 @@ function Music(props)
 
         );
     }
-
-
-
 }
 export const Activity = () =>
 {
