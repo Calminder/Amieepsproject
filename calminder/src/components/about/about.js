@@ -137,7 +137,9 @@ export const About = () =>
                     book titles as soon as they are available.)</p>
             </div>
             <div className={styles.right}>
-                <img src={artboard82} />
+                <img style={{
+                   "float":"right"
+                }} src={artboard82} />
             </div>
         </section>
     </div>
