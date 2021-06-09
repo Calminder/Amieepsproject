@@ -130,11 +130,9 @@ export const About = () =>
                 be found in Irma Smegen's books which
                     will be published the coming years.</p>
 
-                <p>(Maybe you can add a link to 'mindful at
-                school' here? <a target="_blank" href="https://www.irmasmegen.com/en/mindful-at-school/">
+                <p>Visit Midful at school at <a target="_blank" href="https://www.irmasmegen.com/en/mindful-at-school/">
                 www.mindfulatschool.com </a>
-                and make it workable for us so we can add
-                    book titles as soon as they are available.)</p>
+                </p>
             </div>
             <div className={styles.right}>
                 <img style={{
