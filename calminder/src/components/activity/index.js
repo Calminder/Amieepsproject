@@ -9,9 +9,10 @@ import { PlayButton, Timer } from 'react-soundplayer/components';
 import { withSoundCloudAudio } from 'react-soundplayer/addons';
 import { getCards } from "../../services/firebase.service";
 import Header from './header';
+import Background from '../../resources/sky.jpg';
 const clientId = 'c5a171200f3a0a73a523bba14a1e0a29';
 // const resolveUrl = 'https://soundcloud.com/qvenaozv6yzq/grapevocal/s-wSrH0TN9QJv?fbclid=IwAR1O9bmVk5v969rAe8tTv0-Njjs4cZgevTXZR9B_CwUhrseD1WzWdgo4NTg';
-
+var testhaha = true;
 const Player = withSoundCloudAudio(props =>
 {
     let { track, currentTime } = props;
@@ -36,7 +37,21 @@ const Player = withSoundCloudAudio(props =>
         </div>
     );
 });
+function Picture(props)
+{
+    if (props.warn == "")
+    {
+        testhaha = true;
+    }
+    else
+    {
+        testhaha = false;
+    }
+    return (
+        <div></div>
+    );
 
+}
 export const Activity = () =>
 {
     const { id } = useParams();
@@ -70,10 +85,12 @@ export const Activity = () =>
                 />
                 <div className={styles.wrapper}>
                     <div className={cardOpened ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
+                        <Picture warn={card.url} />
                         <div className={styles.cardActive}
                             style={{
-                                backgroundImage: `url(${(card.url)})`,
-                                backgroundSize: "cover"
+                                backgroundImage: testhaha ? `url(${Background})` : `url(${(card.url)})`,
+                                backgroundSize: "cover",
+                                backgroundPosition: 'center'
                             }}
                         >
                             <div className={styles.close} onClick={() => setCardOpened(false)}>X</div>
@@ -118,8 +135,10 @@ export const Activity = () =>
                     <section className={styles.card}
                         onClick={() => setCardOpened(true)}
                         style={{
-                            backgroundImage: `url(${(card.url)})`,
-                            backgroundSize: "cover"
+                            backgroundImage: testhaha ? `url(${Background})` : `url(${(card.url)})`,
+                            backgroundSize: "cover",
+                            backgroundPosition: 'center'
+
                         }}
                     >
                         <div className={styles.output}>
