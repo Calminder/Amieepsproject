@@ -47,8 +47,17 @@
         </mat-grid-tile>
         <mat-grid-tile rowspan='7'>
             <div class="controles-container">
-                <mat-form-field>
+                <!-- <mat-form-field>
                     <input type='text' formControlName='category' matInput placeholder="Category">
+                </mat-form-field> -->
+                <mat-form-field>
+                    <mat-select formControlName='category' placeholder="category">
+
+                        <ng-container *ngFor="let option of options; let i = index">
+                            <mat-option value='{{option.value}}'>{{option.value}}
+                            </mat-option>
+                        </ng-container>
+                    </mat-select>
                 </mat-form-field>
 
                 <mat-form-field>
