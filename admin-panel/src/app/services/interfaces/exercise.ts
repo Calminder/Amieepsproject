@@ -2,7 +2,7 @@ export interface IExercise
 {
     $key?: any;
     title: string;
-    date: Date;
+    date: string;
     age: string;
     duration: string;
     category: string;
@@ -13,4 +13,5 @@ export interface IExercise
     image?: string;
     extra: string;
     url: string;
+    musicUrl: string;
 }

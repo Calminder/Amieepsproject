@@ -7,7 +7,7 @@
 </mat-toolbar>
 <form [formGroup]="this.svc.exerciseForm" class="normal-form" (submit)="onSubmit()">
     <mat-grid-list cols='2' rowHeight='50px'>
-        <mat-grid-tile rowspan='8'>
+        <mat-grid-tile rowspan='7'>
             <div class="controles-container">
                 <input type="hidden" formControlName='$key'>
                 <mat-form-field>
@@ -45,10 +45,19 @@
                 </mat-form-field>
             </div>
         </mat-grid-tile>
-        <mat-grid-tile rowspan='8'>
+        <mat-grid-tile rowspan='7'>
             <div class="controles-container">
-                <mat-form-field>
+                <!-- <mat-form-field>
                     <input type='text' formControlName='category' matInput placeholder="Category">
+                </mat-form-field> -->
+                <mat-form-field>
+                    <mat-select formControlName='category' placeholder="category">
+
+                        <ng-container *ngFor="let option of options; let i = index">
+                            <mat-option value='{{option.value}}'>{{option.value}}
+                            </mat-option>
+                        </ng-container>
+                    </mat-select>
                 </mat-form-field>
 
                 <mat-form-field>
@@ -67,18 +76,27 @@
 
             </div>
         </mat-grid-tile>
-        <mat-grid-tile colspan='2' rowspan='4'>
-            <div class="controles-container">
+        <mat-grid-tile colspan='2' rowspan='5'>
+            <div class="controle-container-image">
                 <ngx-dropzone (change)="onSelect($event)" [expandable]="true">
                     <ngx-dropzone-label>Drop you picture</ngx-dropzone-label>
                     <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
                         <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
                     </ngx-dropzone-preview>
                 </ngx-dropzone>
+
             </div>
 
         </mat-grid-tile>
-        <mat-grid-tile colspan='2'>
+        <mat-grid-tile colspan='2' rowspan='2'>
+            <div class='control-container'>
+                <mat-form-field>
+                    <input type='text' formControlName='musicUrl' matInput placeholder="Music url form soundcloud">
+                </mat-form-field>
+            </div>
+
+        </mat-grid-tile>
+        <mat-grid-tile colspan='2' rowspan='2'>
 
             <div class='button-row'>
                 <button mat-raised-button color='primary' type='submit'

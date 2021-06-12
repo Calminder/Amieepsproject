@@ -15,7 +15,26 @@
         }
     }
 }
+.control-container {
+    width: 100%;
+    padding: 5%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
 
+.control-container > * {
+    width:  100%;
+}
+
+.controle-container-image {
+    min-width: 100%;
+    margin-top: 25px;
+ 
+}
+
+.controle-container-image > * {
+    width: 100%;
+}
 .example-container{
     width:120px !important;
  }
@@ -37,4 +56,7 @@
     left: 0px;
     top: 0px;
     cursor: pointer;
+}
+.text-row{
+    width: 100%;
 }

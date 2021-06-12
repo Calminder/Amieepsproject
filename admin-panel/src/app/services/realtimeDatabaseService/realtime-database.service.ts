@@ -36,15 +36,17 @@ export class RealtimeDatabaseService
   exerciseForm: FormGroup = new FormGroup({
     $key: new FormControl(null),
     title: new FormControl('', Validators.required),
-    date: new FormControl(Date, Validators.required),
+    date: new FormControl(Date),
     age: new FormControl(''),
     duration: new FormControl('', Validators.required),
-    category: new FormControl(''),
+    category: new FormControl(0),
     description: new FormControl('', Validators.required),
-    wonder: new FormControl('', Validators.required),
-    materials: new FormControl('', Validators.required),
+    wonder: new FormControl(''),
+    materials: new FormControl(''),
     instructions: new FormControl('', Validators.required),
-    extra: new FormControl('')
+    extra: new FormControl(''),
+    url: new FormControl(''),
+    musicUrl: new FormControl('')
   });
 
   initializeexerciseFrom()
@@ -55,17 +57,33 @@ export class RealtimeDatabaseService
       date: '',
       age: '',
       duration: '',
-      category: '',
+      category: 0,
       description: '',
       wonder: '',
       materials: '',
       instructions: '',
-      extra: ''
+      extra: '',
+      url: '',
+      musicUrl: ''
     });
   }
-  poulateexerciseForm(exercise: any)
+  poulateexerciseForm(exercise: IExercise)
   {
-    this.exerciseForm.setValue(exercise);
+    this.exerciseForm.setValue({
+      $key: exercise.$key,
+      age: exercise.age,
+      title: exercise.title,
+      date: new Date(exercise.date),
+      duration: exercise.duration,
+      category: exercise.category,
+      description: exercise.description,
+      wonder: exercise.wonder,
+      materials: exercise.materials,
+      instructions: exercise.instructions,
+      extra: exercise.extra,
+      url: exercise.url,
+      musicUrl: exercise.musicUrl
+    });
   }
 
   questionList!: AngularFireList<any>;
@@ -116,7 +134,6 @@ export class RealtimeDatabaseService
   {
     this.exerciseList.push({
       title: exercise.title,
-      date: exercise.date,
       age: exercise.age,
       duration: exercise.duration,
       category: exercise.category,
@@ -125,13 +142,16 @@ export class RealtimeDatabaseService
       materials: exercise.materials,
       instructions: exercise.instructions,
       extra: exercise.extra,
-      url: exercise.url
+      url: exercise.url,
+      date: exercise.date,
+      musicUrl: exercise.musicUrl
     });
+
   }
 
   updateExercise(exercise: IExercise)
   {
-    this.exerciseList.update(String(exercise.date), {
+    this.exerciseList.update(exercise.$key, {
       title: exercise.title,
       date: exercise.date,
       age: exercise.age,
@@ -142,7 +162,9 @@ export class RealtimeDatabaseService
       materials: exercise.materials,
       instructions: exercise.instructions,
       extra: exercise.extra,
-      url: exercise.url
+      url: exercise.url,
+      musicUrl: exercise.musicUrl
+
     });
   }
 

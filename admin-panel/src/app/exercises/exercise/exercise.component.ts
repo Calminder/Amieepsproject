@@ -18,64 +18,212 @@ import { snapshotChanges } from '@angular/fire/database';
 })
 export class ExerciseComponent implements OnInit
 {
-  files: File[] = [];
-  imageToFirebase: any[] = [];
+  options = [
+    { id: 1, value: 'Music' },
+    { id: 2, value: 'Visual Art' },
+    { id: 3, value: 'Drama' },
+    { id: 4, value: 'Digital art' },
+    { id: 5, value: 'Writing' },
+    { id: 6, value: 'Dance - Movement' },
+    { id: 7, value: 'stories - poetry' }
+  ];
+  files: any[] = [];
+  deletedFiles: any[] = [];
+  //imageToFirebase: any[] = [];
   isHovering!: boolean;
   selectedFile!: File;
   downloadURL!: string;
-  toggleHover(event: boolean)
-  {
-    this.isHovering = event;
-  }
-
-
-  onSelect(event: any)
-  {
-    console.log(event);
-    this.files.push(...event.addedFiles);
-    this.imageToFirebase.push(event);
-    console.log("files", this.files[0]);
-  }
-
-  onRemove(event: any)
-  {
-    console.log(event);
-    this.files.splice(this.files.indexOf(event), 1);
-    this.imageToFirebase.splice(this.imageToFirebase.indexOf(event), 1);
-  }
-
-  fileChangeEvent(event: any)
-  {
-
-  }
+  uploadTask: any;
+  test: boolean = false;
+  submit: boolean = false;
+  onDelete: boolean = false;
 
   constructor(public svc: RealtimeDatabaseService, private note: NotificationService,
     @Optional() public dialogRef: MatDialogRef<ExerciseListComponent>,
     private storage: AngularFireStorage) { }
-  dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) =>
-  {
-    // Only highligh dates inside the month view.
-    if (view === 'month') {
-      const date = cellDate.getDate();
 
-      // Highlight the 1st and 20th day of each month.
-      return (date === 1 || date === 20) ? 'example-custom-date-class' : '';
-    }
-
-    return '';
-  };
 
   ngOnInit(): void
   {
-    this.svc.getExercise();
+    this.svc.getExercise().subscribe(r =>
+    {
+    });
     //console.log(this.svc.exerciseForm.value.date);
+
+    if (this.svc.exerciseForm.value.url != '') {
+      var httpsReference = firebase.storage().refFromURL(`${ this.svc.exerciseForm.value.url }`);
+      //this.files.push(httpsReference);
+      //console.log('dataform url', httpsReference);
+      this.files.push(httpsReference);
+      this.downloadURL = this.svc.exerciseForm.value.url;
+    } else {
+      this.downloadURL = '';
+    }
+
 
   }
 
 
   onSubmit()
   {
-    var uploadTask = firebase.storage().ref().child(`${ this.imageToFirebase[0].addedFiles[0].name }`).put(this.imageToFirebase[0].addedFiles[0].name);
+
+    //this.fileChangeEvent(this.imageToFirebase[0]);
+    if (this.svc.exerciseForm.valid) {
+      if (!this.svc.exerciseForm.get('$key')?.value) {
+        var exercisepost: IExercise = {
+          title: this.svc.exerciseForm.value.title,
+          date: this.svc.exerciseForm.value.date.toDateString(),
+          age: this.svc.exerciseForm.value.age,
+          duration: this.svc.exerciseForm.value.duration,
+          category: this.svc.exerciseForm.value.category,
+          description: this.svc.exerciseForm.value.description,
+          wonder: this.svc.exerciseForm.value.wonder,
+          materials: this.svc.exerciseForm.value.materials,
+          instructions: this.svc.exerciseForm.value.instructions,
+          extra: this.svc.exerciseForm.value.extra,
+          url: this.downloadURL,
+          musicUrl: this.svc.exerciseForm.value.musicUrl
+        };
+        //console.log(exercisepost);
+
+        this.svc.createExercise(exercisepost);
+
+
+        this.note.succes('was successfully added!');
+      } else {
+        var exerciseupdate: IExercise = {
+          $key: this.svc.exerciseForm.value.$key,
+          title: this.svc.exerciseForm.value.title,
+          date: this.svc.exerciseForm.value.date.toDateString(),
+          age: this.svc.exerciseForm.value.age,
+          duration: this.svc.exerciseForm.value.duration,
+          category: this.svc.exerciseForm.value.category,
+          description: this.svc.exerciseForm.value.description,
+          wonder: this.svc.exerciseForm.value.wonder,
+          materials: this.svc.exerciseForm.value.materials,
+          instructions: this.svc.exerciseForm.value.instructions,
+          extra: this.svc.exerciseForm.value.extra,
+          url: this.downloadURL,
+          musicUrl: this.svc.exerciseForm.value.musicUrl
+        };
+        //console.log(this.svc.exerciseForm.value.date);
+
+        this.svc.updateExercise(exerciseupdate);
+        // if (String(this.svc.exerciseForm.value.date) != this.date) {
+        //   this.svc.deleteExercise(this.date);
+        // }
+
+        //this.fileChangeEvent(this.imageToFirebase[0]);
+        this.note.succes('was successfully updated!');
+      }
+      this.downloadURL = '';
+      this.files.length = 0;
+      //this.imageToFirebase.length = 0;
+      //this.onRemove(this.imageToFirebase[0]);
+      this.svc.exerciseForm.reset();
+      this.svc.initializeexerciseFrom();
+      this.dialogRef.close();
+      this.svc.exerciseForm.reset();
+      this.svc.initializeexerciseFrom();
+      //this.onClose();
+    }
+  }
+  onClose()
+  {
+    if (this.submit) {
+      this.onRemove(this.files[0]);
+    }
+    if (this.onDelete) {
+      if (this.svc.exerciseForm.get('$key')?.value) {
+        this.fileAfterRemove();
+      }
+    }
+    this.downloadURL = '';
+    this.files.length = 0;
+    //this.imageToFirebase.length = 0;
+    this.svc.exerciseForm.reset();
+    this.svc.initializeexerciseFrom();
+    this.dialogRef.close();
+  }
+
+
+
+  onSelect(event: any)
+  {
+    //console.log(event);
+    this.files.push(...event.addedFiles);
+    //this.imageToFirebase.push(event);
+    this.fileChangeEvent();
+    //console.log("files", this.files[0]);
+  }
+
+  onRemove(event: any)
+  {
+    //console.log(event);
+    if (this.files.length > 0) {
+      var desertRef = firebase.storage().ref().child(`${ this.files[0].name }`);
+      desertRef.delete().then(() =>
+      {
+        // File deleted successfully
+        this.downloadURL = '';
+      }).catch((error) =>
+      {
+        // Uh-oh, an error occurred!
+        console.log(error);
+      });
+    }
+    // Delete the file
+    this.deletedFiles.push(event);
+    this.onDelete = true;
+    this.files.splice(this.files.indexOf(event), 1);
+    //this.imageToFirebase.splice(this.imageToFirebase.indexOf(event), 1);
+
+  }
+  fileAfterRemove()
+  {
+    var uploadTask = firebase.storage().ref().child(`${ this.deletedFiles[0].name }`).put(this.deletedFiles[0]);
+    //console.log(uploadTask);
+    uploadTask.on('state_changed', (snapshotChanges) =>
+    {
+
+    },
+      (error) =>
+      {
+        console.log(error);
+      },
+      () =>
+      {
+        uploadTask.snapshot.ref.getDownloadURL().then(async (downloadURL) =>
+        {
+          //console.log('File available at', downloadURL);
+          this.downloadURL = await downloadURL;
+          this.submit = true;
+          var exerciseupdate: IExercise = {
+            $key: this.svc.exerciseForm.value.$key,
+            title: this.svc.exerciseForm.value.title,
+            date: this.svc.exerciseForm.value.date,
+            age: this.svc.exerciseForm.value.age,
+            duration: this.svc.exerciseForm.value.duration,
+            category: this.svc.exerciseForm.value.category,
+            description: this.svc.exerciseForm.value.description,
+            wonder: this.svc.exerciseForm.value.wonder,
+            materials: this.svc.exerciseForm.value.materials,
+            instructions: this.svc.exerciseForm.value.instructions,
+            extra: this.svc.exerciseForm.value.extra,
+            url: await downloadURL,
+            musicUrl: this.svc.exerciseForm.value.musicUrl
+          };
+          //console.log(this.svc.exerciseForm.value.date);
+
+          this.svc.updateExercise(exerciseupdate);
+
+        });
+      });
+  }
+
+  fileChangeEvent()
+  {
+    var uploadTask = firebase.storage().ref().child(`${ this.files[0].name }`).put(this.files[0]);
     console.log(uploadTask);
     uploadTask.on('state_changed', (snapshotChanges) =>
     {
@@ -89,67 +237,13 @@ export class ExerciseComponent implements OnInit
       {
         uploadTask.snapshot.ref.getDownloadURL().then(async (downloadURL) =>
         {
-          console.log('File available at', downloadURL);
+          //console.log('File available at', downloadURL);
           this.downloadURL = await downloadURL;
-          if (this.svc.exerciseForm.valid) {
-            if (!this.svc.exerciseForm.get('$key')?.value) {
-              var exercisepost: IExercise = {
-                title: this.svc.exerciseForm.value.title,
-                date: this.svc.exerciseForm.value.date,
-                age: this.svc.exerciseForm.value.age,
-                duration: this.svc.exerciseForm.value.duration,
-                category: this.svc.exerciseForm.value.category,
-                description: this.svc.exerciseForm.value.description,
-                wonder: this.svc.exerciseForm.value.wonder,
-                materials: this.svc.exerciseForm.value.materials,
-                instructions: this.svc.exerciseForm.value.instructions,
-                extra: this.svc.exerciseForm.value.extra,
-                url: this.downloadURL
-              };
-              //console.log(exercisepost);
+          this.submit = true;
 
-              // this.svc.createExercise(exercisepost);
-              this.svc.updateExercise(exercisepost);
-              console.log("this line 114", downloadURL);
-
-              this.note.succes('was successfully added!');
-            } else {
-              var exerciseupdate: IExercise = {
-                $key: this.svc.exerciseForm.value.$key,
-                title: this.svc.exerciseForm.value.title,
-                date: this.svc.exerciseForm.value.date,
-                age: this.svc.exerciseForm.value.age,
-                duration: this.svc.exerciseForm.value.duration,
-                category: this.svc.exerciseForm.value.category,
-                description: this.svc.exerciseForm.value.description,
-                wonder: this.svc.exerciseForm.value.wonder,
-                materials: this.svc.exerciseForm.value.materials,
-                instructions: this.svc.exerciseForm.value.instructions,
-                extra: this.svc.exerciseForm.value.extra,
-                url: this.downloadURL
-              };
-              //console.log(exerciseupdate);
-
-              this.svc.updateExercise(exerciseupdate);
-              this.fileChangeEvent(this.imageToFirebase[0]);
-              this.note.succes('was successfully updated!');
-            }
-            this.svc.exerciseForm.reset();
-            this.svc.initializeexerciseFrom();
-            this.onClose();
-          }
         });
-
       });
-    //this.fileChangeEvent(this.imageToFirebase[0]);
-  }
 
-  onClose()
-  {
-    this.onRemove(this.imageToFirebase[0]);
-    this.svc.exerciseForm.reset();
-    this.svc.initializeexerciseFrom();
-    this.dialogRef.close();
   }
 
 }

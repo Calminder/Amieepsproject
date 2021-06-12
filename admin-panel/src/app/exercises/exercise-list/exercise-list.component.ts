@@ -38,17 +38,19 @@ export class ExerciseListComponent implements OnInit
 
           return {
             $key: item.key,
+
             ...item.payload.val()
           };
-          //console.log("item");
+
         });
 
-
+        //console.log("array", array);
         this.dataSource = new MatTableDataSource(array);
         //console.log("Rr", this.dataSource.filteredData.length);
         this.dataSource.sort = this.sort;
+        //this.dataSource.sortingDataAccessor
         this.dataSource.paginator = this.paginator;
-        this.displayedColumns = ["id", "title", "actions"];
+        this.displayedColumns = ["id", "title", "date", "actions"];
       });
 
   }
@@ -68,31 +70,45 @@ export class ExerciseListComponent implements OnInit
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = '60%';
+    dialogConfig.height = '90%';
     this.dialog.open(ExerciseComponent, dialogConfig);
   }
   onEdit(row: any)
   {
+    //console.log(row);
+
     this.svc.poulateexerciseForm(row);
+
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = '60%';
+    dialogConfig.height = '90%';
     this.dialog.open(ExerciseComponent, dialogConfig);
   }
 
-  onDelete(key: any)
+  onDelete(key: any, row: any)
   {
     this.dialogsvc.openConfirmDialog('Are you sure you want to delete the question').afterClosed().subscribe(res =>
     {
       if (res) {
-       var desertRef = firebase.storage().ref().child('images/desert.jpg');
+        if (row.url != '') {
+          var httpsReference = firebase.storage().refFromURL(`${ row.url }`);
+          //this.files.push(httpsReference);
+          //console.log('dataform url', httpsReference);
+          var desertRef = firebase.storage().ref().child(httpsReference.name);
 
-        // Delete the file
-        desertRef.delete().then(() => {
-          // File deleted successfully
-        }).catch((error) => {
-          // Uh-oh, an error occurred!
-        });
+          // Delete the file
+          desertRef.delete().then(() =>
+          {
+            // File deleted successfully
+          }).catch((error) =>
+          {
+            // Uh-oh, an error occurred!
+          });
+
+        }
+
         this.svc.deleteExercise(key);
         this.notif.warn('Deleted');
       }
