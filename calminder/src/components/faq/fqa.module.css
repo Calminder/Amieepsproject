@@ -32,7 +32,7 @@ article{
     background-position: absolute;
     background-size: 100%;
     background-repeat: no-repeat;
-    height: 95%;
+    height: 80%;
     width: 65%;
    
 }
@@ -62,9 +62,9 @@ header .popo {
 .faqs {
     margin: 0 auto;
     padding: 25px;
-    width: calc(100% / 8 * 6 - 20px);
+    width: calc(100% / 8 * 6.5 - 20px);
     list-style-type: none;
-    transform: scale(0.95);
+    transform: scale(0.9);
     height: 60%;
     position: fixed;
     overflow: auto;

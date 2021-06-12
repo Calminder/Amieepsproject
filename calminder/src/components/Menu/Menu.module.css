@@ -85,14 +85,14 @@ ul {
 
 }
 
-ul li a {
+ul .menuli a {
     font-size: 25px;
     color: white;
     text-decoration: none;
     font-weight: bold;
 }
 
-li {
+.menuli {
     box-sizing: border-box;
     margin-top: 56px;
 }
