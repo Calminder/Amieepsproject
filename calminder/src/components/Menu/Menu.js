@@ -15,6 +15,10 @@ export const Menu = () =>
         {
             value: 'FAQ',
             href: '/faq',
+        },
+        {
+           value: 'Music',
+           href: '/music',
         }
     ];
     const [open, setOpen] = useState(false);

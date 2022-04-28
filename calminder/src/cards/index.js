@@ -7,9 +7,12 @@ import btn_rotate from '../resources/btn_rotate.png';
 import btn_multiple from '../resources/btn_multiple.png';
 import { getFullDate } from '../helpers/dateHendlers';
 import { CardsWeek } from "./CardsWeek";
+import ChoiceOfCategories from "./ChoiceOfCategories";
 import { getCards } from '../services/firebase.service';
+import { getCardImageByCategory } from '../services/card.service'; 
+ 
 import Header from './header';
-
+//const selectCategory = getCardImageByCategory(category) || ''; //pair (image
 export const List = () =>
 {
     const [mode, setMode] = useState('MULTIPLE');
@@ -47,16 +50,17 @@ export const List = () =>
     function getRandomInt(max)
     {
         return Math.floor(Math.random() * max);
-    }
+    } 
 
     return (
-
+        
         <div className={styles.wrapper}>
             <Header></Header>
+            /*
             <div className={styles.overflowbackground}>
-
-
+                
                 <div className={styles.overflow}>
+                    <ChoiceOfCategories></ChoiceOfCategories>
                     {
                         mode === "MULTIPLE" &&
                         <div className={styles.list}>
@@ -77,9 +81,10 @@ export const List = () =>
                                 </Link>
                             )}
                         </div>
+                        
                     }
 
-                    {
+                    {/*
                         mode === "ROTATE" &&
                         <div className={styles.listRotate}>
                             {cards.map((card, index) =>
@@ -104,8 +109,8 @@ export const List = () =>
                                 </Link>
                             )}
                         </div>
-                    }
-                    {
+                    */}
+                    {/*
                         mode === "SIMPLE" &&
                         <div className={styles.listSimple}>
                             <div className={styles.column}>
@@ -180,14 +185,16 @@ export const List = () =>
                                 </Link>
                             </div>
                         </div>
-                    }
+                    */}
                 </div>
             </div>
+        
             <div className={styles.controls}>
                 <img src={btn_simple} onClick={() => setMode("SIMPLE")} />
                 <img src={btn_rotate} onClick={() => setMode("ROTATE")} />
                 <img src={btn_multiple} onClick={() => setMode("MULTIPLE")} />
             </div>
+            
         </div>
     )
 

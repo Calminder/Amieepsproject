@@ -6,7 +6,7 @@ import { List }  from '../cards';
 import { Activity } from './activity';
 import FaqList from './faq/FaqList';
 import { Menu } from './Menu/Menu';
-
+import {Music} from './music/music';
 import {
   BrowserRouter as Router,
   Switch,
@@ -113,6 +113,9 @@ export function AnimationLandingPage() {
             </Route>
             <Route path="/about">
               <About />
+            </Route>
+            <Route path="/music">
+              <Music/>
             </Route>
           </Switch>
         </Router>

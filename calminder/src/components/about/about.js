@@ -142,54 +142,32 @@ export const About = () =>
                             "float": "right"
                         }} src={artboard82} />
                     </div>
-                </section>
+                </section> */
                 <section >
                     <div className={styles.teams}>
 
-                        <h3>Wallace Helsen – Teacher/ Research Team</h3>
-
-                        <p>Founder of the name ‘Calminder’ and author of mindfulness explorations.
-                            Spokesperson from the group and voice-over in the promo-video.
-                            Contact person for teachers and sponsors.</p>
+                        <h3>Indy Sluijs - Team leader/Text writer</h3>
                         <br></br>
 
 
-                        <h3>Miruna Maidik - Team leader/Text writer</h3>
+                        <h3>Yurii Herasin - Programmer and UI/UX Designer</h3>
+
+                        <p>As a programmer me and my team provided a platform for children and teachers to explore mindfulness. As a Graphic Designer responsible for the visual style of website</p>
                         <br></br>
 
 
-                        <h3>Ayoub Aouraghe - Programmer</h3>
+                        <h3>Ana Vilaplana Brotons and Maria del Mar Rodriguez – Teacher/research team</h3>
 
-                        <p>As a programmer me and my team provided a platform for children and teachers to explore mindfulness.</p>
+                        <p>Responsible for the website's pedagogical perspective, the design of the explorations, collecting and answering FAQs.</p>
                         <br></br>
 
 
-                        <h3>Amalie Omsland Bakken – Teacher/research team</h3>
-
-                        <p>Responsible for the website's pedagogical perspective, the design of the explorations and collecting and answering FAQs.
-
-                            Contact person for teachers and test group.</p>
+                        <h3>Levi Meskens - Contact Person</h3>
+                        <p>Contact person for coaches, teachers and test group.</p>
+                        
                         <br></br>
 
 
-                        <h3>Alexander Aleksidze - UI/UX Designer/ Graphic designer</h3>
-
-                        <p>As a UI/UX designer responsible for the visual style and the user friendliness of the website
-
-                            As a Graphic Designer responsible for the presentation, brandbook and the promo video visual style.</p>
-                        <br></br>
-
-
-
-
-                        <h3>Yaroslav Taran – music creator</h3>
-
-                        <p>The creator of musical compositions and music for individual exercises.</p>
-                        <br></br>
-
-
-                        <h3>Yeva Bielinska - Programmer.</h3>
-                        <p>Responsible for the development of the functionally of the front-end part of the site</p>
                     </div>
                 </section>
             </div>

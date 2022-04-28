@@ -1,0 +1,80 @@
+.wrapper {
+  width: 1000px;
+  margin: auto;
+  background-color: rgba(9, 204, 230, 0.74);
+  padding: 30px 20px 100px 20px;
+  margin-top: 150px;
+  border-radius: 20px;
+  .first_screen {
+    width: 100%;
+    display: inline-block;
+    flex-wrap: wrap;
+    p {
+      margin-bottom: 30px;
+    }
+    .title {
+      font-family: "Baloo 2";
+      font-size: 55px;
+      color: #ffbb00;
+      width: 100%;
+      padding-bottom: 30px;
+      text-align: center;
+    }
+    .main {
+      width: 100%;
+      font-size: 40px;
+      font-family: "Lato";
+      color: rgb(243, 148, 6);
+      background-color: #a05d8c00;
+      h1 {
+        color: rgba(0, 110, 255, 0.945);
+        margin-top: 20px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+.logo {
+  right: 0;
+  left: 0;
+  top: 10px;
+  margin: 0 auto;
+  position: absolute;
+  background-image: url("../../resources/logo_calminder.png");
+  background-position: center;
+  background-size: 150px;
+  background-repeat: no-repeat;
+  z-index: 100;
+  width: 150px;
+  height: 150px;
+}
+.amielogo {
+  top: -45px;
+  left: -20px;
+
+  position: fixed;
+  background-image: url("../../resources/logo_amie.png");
+  background-position: center;
+  background-size: 200px;
+  background-repeat: no-repeat;
+
+  z-index: 100 !important;
+  width: 250px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.teams {
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Baloo 2";
+  color: white;
+  margin-bottom: 200px;
+  margin-top: 50px;
+  width: 70%;
+  font-size: 22px;
+}
+.teams p {
+  font-family: "Lato";
+}

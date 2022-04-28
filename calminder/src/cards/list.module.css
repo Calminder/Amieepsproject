@@ -39,6 +39,31 @@
     position: relative;
 }
 
+.textSection {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    background-color: rgba(13, 81, 241, 0.221);
+    margin: 5px 5px 15px;
+    padding: 5px;
+}
+
+.ChoiceButtons {
+    background-color: #7669de; /* Green */
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgb(2, 3, 8);
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 75%;
+    font-size: 32px;
+}
+
 .wrapper .controls {
     position: absolute;
     right: 30px;

@@ -91,7 +91,7 @@ export const Activity = () =>
     useEffect(async () =>
     {
         setLoading(true);
-        const cards = await getCards();
+        const cards = await getCards(); //here is what I need , took from Firebase
         setCard(cards[id]);
         setLoading(false)
     }, []);
@@ -105,22 +105,22 @@ export const Activity = () =>
 
             <div className={styles.shadow}>
                 <Header></Header>
-                <Music warn={card.musicUrl} />
-
+                <Music warn={card.musicUrl}/>
 
                 <div className={styles.wrapper}>
                     <div className={cardOpened ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
                         <Picture warn={card.url} />
                         <div className={styles.cardActive}
                             style={{
-                                backgroundImage: boolPicture ? `url(${Background})` : `url(${(card.url)})`,
-                                backgroundSize: "cover",
+                                
+                                backgroundImage: boolPicture ? `url(${Background})` : `url(${(card.url)})`, //импорт неба, как картинки для упражнения
+                                backgroundSize: "cover", //изменить значения для вставки горизонтальных картинок
                                 backgroundPosition: 'center'
                             }}
                         >
                             <div className={styles.close} onClick={() => setCardOpened(false)}>X</div>
                             <div className={styles.title}>
-                                picture
+                                
                             </div>
 
                             <div className={styles.value}>
@@ -128,7 +128,6 @@ export const Activity = () =>
                             </div>
                         </div>
                     </div>
-
                     <div className={styles.goal}>
                         <h1 className={styles.title}>
                             {card.title}
