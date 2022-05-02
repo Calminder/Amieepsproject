@@ -3,6 +3,7 @@ import { getCardImageByCategory } from '../services/card.service';
 
 export const Card = ({ title, description, image, activeDay, style, category }) =>
 {
+    // { title, description, image, activeDay, style, category } - arguments
     const selectCategory = getCardImageByCategory(category) || ''; //pair (image,category)
     return (
         <div className={styles.flipCard} style={style}>
