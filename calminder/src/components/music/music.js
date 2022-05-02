@@ -14,46 +14,54 @@ export const Music = () =>
             <div className={styles.wrapper}>
                 <section className={styles.first_screen}>
                     <div className={styles.title}>
-                        <h1>SoundCloud Music</h1>
+                        <h1>Mindfulness Music</h1>
                     </div>
                     <div className={styles.main}>
-                        <h4>Here you can find our tracks from SoundCloud to listen to and incorporate into your mindfulness practice. Enjoy!</h4>
-                        <h1>Piano</h1>
+                        <p>The music is created by professional musicians around Europe who are involved in the AMIE project. The music is often made in co-creation with students with no Background in music.
+                            The musicians took mindfulness as the inspiration and main theme for composing or improvising. 
+                            <br></br>You can enjoy the music with your students and use it:
+                                <ol>
+                                    <li>As a mindful listening exercise</li>
+                                    <li>As inspiration or an intro for your own musical activities.</li>
+                                    <li>As background music while doing other creative and/or mindfulness exercises.</li>
+                                </ol>
+                        </p>
+                        <h2>Piano</h2>
                         <ReactPlayer 
                         width='100%'
                         height='5%'
                         controls={true}
                         url='https://soundcloud.com/project-claminder/conv1-miz1?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing'  
                         />
-                        <h1>Bell</h1>
+                        <h2>Bell</h2>
                         <ReactPlayer 
                         width='100%'
                         height='5%'
                         controls={true}
                         url='https://soundcloud.com/project-claminder/bell?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing'  
                         />
-                        <h1>Birds in forest</h1>
+                        <h2>Birds in forest</h2>
                         <ReactPlayer 
                         width='100%'
                         height='5%'
                         controls={true}
                         url='https://soundcloud.com/project-claminder/birds-in-forest?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing'  
                         />
-                        <h1>Rain forest</h1>
+                        <h2>Rain forest</h2>
                         <ReactPlayer 
                         width='100%'
                         height='5%'
                         controls={true}
                         url='https://soundcloud.com/project-claminder/rain-forest?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing'  
                         />
-                        <h1>American flute</h1>
+                        <h2>American flute</h2>
                         <ReactPlayer 
                         width='100%'
                         height='5%'
                         controls={true}
                         url='https://soundcloud.com/project-claminder/american-flute?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing'  
                         />
-                        <h1>Charming nature</h1>
+                        <h2>Charming nature</h2>
                         <ReactPlayer 
                         width='100%'
                         height='5%'

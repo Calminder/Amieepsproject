@@ -40,13 +40,17 @@
 }
 
 .textSection {
-    position: relative;
-    display: inline-block;
+    position: sticky;
+    display: block;
+    font-family: 'Lato';
+    color: rgb(255,255,255);
     width: 100%;
     height: auto;
     text-align: center;
-    background-color: rgba(13, 81, 241, 0.221);
-    margin: 5px 5px 15px;
+    background-color: rgba(13, 81, 241, 0.735);
+    border-radius: 20px;
+    margin: 5px;
+    margin-right: 10px;
     padding: 5px;
 }
 

@@ -1,18 +1,16 @@
 import React from 'react';
 import styles from "./list.module.css";
 import { categories } from '../constants/cards';
+import {List} from './index';
 
 //category - это аргумент
 // ищет категории по заданному слову categories.find(c => c.name === category)
 // c  - возвращаемая пара (изображение, категория)
-function displayDate() {
-    document.getElementById("demo").innerHTML = Date();
-  }
 
-function showAllExcercises() {
-    console.log(categories.length);
 
-}
+//category - это аргумент
+// ищет категории по заданному слову categories.find(c => c.name === category)
+// c  - возвращаемая пара (изображение, категория)
 
 
 function ChoiceOfCategories()
@@ -25,9 +23,7 @@ function ChoiceOfCategories()
                         and mindfulness in education. These exercises range from painting to paying attention to your
                         surroundings. Let's get started!
                     </p>
-                    <button onClick ={showAllExcercises}> Show all exercises </button>
-                    <p id="demo"></p>
-                </div>
+        </div>
     )
 }
 

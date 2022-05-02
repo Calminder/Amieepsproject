@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { useEffect, useState } from "react";
 import { Card } from './card';
 import styles from './list.module.css';
@@ -10,22 +12,62 @@ import { CardsWeek } from "./CardsWeek";
 import ChoiceOfCategories from "./ChoiceOfCategories";
 import { getCards } from '../services/firebase.service';
 import { getCardImageByCategory } from '../services/card.service'; 
- 
 import Header from './header';
 //const selectCategory = getCardImageByCategory(category) || ''; //pair (image
+
+function AllExercises(props) {
+    return (
+      <button className="btnAllExerc" onClick={props.onClick}>
+        {props.value}
+      </button>
+    );
+  }
+  
+class ChoiceOfExercises extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        title: "Show all exercises",
+      };
+    }
+    handleClick() {
+        console.log("1931");
+    }
+    renderAllExercises() {
+      return (
+        <AllExercises
+          value={this.props.title}
+          onClick={() => this.handleClick()}
+        />
+      );
+    }
+  
+    render() {
+      return (
+        <div>
+            {this.renderAllExercises()};
+        </div>
+      );
+    }
+}
+ 
+
 export const List = () =>
 {
     const [mode, setMode] = useState('MULTIPLE');
-
+    //MULTIPLE is a default condition of "mode"
+    //setMode is a method
     useEffect(async () =>
     {
         if (mode === "ROTATE")
         {
             const currentDay = getFullDate();
             const elem = cards.findIndex(card => card.activeDay === currentDay);
-            cards.unshift(...cards.splice(elem, cards.length));
+            cards.unshift(cards.splice(elem, cards.length));
+            //"unshift" adds new items to the beginning of cards array 
+            //"splice" removes "cards.length" items from element (with elem index) 
         }
-        await getCards();
+        await getCards(); // waiting for Cards from Firebase
     }, [mode]);
 
     const [cards, setCards] = useState([]);
@@ -50,21 +92,24 @@ export const List = () =>
     function getRandomInt(max)
     {
         return Math.floor(Math.random() * max);
+        //floor Math.floor( 45.95) = 45
     } 
+
+    
 
     return (
         
         <div className={styles.wrapper}>
-            <Header></Header>
-            /*
+            <Header></Header> 
             <div className={styles.overflowbackground}>
                 
                 <div className={styles.overflow}>
-                    <ChoiceOfCategories></ChoiceOfCategories>
+                    <ChoiceOfCategories></ChoiceOfCategories>  
+                    <ChoiceOfExercises></ChoiceOfExercises>
                     {
                         mode === "MULTIPLE" &&
                         <div className={styles.list}>
-                            {cards.map((card, index) =>
+                            {cards.map((card, index) => //creating cards array
                                 <Link to={`/activity/${index}`}>
                                     <Card
                                         title={card.title}
@@ -80,11 +125,12 @@ export const List = () =>
                                     />
                                 </Link>
                             )}
-                        </div>
-                        
+                        </div>   
                     }
+                
+                    
 
-                    {/*
+                    {
                         mode === "ROTATE" &&
                         <div className={styles.listRotate}>
                             {cards.map((card, index) =>
@@ -109,8 +155,8 @@ export const List = () =>
                                 </Link>
                             )}
                         </div>
-                    */}
-                    {/*
+                    }
+                    {
                         mode === "SIMPLE" &&
                         <div className={styles.listSimple}>
                             <div className={styles.column}>
@@ -185,8 +231,9 @@ export const List = () =>
                                 </Link>
                             </div>
                         </div>
-                    */}
-                </div>
+                    }
+                
+                    </div>
             </div>
         
             <div className={styles.controls}>

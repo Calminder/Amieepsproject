@@ -1,7 +1,7 @@
 .wrapper {
   width: 1000px;
   margin: auto;
-  background-color: rgba(9, 204, 230, 0.74);
+  background-color: rgba(11, 114, 170, 0.448);
   padding: 30px 20px 100px 20px;
   margin-top: 150px;
   border-radius: 20px;
@@ -15,7 +15,8 @@
     .title {
       font-family: "Baloo 2";
       font-size: 55px;
-      color: #ffbb00;
+      color: #ffffff;
+      //background-color: rgb(252, 186, 3);
       width: 100%;
       padding-bottom: 30px;
       text-align: center;
@@ -24,12 +25,18 @@
       width: 100%;
       font-size: 40px;
       font-family: "Lato";
-      color: rgb(243, 148, 6);
+      color: rgb(255, 255, 255);
       background-color: #a05d8c00;
+      margin: 15px 10px;
       h1 {
-        color: rgba(0, 110, 255, 0.945);
         margin-top: 20px;
         margin-bottom: 5px;
+      }
+      p {
+        font-size: 25px;
+      }
+      ol {
+        padding: 25px;
       }
     }
   }
