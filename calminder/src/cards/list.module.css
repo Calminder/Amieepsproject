@@ -15,11 +15,12 @@
 
 .wrapper .overflow {
     height: 60vh;
-    width: 900px;
+    width: 100%;
     overflow: auto;
     margin: auto;
+    padding: 0 15%;
     margin-top: 0px;
-    z-index: 11;
+    background-color: rgba(0, 245, 236, 0.81)
 }
 .wrapper .overflow .list {
     display: flex;
@@ -40,7 +41,7 @@
 }
 
 .wrapper .overflowbackground .textSection {
-    position: absolute;
+    position: relative;
     display: block;
     font-family: 'Lato';
     color: rgb(255,255,255);
@@ -54,8 +55,8 @@
     padding: 5px;
 }
 
-.ChoiceButtons {
-    background-color: #7669de; /* Green */
+.wrapper .overflowbackground .btnChoices {
+    background-color: #ff0707; /* Green */
     border-style: solid;
     border-width: 3px;
     border-color: rgb(2, 3, 8);
@@ -63,10 +64,16 @@
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    width: 75%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    width: 100%;
     font-size: 32px;
 }
+.wrapper .overflowbackground .btnChoices .btnAllExerc {
+    grid-column-start: span 5;
+}
+
 
 .wrapper .controls {
     position: absolute;

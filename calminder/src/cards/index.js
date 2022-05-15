@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { useEffect, useState } from "react";
 import { Card } from './card';
+import { categories } from '../constants/cards';
 import styles from './list.module.css';
 import { Link } from 'react-router-dom';
 import btn_simple from '../resources/btn_simple.png';
@@ -9,52 +10,16 @@ import btn_rotate from '../resources/btn_rotate.png';
 import btn_multiple from '../resources/btn_multiple.png';
 import { getFullDate } from '../helpers/dateHendlers';
 import { CardsWeek } from "./CardsWeek";
-import ChoiceOfCategories from "./ChoiceOfCategories";
 import { getCards } from '../services/firebase.service';
 import { getCardImageByCategory } from '../services/card.service'; 
 import Header from './header';
 //const selectCategory = getCardImageByCategory(category) || ''; //pair (image
 
-function AllExercises(props) {
-    return (
-      <button className="btnAllExerc" onClick={props.onClick}>
-        {props.value}
-      </button>
-    );
-  }
-  
-class ChoiceOfExercises extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        title: "Show all exercises",
-      };
-    }
-    handleClick() {
-        console.log("1931");
-    }
-    renderAllExercises() {
-      return (
-        <AllExercises
-          value={this.props.title}
-          onClick={() => this.handleClick()}
-        />
-      );
-    }
-  
-    render() {
-      return (
-        <div>
-            {this.renderAllExercises()};
-        </div>
-      );
-    }
-}
- 
 
 export const List = () =>
 {
     const [mode, setMode] = useState('MULTIPLE');
+    const [category, setCategory] = useState([]);
     //MULTIPLE is a default condition of "mode"
     //setMode is a method
     useEffect(async () =>
@@ -93,23 +58,66 @@ export const List = () =>
     {
         return Math.floor(Math.random() * max);
         //floor Math.floor( 45.95) = 45
-    } 
-
-    
+    }     
 
     return (
-        
+ 
         <div className={styles.wrapper}>
             <Header></Header> 
             <div className={styles.overflowbackground}>
-                
-                <div className={styles.overflow}>
-                    <ChoiceOfCategories></ChoiceOfCategories>  
-                    <ChoiceOfExercises></ChoiceOfExercises>
+                <div className={styles.textSection}>
+                    <p> Mindfulness is beneficial for children of all ages as they learn how to bring a gentle,
+                        accepting atitude to the present moment. Mindfulness together with art will create an approachable
+                        environment for children. On the Calminder website exercises are provided to help implement arts
+                        and mindfulness in education. These exercises range from painting to paying attention to your
+                        surroundings. Let's get started!
+                    </p>
+                </div>
+                <div className={styles.btnChoices}>
+                    <div className={styles.btnAllExerc}>
+                        <button class = {styles.ButtonAll} onClick={() => setCategory([])}>
+                            Show all Exercises
+                        </button>
+                    </div>
+                    <button onClick={() => setCategory(categories[0].name)}>
+                        {categories[0].name}
+                    </button>
+                    <button onClick={() => setCategory(categories[1].name)}>
+                        Creating
+                    </button>
+                    <button onClick={() => setCategory(categories[2].name)}>
+                        Expressions
+                    </button>
+                    <button onClick={() => setCategory(categories[3].name)}>
+                        Movement
+                    </button>
+                    <button onClick={() => setCategory(categories[4].name)}>
+                        Experiments
+                    </button>
+                </div>
+                <div className={styles.overflow}> 
                     {
                         mode === "MULTIPLE" &&
-                        <div className={styles.list}>
-                            {cards.map((card, index) => //creating cards array
+
+                        <div className = {styles.list}>
+                        {   (category.length > 0) ? 
+                            cards.filter(filter => filter.category == category).map((card, index) => //creating cards array 
+                            <Link to={`/activity/${index}`}>
+                                <Card
+                                    title={card.title}
+                                    description={card.description}
+                                    image={card.url}
+                                    requirmens={card.requirmens}
+                                    age={card.age}
+                                    materials={card.materials}
+                                    activeDay={card.activeDay}
+                                    goal={card.goal}
+                                    flip={true}
+                                    category={card.category}
+                                />
+                            </Link>
+                            ) :
+                            cards.map((card, index) => //creating cards array 
                                 <Link to={`/activity/${index}`}>
                                     <Card
                                         title={card.title}
@@ -133,7 +141,8 @@ export const List = () =>
                     {
                         mode === "ROTATE" &&
                         <div className={styles.listRotate}>
-                            {cards.map((card, index) =>
+                        {       (category.length > 0) ? 
+                                cards.filter(filter => filter.category == category).map((card, index) => //creating cards array =>
                                 <Link to={`/activity/${index}`}
                                     style={{
                                         position: "absolute",
@@ -151,7 +160,27 @@ export const List = () =>
                                         goal={card.goal}
                                         category={card.category}
                                     />
-
+                                </Link>
+                                )
+                                :
+                                cards.map((card, index) => //creating cards array =>
+                                <Link to={`/activity/${index}`}
+                                    style={{
+                                        position: "absolute",
+                                        transform: `rotate(${getRotate(index)}deg)`,
+                                        right: `${getRandomInt(150)}px`
+                                    }}>
+                                    <Card
+                                        title={card.title}
+                                        description={card.description}
+                                        image={card.image}
+                                        requirmens={card.requirmens}
+                                        age={card.age}
+                                        materials={card.materials}
+                                        activeDay={card.activeDay}
+                                        goal={card.goal}
+                                        category={card.category}
+                                    />
                                 </Link>
                             )}
                         </div>
@@ -233,7 +262,8 @@ export const List = () =>
                         </div>
                     }
                 
-                    </div>
+                </div>
+
             </div>
         
             <div className={styles.controls}>
@@ -243,8 +273,7 @@ export const List = () =>
             </div>
             
         </div>
-    )
-
+       )
 };
 
 

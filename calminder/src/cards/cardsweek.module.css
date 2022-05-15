@@ -19,7 +19,8 @@
     margin: 15px;
     padding: 50px 10px;
     box-sizing: border-box;
-    background: gray;
+    background: rgb(114, 72, 72);
+    border-radius: 28px;
 
 }
 

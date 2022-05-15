@@ -1,8 +1,8 @@
 .shadow {
     position: absolute;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0 ,0, .4);
+    height: 250%;
+    background-color: rgba(0, 0, 0, 0.465);
     font-family: 'Baloo 2';
 }
 
@@ -17,16 +17,20 @@
 
 .shadow .wrapper {
     margin: 0 auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3%;
     color: white;
-    margin-top: 10%;
+    background-color: rgba(0, 0, 0, 0.049);
+    border-radius: 20px;
+    height: auto;
+    margin-top: 2%;
     width: 80%;
-    height: 60%;
+    height: 65%;
 }
 
 .shadow .wrapper .goal {
     padding: 0px 20px;
-    flex: 1;
     overflow: auto;
 }
 
@@ -65,56 +69,70 @@
     height: fit-content;
 }
 
-
-.shadow .wrapper .card {
+/* container for an image of exercise */
+.shadow .card {
     position: relative;
     font-size: 16px;
     border-radius: 8px;
-    width: 300px;
-    padding: 20px;
-    flex:1;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 15%;
+    padding: 2%;
+    margin-top: 13%;
 }
 
-.shadow .wrapper .cardActiveWrapper {
-    position: absolute;
+.shadow .cardActiveWrapper {
+    position: fixed;
     left: 0px;
     top: 0px;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0 ,0, .4);
+    background-color: rgba(0, 0, 0, 0.445);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 20;
 }
 
-.shadow .wrapper .cardCloseWrapper {
+.shadow .cardCloseWrapper {
     display: none;
 }
 
-.shadow .wrapper .cardActiveWrapper .cardActive {
+.shadow .cardActiveWrapper .cardActive {
     font-size: 16px;
-    border-radius: 8px;
-    width: 60%;
-    height: 60%;
-    padding: 20px;
-    margin: auto
+    border-radius: 38px;
+    position: top;
+    width: 100%;
+    height: 75%;
+    padding: 1%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+    background-color:rgba(0, 0, 0, 0.605);
+    color: rgb(255, 255, 255);
+    z-index: 11;
 }
 
-
-.shadow .wrapper .cardActiveWrapper .cardActive .close{
-    text-align: end;
-}
-
-.shadow .wrapper .card .title, .shadow .wrapper .cardActiveWrapper .cardActive .title {
+.shadow .card .title {
     text-align: center;
     font-size: 30px;
 }
-
+.shadow .cardActiveWrapper .cardActive .title {
+    text-align: left;
+    font-size: 40px;
+}
+.shadow .cardActiveWrapper .cardActive .bgImage{
+    font-size: 40px;
+    text-align: right;
+}
+.shadow .cardActiveWrapper .cardActive .close{
+    font-size: 40px;
+    text-align: right;
+}
 
 .shadow .wrapper .info {
     padding: 0px 20px;
-    flex: 1;
     overflow: auto;
 }
 
@@ -142,7 +160,6 @@
 
 }
 .shadow .wrapper .item .desc .scrolltext{
-    
     height: 30px;
 }
 
@@ -163,21 +180,21 @@
     top:10;
     margin-bottom: 25px;
 }
-.customplayertitle{
+.customplayertitle {
     font-size: 18px;
     font-weight: 100;
     margin-left: 0px;
     width: 100%;
     text-align: center;
 }
-.customplayertimer{
+.customplayertimer {
     text-align: right;
     margin-right: 2%;
     width: 200px;
     font-size: 14px;
     font-weight: 100;
 }
-.customplayerbtn{
+.customplayerbtn {
     background-color: transparent;
     min-width: 70px;
     text-align: center;
@@ -187,7 +204,7 @@
     margin-left: 1%;
     align-items: center;
 }
-.logo{
+.logo {
     right: 0;
     left: 0;
     top: 10px;
@@ -201,7 +218,7 @@
     width: 150px;
     height: 150px;
 }
-.amielogo{
+.amielogo {
     top: -45px;
     left:-20px;
     
