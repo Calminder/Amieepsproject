@@ -39,8 +39,8 @@
     position: relative;
 }
 
-.textSection {
-    position: sticky;
+.wrapper .overflowbackground .textSection {
+    position: absolute;
     display: block;
     font-family: 'Lato';
     color: rgb(255,255,255);
