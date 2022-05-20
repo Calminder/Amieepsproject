@@ -110,22 +110,19 @@ export const Activity = () =>
                 <div className={styles.wrapper}>
                     <div className={cardOpened ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
                         <Picture warn={card.url} />
-                        <div className={styles.cardActive}
-                            style={{
-                                
-                                backgroundImage: boolPicture ? `url(${Background})` : `url(${(card.url)})`, //импорт неба, как картинки для упражнения
-                                backgroundSize: "cover", //изменить значения для вставки горизонтальных картинок
-                                backgroundPosition: 'center'
-                            }}
-                        >
-                            <div className={styles.close} onClick={() => setCardOpened(false)}>X</div>
+                        <div className={styles.cardActive}>
                             <div className={styles.title}>
-                                
-                            </div>
+                                {card.title}  
+                            </div>   
+                            <div className={styles.bgImage}
+                            style={{
+                                backgroundImage: boolPicture ? `url(${Background})` : `url(${(card.url)})`, //импорт неба, как картинки для упражнения
+                            }}
+                            >
 
-                            <div className={styles.value}>
-
                             </div>
+                            <div className={styles.close} onClick={() => setCardOpened(false)}>X</div>
+                            
                         </div>
                     </div>
                     <div className={styles.goal}>
@@ -160,9 +157,9 @@ export const Activity = () =>
                         onClick={() => setCardOpened(true)}
                         style={{
                             backgroundImage: boolPicture ? `url(${Background})` : `url(${(card.url)})`,
-                            backgroundSize: "cover",
-                            backgroundPosition: 'center'
-
+                            backgroundSize: "contain",
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat'
                         }}
                     >
                         <div className={styles.output}>

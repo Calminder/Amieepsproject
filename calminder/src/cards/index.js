@@ -73,27 +73,25 @@ export const List = () =>
                         surroundings. Let's get started!
                     </p>
                 </div>
-                <div className={styles.btnChoices}>
-                    <div className={styles.btnAllExerc}>
-                        <button class = {styles.ButtonAll} onClick={() => setCategory([])}>
-                            Show all Exercises
-                        </button>
+                <div class={styles.btnChoices}>
+                    <div class = {styles.ButtonAll} onClick={() => setCategory([])}>
+                        Show all Exercises
                     </div>
-                    <button onClick={() => setCategory(categories[0].name)}>
+                    <div class = {styles.button} onClick={() => setCategory(categories[0].name)}>
                         {categories[0].name}
-                    </button>
-                    <button onClick={() => setCategory(categories[1].name)}>
+                    </div>
+                    <div class = {styles.button} onClick={() => setCategory(categories[1].name)}>
                         Creating
-                    </button>
-                    <button onClick={() => setCategory(categories[2].name)}>
+                    </div>
+                    <div class = {styles.button} onClick={() => setCategory(categories[2].name)}>
                         Expressions
-                    </button>
-                    <button onClick={() => setCategory(categories[3].name)}>
+                    </div>
+                    <div class = {styles.button} onClick={() => setCategory(categories[3].name)}>
                         Movement
-                    </button>
-                    <button onClick={() => setCategory(categories[4].name)}>
+                    </div>
+                    <div class = {styles.button} onClick={() => setCategory(categories[4].name)}>
                         Experiments
-                    </button>
+                    </div>
                 </div>
                 <div className={styles.overflow}> 
                     {
@@ -266,11 +264,6 @@ export const List = () =>
 
             </div>
         
-            <div className={styles.controls}>
-                <img src={btn_simple} onClick={() => setMode("SIMPLE")} />
-                <img src={btn_rotate} onClick={() => setMode("ROTATE")} />
-                <img src={btn_multiple} onClick={() => setMode("MULTIPLE")} />
-            </div>
             
         </div>
        )
