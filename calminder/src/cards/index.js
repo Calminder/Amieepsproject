@@ -99,8 +99,8 @@ export const List = () =>
 
                         <div className = {styles.list}>
                         {   (category.length > 0) ? 
-                            cards.filter(filter => filter.category == category).map((card, index) => //creating cards array 
-                            <Link to={`/activity/${index}`}>
+                            cards.filter(filter => filter.category == category).map((card) => //creating cards array 
+                            <Link to={`/activity/${cards.findIndex(v => v.title == card.title)}`}>
                                 <Card
                                     title={card.title}
                                     description={card.description}
@@ -140,8 +140,8 @@ export const List = () =>
                         mode === "ROTATE" &&
                         <div className={styles.listRotate}>
                         {       (category.length > 0) ? 
-                                cards.filter(filter => filter.category == category).map((card, index) => //creating cards array =>
-                                <Link to={`/activity/${index}`}
+                                cards.filter(filter => filter.category == category).map((card) => //creating cards array =>
+                                <Link to={`/activity/${cards.findIndex(v => v.title == card.title)}`}
                                     style={{
                                         position: "absolute",
                                         transform: `rotate(${getRotate(index)}deg)`,
