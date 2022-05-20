@@ -34,8 +34,8 @@ const seasons = {
         className: 'plants',
         static: true,
         style: {
-          zIndex: 7,
-          bottom: '0px',
+          zIndex: 2,
+          bottom: '-97px',
         },
       },
       {
@@ -65,7 +65,7 @@ const seasons = {
         static: true,
         style: {
           zIndex: 7,
-          bottom: '0px',
+          bottom: '-77px',
         },
       },
       {
@@ -95,7 +95,7 @@ const seasons = {
         static: true,
         style: {
           zIndex: 7,
-          bottom: '0px',
+          bottom: '-77px',
         },
       },
       {
@@ -132,7 +132,7 @@ const seasons = {
         static: true,
         style: {
           zIndex: 7,
-          bottom: '0px',
+          bottom: '-77px',
         },
       },
       {
