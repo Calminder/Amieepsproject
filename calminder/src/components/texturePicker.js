@@ -35,7 +35,7 @@ const seasons = {
         static: true,
         style: {
           zIndex: 2,
-          bottom: '-97px',
+          bottom: '-157px',
         },
       },
       {
