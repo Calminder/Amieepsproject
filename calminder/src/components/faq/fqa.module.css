@@ -133,7 +133,7 @@ header .popo {
     width: 222.5px;
     height: 80px;
     border-bottom-left-radius: 35px;
-    background-color:  #c700d9;
+    background-color:  #ff5a3a;
     font-size: 2em;
     text-align: center;
     line-height: 5em;
@@ -159,9 +159,9 @@ header .popo {
 }
 .faqs .faqOpen .imgContainerQuestion {
     width: 222.5px;
-    height: auto;
+    height: 80px;
     border-bottom-left-radius: 35px;
-    background-color:  #0aea15;
+    background-color:  #ff5a3a;
     content: '';
     background-image: url("../../resources/arrow.png");
     background-position: center;
