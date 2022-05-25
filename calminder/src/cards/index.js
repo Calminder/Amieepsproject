@@ -67,10 +67,10 @@ export const List = () =>
             <div className={styles.overflowbackground}>
                 <div className={styles.textSection}>
                     <p> Mindfulness is beneficial for children of all ages as they learn how to bring a gentle,
-                        accepting atitude to the present moment. Mindfulness together with art will create an approachable
-                        environment for children. On the Calminder website exercises are provided to help implement arts
-                        and mindfulness in education. These exercises range from painting to paying attention to your
-                        surroundings. Let's get started!
+                        accepting attitude to the present moment. 
+                        Mindfulness together with art will create a stimulating environment for children to learn an develop.
+                        On the Calminder website exercises are provided to help implement arts and mindfulness in education.
+                        The exercises range from being creative to accepting your emotions and translating these into artworks. Let's get started!  
                     </p>
                 </div>
                 <div class={styles.btnChoices}>

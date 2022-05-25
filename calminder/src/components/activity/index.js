@@ -176,7 +176,7 @@ export const Activity = () =>
                             <div className={styles.title}>
                                 <span className={styles.text}>
                                     Title
-                            </span>
+                                </span>
 
                             </div>
                             <div className={styles.desc}>
