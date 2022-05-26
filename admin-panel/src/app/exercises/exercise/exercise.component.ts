@@ -19,11 +19,13 @@ import { snapshotChanges } from '@angular/fire/database';
 export class ExerciseComponent implements OnInit
 {
   options = [
-    { id: 1, value: 'Creating' },
-    { id: 2, value: 'Experiments' },
-    { id: 3, value: 'Expressions' },
-    { id: 4, value: 'Movement' },
-    { id: 5, value: 'Music' },
+    { id: 1, value: 'Music' },
+    { id: 2, value: 'Visual Art' },
+    { id: 3, value: 'Drama' },
+    { id: 4, value: 'Digital art' },
+    { id: 5, value: 'Writing' },
+    { id: 6, value: 'Dance - Movement' },
+    { id: 7, value: 'stories - poetry' }
   ];
   files: any[] = [];
   deletedFiles: any[] = [];
