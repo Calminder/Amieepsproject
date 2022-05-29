@@ -1,7 +1,7 @@
 import styles from './card.module.css';
 import { getCardImageByCategory } from '../services/card.service';
 
-export const Card = ({ title, description, image, activeDay, style, category }) =>
+export const Card = ({ title, description, image, video, activeDay, style, category }) =>
 {
     // { title, description, image, activeDay, style, category } - arguments
     const selectCategory = getCardImageByCategory(category) || ''; //pair (image,category)

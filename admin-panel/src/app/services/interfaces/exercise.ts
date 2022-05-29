@@ -14,4 +14,5 @@ export interface IExercise
     extra: string;
     url: string;
     musicUrl: string;
+    videoURL: string;
 }

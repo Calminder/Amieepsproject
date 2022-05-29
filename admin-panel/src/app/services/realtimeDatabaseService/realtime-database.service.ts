@@ -8,6 +8,7 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 @Injectable({
   providedIn: 'root'
 })
+// this service can be seen in the whole application
 export class RealtimeDatabaseService
 {
   questionForm: FormGroup = new FormGroup({
@@ -46,7 +47,8 @@ export class RealtimeDatabaseService
     instructions: new FormControl('', Validators.required),
     extra: new FormControl(''),
     url: new FormControl(''),
-    musicUrl: new FormControl('')
+    musicUrl: new FormControl(''),
+    videoURL: new FormControl('')
   });
 
   initializeexerciseFrom()
@@ -64,9 +66,11 @@ export class RealtimeDatabaseService
       instructions: '',
       extra: '',
       url: '',
-      musicUrl: ''
+      musicUrl: '',
+      videoURL: ''
     });
   }
+  //'url' parameter is for photos
   poulateexerciseForm(exercise: IExercise)
   {
     this.exerciseForm.setValue({
@@ -82,7 +86,8 @@ export class RealtimeDatabaseService
       instructions: exercise.instructions,
       extra: exercise.extra,
       url: exercise.url,
-      musicUrl: exercise.musicUrl
+      musicUrl: exercise.musicUrl,
+      videoURL: exercise.videoURL
     });
   }
 
@@ -144,7 +149,8 @@ export class RealtimeDatabaseService
       extra: exercise.extra,
       url: exercise.url,
       date: exercise.date,
-      musicUrl: exercise.musicUrl
+      musicUrl: exercise.musicUrl,
+      videoURL: exercise.videoURL
     });
 
   }
@@ -163,8 +169,8 @@ export class RealtimeDatabaseService
       instructions: exercise.instructions,
       extra: exercise.extra,
       url: exercise.url,
-      musicUrl: exercise.musicUrl
-
+      musicUrl: exercise.musicUrl,
+      videoURL: exercise.videoURL
     });
   }
 

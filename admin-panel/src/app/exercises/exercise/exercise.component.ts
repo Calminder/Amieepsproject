@@ -20,18 +20,17 @@ export class ExerciseComponent implements OnInit
 {
   options = [
     { id: 1, value: 'Music' },
-    { id: 2, value: 'Visual Art' },
-    { id: 3, value: 'Drama' },
-    { id: 4, value: 'Digital art' },
-    { id: 5, value: 'Writing' },
-    { id: 6, value: 'Dance - Movement' },
-    { id: 7, value: 'stories - poetry' }
+    { id: 2, value: 'Creating' },
+    { id: 3, value: 'Expressions' },
+    { id: 4, value: 'Experiments' },
+    { id: 5, value: 'Movement' },
   ];
   files: any[] = [];
   deletedFiles: any[] = [];
   //imageToFirebase: any[] = [];
   isHovering!: boolean;
   selectedFile!: File;
+  //! means this expression cannot be null or undefined here
   downloadURL!: string;
   uploadTask: any;
   test: boolean = false;
@@ -41,6 +40,7 @@ export class ExerciseComponent implements OnInit
   constructor(public svc: RealtimeDatabaseService, private note: NotificationService,
     @Optional() public dialogRef: MatDialogRef<ExerciseListComponent>,
     private storage: AngularFireStorage) { }
+    // @Optional enables the possibility of null result
 
 
   ngOnInit(): void
@@ -82,7 +82,8 @@ export class ExerciseComponent implements OnInit
           instructions: this.svc.exerciseForm.value.instructions,
           extra: this.svc.exerciseForm.value.extra,
           url: this.downloadURL,
-          musicUrl: this.svc.exerciseForm.value.musicUrl
+          musicUrl: this.svc.exerciseForm.value.musicUrl,
+          videoURL: this.svc.exerciseForm.value.videoURL
         };
         //console.log(exercisepost);
 
@@ -104,7 +105,8 @@ export class ExerciseComponent implements OnInit
           instructions: this.svc.exerciseForm.value.instructions,
           extra: this.svc.exerciseForm.value.extra,
           url: this.downloadURL,
-          musicUrl: this.svc.exerciseForm.value.musicUrl
+          musicUrl: this.svc.exerciseForm.value.musicUrl,
+          videoURL: this.svc.exerciseForm.value.videoURL
         };
         //console.log(this.svc.exerciseForm.value.date);
 
@@ -211,7 +213,8 @@ export class ExerciseComponent implements OnInit
             instructions: this.svc.exerciseForm.value.instructions,
             extra: this.svc.exerciseForm.value.extra,
             url: await downloadURL,
-            musicUrl: this.svc.exerciseForm.value.musicUrl
+            musicUrl: this.svc.exerciseForm.value.musicUrl,
+            videoURL: this.svc.exerciseForm.value.videoURL
           };
           //console.log(this.svc.exerciseForm.value.date);
 

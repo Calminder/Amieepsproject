@@ -1,14 +1,5 @@
 {
   "projects": {
     "default": "calminder-6e144"
-  },
-  "targets": {
-    "calminder-6e144": {
-      "hosting": {
-        "admin-panel": [
-          "calminder-6e144"
-        ]
-      }
-    }
   }
 }

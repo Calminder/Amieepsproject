@@ -100,7 +100,7 @@ export function AnimationLandingPage() {
       })
       }
       <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 5}}>
-        <Router>
+        <Router basename='/index.html'>
           <Switch>
             <Route path="/" exact>
             <List />
