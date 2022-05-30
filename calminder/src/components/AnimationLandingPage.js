@@ -68,7 +68,7 @@ export function AnimationLandingPage() {
     setInterval(() => {
       const page = window.location.pathname.includes('/activity') || window.location.pathname.includes('/faq');
       const plants = document.querySelector('.plants');
-      if(page)  plants.style.zIndex = 5;
+      if (page)  plants.style.zIndex = 5;
       else plants.style.zIndex = 7;
     }, 100);
 
@@ -100,7 +100,7 @@ export function AnimationLandingPage() {
       })
       }
       <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 5}}>
-        <Router basename='/index.html'>
+        <Router>
           <Switch>
             <Route path="/" exact>
             <List />

@@ -45,21 +45,6 @@ export const List = () =>
         setLoading(false)
     }, []);
 
-    const getRotate = (index) =>
-    {
-        if (index % 2 === 0)
-        {
-            return index * 45 + index * 10;
-        }
-        return index * -45 + index * 10;
-    };
-
-    function getRandomInt(max)
-    {
-        return Math.floor(Math.random() * max);
-        //floor Math.floor( 45.95) = 45
-    }     
-
     return (
  
         <div className={styles.wrapper}>
@@ -81,16 +66,16 @@ export const List = () =>
                         {categories[0].name}
                     </div>
                     <div class = {styles.button} onClick={() => setCategory(categories[1].name)}>
-                        Creating
+                        {categories[1].name}
                     </div>
                     <div class = {styles.button} onClick={() => setCategory(categories[2].name)}>
-                        Expressions
+                        {categories[2].name}
                     </div>
                     <div class = {styles.button} onClick={() => setCategory(categories[3].name)}>
-                        Movement
+                        {categories[3].name}
                     </div>
                     <div class = {styles.button} onClick={() => setCategory(categories[4].name)}>
-                        Experiments
+                        {categories[4].name}
                     </div>
                 </div>
                 <div className={styles.overflow}> 

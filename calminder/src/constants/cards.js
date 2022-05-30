@@ -22,7 +22,7 @@ export const categories = [
     
     {
         // yes
-        name: 'Writing',
+        name: 'Experiments',
         image: 'categories/experiments.jpg'
     },
     
