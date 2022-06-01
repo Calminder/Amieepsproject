@@ -82,7 +82,29 @@
     padding: 2%;
     margin-top: 0%;
 }
+.shadow .wrapper .video {
+    display: none;
+}
+/* */
+.shadow .wrapper .videoPlayer {
+    grid-area: 1 / 1 / span 1 / span 2;
+    /* background-color: rgba(0, 221, 44, 0.909); */
+    position: relative;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: 100%;
+    padding: 2%;
+    margin-top: 0%;
+}
 
+.shadow .wrapper .NoVideoPlayer {
+    display: none;
+}
+
+/* */
 .shadow .cardActiveWrapper {
     position: fixed;
     left: 0px;

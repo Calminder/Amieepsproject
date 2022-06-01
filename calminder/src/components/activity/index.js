@@ -15,6 +15,7 @@ const clientId = 'c5a171200f3a0a73a523bba14a1e0a29';
 var boolPicture = true;
 var boolMusic = true;
 var boolVideo = true;
+let videoLink = "";
 /*
 const Player = withSoundCloudAudio(props =>
 {
@@ -62,21 +63,23 @@ function Video(props)
 {
     if (props.warn == "")
     {
-        boolVideo = true;
+        return boolVideo = true;
     }
     else
     {
         boolVideo = false;
+        videoLink = props.warn;
+        console.log(videoLink);
     }
-
     return (
         <div></div>
     );
+
 }
 
 export const Activity = () =>
 {
-    const { id } = useParams();
+    const { id } = useParams(); /*specially for address bar */
     const [cardOpened, setCardOpened] = useState(false);
 
     /*const card = getCardById(id);*/
@@ -94,13 +97,14 @@ export const Activity = () =>
     /* const { title, duration, requirmens, age, materials, description, goal } = card;*/
 
     return (
-
+        // this file doesn't correspond to the file in "cards" folder
         card ?
 
             <div className={styles.shadow}>
                 <Header></Header>
+                <Video warn={card.videoURL} />
                 <div className={styles.wrapper}>
-                    <div className={ cardOpened ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
+                    <div className={ (cardOpened && boolVideo) ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
                         <Picture warn={card.url} />
                         <div className={styles.cardActive}>
                             <div className={styles.title}>
@@ -111,11 +115,32 @@ export const Activity = () =>
                                 backgroundImage: boolPicture ? `url(${Background})` : `url(${(card.url)})`, //импорт неба, как картинки для упражнения
                             }}
                             >
-
                             </div>
                             <div className={styles.close} onClick={() => setCardOpened(false)}>X</div>
-                            
                         </div>
+                    </div>
+
+                    <section className={ boolVideo ? styles.card : styles.video}
+                        onClick={() => setCardOpened(true)}
+                        style={{
+                            backgroundImage: boolPicture ? `url(${Background})` : `url(${(card.url)})`,
+                            backgroundSize: "contain",
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat'
+                        }}
+                    >
+
+                    </section>
+
+                    <div className = { boolVideo ? styles.NoVideoPlayer: styles.videoPlayer}>
+                        <iframe src = {videoLink}
+                        width="100%" height="100%"
+                        title = {card.title}
+                        frameborder="0" 
+                        allow="accelerometer;
+                        gyroscope;
+                        picture-in-picture"
+                        allowfullscreen></iframe>
                     </div>
                     <div className={styles.goal}>
                         <h1 className={styles.title}>
@@ -144,23 +169,6 @@ export const Activity = () =>
                         </div>
 
                     </div>
-
-                    <section className={styles.card}
-                        onClick={() => setCardOpened(true)}
-                        style={{
-                            backgroundImage: boolPicture ? `url(${Background})` : `url(${(card.url)})`,
-                            backgroundSize: "contain",
-                            backgroundPosition: 'center',
-                            backgroundRepeat: 'no-repeat'
-                        }}
-                    >
-                        <div className={styles.output}>
-                            <div className={styles.title}></div>
-                            <div className={styles.desc}></div>
-                        </div>
-
-                    </section>
-
 
                     <div className={styles.info}>
                         <div className={styles.item}>
