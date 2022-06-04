@@ -13,7 +13,11 @@ import { QuestionListComponent } from '../question-list/question-list.component'
 })
 export class QuestionComponent implements OnInit
 {
-
+  options = [
+    { id: 1, value: 'General' },
+    { id: 2, value: 'Teachers' },
+    { id: 3, value: 'Mindfulness' }
+  ];
   constructor(public svc: RealtimeDatabaseService, private note: NotificationService,
     @Optional() public dialogRef: MatDialogRef<QuestionListComponent>) { }
 
@@ -31,7 +35,8 @@ export class QuestionComponent implements OnInit
           title: this.svc.questionForm.value.title,
           answer: this.svc.questionForm.value.answer,
           source: this.svc.questionForm.value.source,
-          sourceCheck: this.svc.questionForm.value.sourceCheck
+          sourceCheck: this.svc.questionForm.value.sourceCheck,
+          category: this.svc.questionForm.value.category
         };
         this.svc.createQuestion(questionpost);
         this.note.succes('was successfully added!');
@@ -41,8 +46,8 @@ export class QuestionComponent implements OnInit
           title: this.svc.questionForm.value.title,
           answer: this.svc.questionForm.value.answer,
           source: this.svc.questionForm.value.source,
-          sourceCheck: this.svc.questionForm.value.sourceCheck
-
+          sourceCheck: this.svc.questionForm.value.sourceCheck,
+          category: this.svc.questionForm.value.category
         };
         this.svc.updateQuestion(questionupdate);
         this.note.succes('was successfully updated!');

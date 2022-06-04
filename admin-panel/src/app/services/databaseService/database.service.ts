@@ -15,6 +15,7 @@ export class DatabaseService
     $key: new FormControl(null),
     title: new FormControl('', Validators.required),
     answer: new FormControl('', Validators.required),
+    category: new FormControl(''),
     source: new FormControl(''),
     sourceCheck: new FormControl(false)
   });
@@ -24,6 +25,7 @@ export class DatabaseService
     this.questionForm.setValue({
       $key: null,
       title: '',
+      category: '',
       answer: '',
       source: '',
       sourceCheck: false
@@ -106,7 +108,8 @@ export class DatabaseService
       .update({
         title: question.title,
         answer: question.answer,
-        source: question.source
+        source: question.source,
+        category: question.category
       });
   }
 
@@ -140,7 +143,8 @@ export class DatabaseService
         wonder: exercise.wonder,
         materials: exercise.materials,
         instructions: exercise.instructions,
-        extra: exercise.extra
+        extra: exercise.extra,
+        videoURL: exercise.videoURL
       });
   }
 

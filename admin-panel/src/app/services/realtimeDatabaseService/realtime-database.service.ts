@@ -16,7 +16,8 @@ export class RealtimeDatabaseService
     title: new FormControl('', Validators.required),
     answer: new FormControl('', Validators.required),
     source: new FormControl(''),
-    sourceCheck: new FormControl(false)
+    sourceCheck: new FormControl(false),
+    category: new FormControl(0)
   });
 
   initializequestionFrom()
@@ -26,7 +27,8 @@ export class RealtimeDatabaseService
       title: '',
       answer: '',
       source: '',
-      sourceCheck: false
+      sourceCheck: false,
+      category: 0
     });
   }
   poulatequestionForm(Faq: any)
@@ -109,8 +111,8 @@ export class RealtimeDatabaseService
       title: question.title,
       answer: question.answer,
       source: question.source,
-      sourceCheck: question.sourceCheck
-
+      sourceCheck: question.sourceCheck,
+      category: question.category
     });
   }
 
@@ -120,7 +122,8 @@ export class RealtimeDatabaseService
       title: question.title,
       answer: question.answer,
       source: question.source,
-      sourceCheck: question.sourceCheck
+      sourceCheck: question.sourceCheck,
+      category: question.category
     });
   }
 
