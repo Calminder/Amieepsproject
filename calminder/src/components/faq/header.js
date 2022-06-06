@@ -8,9 +8,8 @@ function Header()
             <div className={styles.amielogo}></div>
 
             <header>
-                <div className={styles.popo}>FAQ</div>
-                <article >
-
+                <div className={styles.popo}>FAQ Categories</div>
+                <article>
                 </article>
             </header>
 
