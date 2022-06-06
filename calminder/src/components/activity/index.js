@@ -69,7 +69,6 @@ function Video(props)
     {
         boolVideo = false;
         videoLink = props.warn;
-        console.log(videoLink);
     }
     return (
         <div></div>
@@ -112,7 +111,7 @@ export const Activity = () =>
                             </div>   
                             <div className={styles.bgImage}
                             style={{
-                                backgroundImage: boolPicture ? `url(${Background})` : `url(${(card.url)})`, //импорт неба, как картинки для упражнения
+                                backgroundImage: boolPicture ? `url(${Background})` : `url(${(card.url)})`, 
                             }}
                             >
                             </div>

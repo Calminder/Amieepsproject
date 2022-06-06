@@ -114,7 +114,7 @@ export const About = () =>
                             educational contexts in the form of a
                             weekly calendar containing 'ready-to-go'
                             exercises.</p>
-
+                            
                         <p>Interdisciplinary and internationally
                             composed student teams developed this
                             multi-year-based project website under

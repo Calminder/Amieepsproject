@@ -16,7 +16,8 @@ export class QuestionComponent implements OnInit
   options = [
     { id: 1, value: 'General' },
     { id: 2, value: 'Teachers' },
-    { id: 3, value: 'Mindfulness' }
+    { id: 3, value: 'Mindfulness' },
+    { id: 4, value: 'Other' }
   ];
   constructor(public svc: RealtimeDatabaseService, private note: NotificationService,
     @Optional() public dialogRef: MatDialogRef<QuestionListComponent>) { }

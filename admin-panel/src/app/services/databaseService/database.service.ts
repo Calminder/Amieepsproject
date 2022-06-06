@@ -15,7 +15,7 @@ export class DatabaseService
     $key: new FormControl(null),
     title: new FormControl('', Validators.required),
     answer: new FormControl('', Validators.required),
-    category: new FormControl(''),
+    category: new FormControl('', Validators.required),
     source: new FormControl(''),
     sourceCheck: new FormControl(false)
   });

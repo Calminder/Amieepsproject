@@ -10,6 +10,7 @@ const componentFaq = fag =>
             faqList.push(snap.val());
         });
         return faqList;
+        //returns an array of FAQs
     });
 };
 

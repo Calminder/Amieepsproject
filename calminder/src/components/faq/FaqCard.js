@@ -6,16 +6,16 @@ import { useEffect, useState } from 'react';
 function FaqCard(props) {
     const [question, setQuestion] = useState({});
     const [index] = useState(props.index);
-
+    const [open, setOpen] = useState(false);
     useEffect(() => {
         setQuestion(props.question);
     }, []);
-
+    // here is an error
     const toggleFAQ  = () => {
-        setQuestion({...question, open: !question.open})
+        setOpen(!open);
     };
 
-    const toggleClass = question.open ? styles.faqOpen : styles.faq;
+    const toggleClass = open ? styles.faqOpen : styles.faq;
 
         return (
 
@@ -40,7 +40,7 @@ function FaqCard(props) {
 
                     </div>
                     <div className={styles.faqAnswer} >
-                        {question.answer}
+                      <p> {question.answer}</p>  
                     </div>
                 </div>
             </div>

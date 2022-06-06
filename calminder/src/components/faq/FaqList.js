@@ -4,19 +4,35 @@ import { useEffect, useState } from 'react';
 import styles from './fqa.module.css';
 import Header from './header';
 import { getFaqs } from '../../services/firebase.service';
-
+import FaqCategory from './FaqCategory';
+let count = 0;
+const categories = [];
+function UniqueCategories (props) {
+    let searchForCategories;
+    count++;
+    props.FAQs.forEach( searchForCategories = (item) => {
+        if (item.category != "" & !categories.includes(item.category)) {
+            categories.push(item.category);
+        }
+    })
+    console.log(categories,' ',count);
+    return (
+        <div></div>
+    );
+}
 export const FaqList = (props) =>
 {
     const [questions, setQuestions] = useState([]);
+    //above useState([]) is correct
     const [loading, setLoading] = useState(false);
     useEffect(async () =>
-    {
+    { 
         setLoading(true);
         const result = await getFaqs();
         setQuestions(result);
-        setLoading(false)
+        setLoading(false);
+        console.log("FAQ list works!");
     }, []);
-
     return (
 
         <>
@@ -26,16 +42,23 @@ export const FaqList = (props) =>
             {
                 loading && <div>Loading...</div>
             }
+            <UniqueCategories 
+                FAQs = {questions}
+            />
             {
-                !loading &&
-                <ol className={styles.faqs}>
-                    {
-                        questions.map((question, index) => (
-                            <li key={question.id}>
-                                <FaqCard question={question} index={index} />
-                            </li>
-                        ))
-                    }
+                !loading 
+                && 
+                <ol className={styles.faqCategories}>
+                {
+                    categories.map((category, index) => (
+                        <li key={category.id}>
+                            <FaqCategory 
+                                category={category}
+                                index={index}
+                             />
+                        </li>
+                    ))
+                }
                 </ol>
             }
         </>
