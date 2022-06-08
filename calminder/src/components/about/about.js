@@ -23,28 +23,18 @@ export const About = () =>
                     </div>
 
                     <div className={styles.left}>
-                        <p>Mindfulness is the ability to be aware of
-                            what is happening in the present
-                            moment,without any judgement. It is a
-                            basic human ability that everyone has,
-                            that we can cultivate and train by prac
-                            tice. During mindfulness exercises,we
-                            are invited to pay attention to thoughts,
-                            sounds,smell,observations,emotions,
-                            parts of the body or the sensations of
-                            breathing, and to bring our attention
-                            back to the object of focus whenever the
-                            mind starts to wander. Another form of
-                            exercise is not using a specific focus yet
-                            training to stay aware of where the attention
-                            moves to. A third group of exercises
-                            are often called 'informal exercises':
-                            we train ourselves by paying more
-                            attention to specific actions, situations
-                            and interactions in our daily lives. For
-                            example, we drink tea, brush our hair, or
-                            walk to the next room with our full
-                            awareness.</p>
+                        <p>Mindfulness is the ability to be aware of 
+                           what is happening in the present moment,
+                           without any judgement. It is a basic human
+                           ability that everyone has, that we can cultivate and train by practice.
+                           During mindfulness exercises, we are invited to
+                           pay attention to thoughts, sounds, smell, observations,
+                           emotions, parts of the body or the sensations of breathing,
+                           and to bring our attention back to the object of focus whenever the mind starts to wander.
+                           Another form of exercise is not using a specific focus yet training to stay aware of where the
+                            attention moves to. A third group of exercises are often called 'informal exercises':
+                           we train ourselves by paying more attention to specific actions, situations and interactions in our daily lives.
+                           For example, we drink tea, brush our hair, or walk to the next room with our full awareness. </p>
 
                         <p>With guidance and training, mindfulness
                             can develop into a way of living that
@@ -69,7 +59,7 @@ export const About = () =>
                 </section>
                 <section className={styles.second_screen}>
                     <div className={styles.title}>
-                        About the A.M.i.E. Project
+                        A.M.i.E. Project
                     </div>
                     <div className={styles.left}>
                         <img src={artboard77} />
@@ -145,77 +135,80 @@ export const About = () =>
                 </section> */
                 <section >
                     <div className={styles.teams}>
-                        <h1>A.M.i.E. team 2020/2021</h1>
-
-                        <h3>Wallace Helsen – Teacher/ Research Team</h3>
-
+                        <h1><u>A.M.i.E. team 2020/2021</u></h1>
+                        
+                        <h3>Wallace Helsen — Teacher/ Research Team</h3>
+                        <p>Primary education teacher in training (Belgium) </p>
                         <p>Founder of the name ‘Calminder’ and author of mindfulness explorations.
                             Spokesperson from the group and voice-over in the promo-video.
                             Contact person for teachers and sponsors.</p>
                         <br></br>
 
 
-                        <h3>Miruna Maidik - Team leader/Text writer</h3>
+                        <h3>Miruna Maidik — Team leader/Text writer</h3>
+                        <p>Advertising student (Romania)</p>
+                        <p>The text writer responsible for writing and revising the text of the different exercises.</p>
                         <br></br>
 
 
-                        <h3>Ayoub Aouraghe - Programmer</h3>
-
-                        <p>As a programmer me and my team provided a platform for children and teachers to explore mindfulness.</p>
+                        <h3>Ayoub Aouraghe — Programmer</h3>
+                        <p>Elektronica-ICT Cloud applications student (Belgium)</p>
+                        <p>Starting up and programming a platform for children and teachers to explore mindfulness.</p>
                         <br></br>
 
 
-                        <h3>Amalie Omsland Bakken – Teacher/research team</h3>
-
-                        <p>Responsible for the website's pedagogical perspective, the design of the explorations and collecting and answering FAQs.
-
-                            Contact person for teachers and test group.</p>
+                        <h3>Amalie Omsland Bakken — Teacher/research team</h3>
+                        <p>Primary and lowser secondary education teacher in training (Norway)</p>
+                        <p>Responsible for the website's pedagogical perspective, the design of the explorations and collecting and answering FAQs.</p>
                         <br></br>
 
-                        <h3>Alexander Aleksidze - UI/UX Designer/ Graphic designer</h3>
-
-                        <p>As a UI/UX designer responsible for the visual style and the user friendliness of the website
-
-                            As a Graphic Designer responsible for the presentation, brandbook and the promo video visual style.</p>
+                        <h3>Alexander Aleksidze — UI/UX Designer/ Graphic designer</h3>
+                        <p>Media Arts student (Georgia)</p>
+                        <p>The UI/UX designer is responsible for the visual style
+                           and the user friendliness of the website. The Graphic Designer is responsible
+                            for the presentation, brand book and the promo video. </p>
                         <br></br>
 
-
-
-
-                        <h3>Yaroslav Taran – music creator</h3>
-
+                        <h3>Yaroslav Taran — Music creator</h3>
+                        <p>Computer science student (Ukraine)</p>
                         <p>The creator of musical compositions and music for individual exercises.</p>
                         <br></br>
 
-                        <h3>Yeva Bielinska - Programmer.</h3>
+                        <h3>Yeva Bielinska — Programmer</h3>
+                        <p>Student: Intelligent technologies of micro- and nanoelectronics (Ukraine)</p>
                         <p>Responsible for the development of the functionally of the front-end part of the site</p>
 
 
                         <br></br>
                         <br></br>
                         <br></br>
-                        <h1>A.M.i.E. team 2021/2022</h1>
+                        <h1><u>A.M.i.E. team 2021/2022</u></h1>
 
-                        <h3>Indy Sluijs - Team leader/Text writer</h3>
+                        <h3>Indy Sluijs — Team leader/Text writer</h3>
+                        <p>Communication student (The Netherlands)  </p>
+                        <p>The text writer is responsible of revising and rewriting the exercises. The researcher made sure the right researching techniques were used.</p>
                         <br></br>
 
 
-                        <h3>Yurii Herasin - Programmer and UI/UX Designer</h3>
-
-                        <p>As a programmer me and my team provided a platform for children and teachers to explore mindfulness. As a Graphic Designer responsible for the visual style of website</p>
+                        <h3>Yurii Herasin — Programmer and UI/UX Designer</h3>
+                        <p>Computer engineering student (Ukraine) </p>
+                        <p>The programmer provided a platform for children and teachers to explore mindfulness. The UI/UX designer is responsible for the visual style and the user friendliness of the website.</p>
                         <br></br>
 
 
-                        <h3>Ana Vilaplana Brotons and Maria del Mar Rodriguez – Teacher/research team</h3>
-
-                        <p>Responsible for the website's pedagogical perspective, the design of the explorations, collecting and answering FAQs.</p>
+                        <h3>Ana Vilaplana Brotons — Teacher/team leader</h3>
+                        <p>Primary education teacher training student (Spain)</p>
+                        <p>Responsible for the website's pedagogical perspective, the design of the explorations, collecting and answering FAQs. Leader of the team during meetings and groupwork together with Maria.</p>
                         <br></br>
 
-
-                        <h3>Levi Meskens - Contact Person</h3>
-                        <p>Contact person for coaches, teachers and test group.</p>
-                        
+                        <h3>Maria del Mar Rodriguez — Teacher/team leader</h3>
+                        <p>Primary education teacher training student (Spain)</p>
+                        <p>Responsible for the website's pedagogical perspective, the design of the explorations, collecting and answering FAQs. Leader of the team during meetings and groupwork together with Ana.</p>
                         <br></br>
+
+                        <h3>Levi Meskens — Contact person</h3>
+                        <p>Occupational therapy student (Belgium)  </p>
+                        <p>Responsible for creating new exercises and researching teachers' opinions. During the project responsible for keeping in contact with the coaches and the team.</p>
 
 
                     </div>
