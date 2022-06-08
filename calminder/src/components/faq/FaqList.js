@@ -48,18 +48,18 @@ export const FaqList = (props) =>
             {
                 !loading 
                 && 
-                <ol className={styles.faqCategories}>
+                <div className={styles.faqCategories}>
                 {
                     categories.map((category, index) => (
-                        <li key={category.id}>
+                        <div key={category.id}>
                             <FaqCategory 
                                 category={category}
                                 index={index}
                              />
-                        </li>
+                        </div>
                     ))
                 }
-                </ol>
+                </div>
             }
         </>
     )

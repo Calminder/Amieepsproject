@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    --color: #06c74d;
 }
 /* h1{
     margin-top: 100px;
@@ -21,19 +22,17 @@
     width: 150px;
     height: 150px;
 }
-.popo{
-    margin-top: 150px; 
-}
+
 article {
-    margin-top: 220px;
-    
-    position: fixed ;
-    background-image: url("../../resources/blue_line.png");
+    margin: 200px auto 0;
+    position: absolute ;
+    background-image: url("../../resources/blue_line.png"); 
     background-position: absolute;
     background-size: 100%;
     background-repeat: no-repeat;
-    height: 80%;
-    width: 65%;
+    height: 60%;
+    width: 90%;
+    z-index: -5;
    
 }
 header{
@@ -45,170 +44,162 @@ header{
 }
 
 header .popo {
-    position: fixed ;
+    margin-top: 150px;
+    position: relative ;
     font-family: 'Baloo 2';
     color:#FFAF20;
     font-size: 40px;
     font-weight: 200;
 }
 
-.logoHolder{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding: 15px;
-}
 .faqCategories {
-    margin: 0 auto;
-    padding: 25px;
-    width: 85%;
-    background-color: rgba(172, 0, 245, 0);
-    transform: scale(0.95);
-    list-style-type: none;
-    height: 75%;
-    position: fixed;
-    overflow: auto;
-    left:0px;
-    right: 0px;
-    bottom:0px; 
-    top: 28%;
-
+    display: flex;
+    flex-direction: column;
+    margin-top: 4%;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 20;
 }
 
 .faqCategories .faqCategoryOpen, .faqCategories .faqCategoryClose {
-    display: block;
     margin: 2%;
     margin-top: 0;
-    background-color: rgba(66, 248, 0, 0);
+    margin-bottom: 2.5%;
 }
 
 /* ////////////////////////////// */
 .faqCategories .faqCategoryClose .categoryContainer, .faqCategories .faqCategoryOpen .categoryContainer {
-    display: flex;
+    display: grid;
+    grid-template-columns: 10% auto;
+    gap: 0;
 }
 
 .faqCategories .faqCategoryClose .categoryContainer .faqCategory, .faqCategories .faqCategoryOpen .categoryContainer .faqCategory {
     padding: 1.9% 2% 2%;
+    
+    background-color: rgb(3, 65, 151); /* #FFAF20; */
+    border-top-right-radius: 35px;
+    font-family: 'Baloo 2';
+    font-size: 20px;
+    color:white;
+    height: auto;
+    text-align: left;
+}
+
+.faqCategories .faqCategoryClose .categoryContainer .imgContainerCategory {
+    /*   width: 222.5px; */
+    border-bottom-left-radius: 35px;
+    background-image: url("../../resources/arrow90.png");
+    background-size: 55%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.faqCategories .faqCategoryOpen .categoryContainer .imgContainerCategory {
+    /*   width: 222.5px; */
+    border-bottom-left-radius: 35px;
+    background-image: url("../../resources/arrow.png");
+    background-size: 55%;
+    background-position: center;
+    background-repeat: no-repeat;
+} 
+
+/* a big gap */
+
+.faqCategories .faqCategoryClose .faqsFromCategory {
+    display: none;
+}
+/* FAQ card */ 
+.faqCategories .faqCategoryOpen .faqsFromCategory {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    margin: 2% 0 1.5%;
+ /*   background-color: rgb(7, 138, 9); */
+}
+/* FAQ Question */
+/* might be confusing */
+.faqCategories .faqCategoryOpen .faqsFromCategory .faq, .faqCategories .faqCategoryOpen .faqsFromCategory .faqOpen {
+    display: flex;
+    flex-direction: column;
+}
+
+.faqCategories .faqCategoryOpen .faqsFromCategory .faq .questionContainer, .faqCategories .faqCategoryOpen .faqsFromCategory .faqOpen .questionContainer {
+    display: grid;
+    grid-template-columns: 10% auto;
+}
+
+.faqCategories .faqCategoryOpen .faqsFromCategory .faq .questionContainer .imgContainerQuestion {
+    /*   width: 222.5px; */
+    border-bottom-left-radius: 35px;
+    font-size: 2em;
+    text-align: center;
+    background-color: rgb(3, 65, 151);
+    background-image: url("../../resources/arrow90.png");
+    background-position: center;
+    background-size: 40%;
+    background-repeat: no-repeat;
+}
+.faqCategories .faqCategoryOpen .faqsFromCategory .faqOpen .questionContainer .imgContainerQuestion {
+    /*   width: 222.5px; */
+    border-bottom-left-radius: 35px;
+    font-size: 2em;
+    text-align: center;
+    background-color: #000066;
+    background-image: url("../../resources/arrow.png");
+    background-position: center;
+    background-size: 40%;
+    background-repeat: no-repeat;
+}
+.faqCategories .faqCategoryOpen .faqsFromCategory .faq .questionContainer .faqQuestion, .faqCategories .faqCategoryOpen .faqsFromCategory .faqOpen .questionContainer .faqQuestion {
+    /* here I am */
+    padding: 1.5% 2% 1%;
     /* padding-top: 2.6%; */
     /* margin:0px; */
     background-color: #FFAF20;
     border-top-right-radius: 35px;
     font-family: 'Baloo 2';
     font-size: 20px;
-    width: 100%;
     color:white;
-    height: 80px;
+   /* height: 80px; */
     text-align: left;
-}
 
-.faqCategories .faqCategoryClose .categoryContainer .imgContainerCategory, .faqCategories .faqCategoryOpen .categoryContainer .imgContainerCategory {
-    width: 222.5px;
-    height: 80px;
-    border-bottom-left-radius: 35px;
-    font-size: 2em;
-    text-align: center;
-    line-height: 5em;
-    position: relative;
-    overflow: hidden;
 }
-  
-.faqCategories .faqCategoryClose .categoryContainer .imgContainerCategory:before {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    z-index: 5;
-    background-image: url("../../resources/arrow.png");
-    background-position: center;
-    background-size: 50px;
-    background-repeat: no-repeat;
-    transform: rotate(-90deg);
-}
-.faqCategories .faqCategoryOpen .categoryContainer .imgContainerCategory {
-    width: 222.5px;
-    height: 80px;
-    border-bottom-left-radius: 35px;
-    content: '';
-    background-image: url("../../resources/arrow.png");
-    background-position: center;
-    background-size: 50px;
-    background-repeat: no-repeat;
-}
-/* a big gap */
-
-
-.faqCategories .faqCategoryOpen .categoryContainer .faqsFromCategory {
-    margin: 0 auto;
-    padding: 25px;
-    width: calc(100% / 8 * 6.5 - 50px);
-    list-style-type: none;
-    transform: scale(0.9);
-    height: 60%;
-    position: fixed;
-    overflow: auto;
-    left: 60px;
-    right: 0px;
-    bottom:0px; 
-    top:27%;
-}
-.faqCategories .faqCategoryClose .categoryContainer .faqsFromCategory {
+/* here I am */
+.faqCategories .faqCategoryOpen .faqsFromCategory .faq .answerContainer{
     display: none;
 }
-/* */
-.faqCategories .faqCategoryOpen .faqsFromCategory .faqOpen .imgContainerAnswer{
-    /* background-color: #275E87;
-    opacity: 0.8; */
-
-    width: 222.5px;
-    content: '';
+.faqCategories .faqCategoryOpen .faqsFromCategory .faqOpen .answerContainer{
+    /* here I am */
+    display: grid;
+    grid-template-columns: 10% auto;
+}
+.faqCategories .faqCategoryOpen .faqsFromCategory .faqOpen .answerContainer .imgContainerAnswer{
+   /* width: 222.5px; */
+    background-color: #275E87;
     background-image: url("../../resources/star.png");
     background-position: center;
-    background-size: 40px;
+    background-size: 30%;
     background-repeat: no-repeat;
     border-bottom-left-radius: 35px;
-}
 
-.faqCategories .faqCategoryOpen .faqsFromCategory .faqOpen .answerContainer{
-    display: flex;
-    justify-content: flex-start;
-    position: relative;
-    opacity: 0.8;
+}
+.faqCategories .faqCategoryOpen .faqsFromCategory .faqOpen .answerContainer .faqAnswer {
+    color: white;
     background-color: #275E87;
-    z-index: -1; /* notice here */
-    border-bottom-left-radius: 35px;
+    font-family:'Lato';
+    /* max-height: 190%; */
+    padding: 2% 1% 1%;
     border-bottom-right-radius: 35px;
-}
-
-.faqCategories .faqCategoryOpen .faqsFromCategory .faq .faqAnswer {
+    font-size: 22px;
+} 
+.faqCategories .faqCategoryOpen .faqsFromCategory .faq .answerContainer .faqAnswer {
     font-family:'Lato';
     font-size:22px;
     color:white;
     max-height: 0;
     overflow-y: hidden;
-}   
-
-.faqCategories .faqCategoryOpen .faqsFromCategory .faqOpen .faqAnswer {
-    color: rgb(255, 255, 255);
-    font-family:'Lato';
-    max-height: 1000px;
-    width: 100%;
-    padding: 2%;
-    border-bottom-right-radius: 35px;
-    font-size: 22px;
-}
-
-.faqCategories .faqCategoryOpen .faqsFromCategory .faqOpen .answerContainer .shadow {
-    position: absolute;
-    width: 100%;
-    height: 48.55px;
-    top: -48px;
-    z-index: -1;
-    opacity: 0.;
-    background-color: #275E87;
-}
-
+} 
+/* */
 ::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */

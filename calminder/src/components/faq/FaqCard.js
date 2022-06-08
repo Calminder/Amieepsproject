@@ -18,14 +18,13 @@ function FaqCard(props) {
     const toggleClass = open ? styles.faqOpen : styles.faq;
 
         return (
-
             <div
                 className={toggleClass}
                 key={index}
-                onClick={toggleFAQ}
             >
 
-                <div className={styles.questionContainer}>
+                <div className={styles.questionContainer}
+                onClick={toggleFAQ}>
                     <div className={styles.imgContainerQuestion}>
                         
                     </div>
@@ -35,7 +34,6 @@ function FaqCard(props) {
                 </div>
                 
                 <div className={styles.answerContainer}>
-                    <div className={styles.shadow}></div>
                     <div className={styles.imgContainerAnswer}>
 
                     </div>

@@ -6,22 +6,19 @@ import { getFaqs } from '../../services/firebase.service';
 
 function FaqCategory(props) {
     const colors = [{
-            value: "#FA4659" //redish
+            value: "#0066cc" //blue
         },
         {
-            value: "#364F6B" //dark-blue
+            value: "#ff6600" //orange
         },
         {
-            value: "#A9EEE6" //light-green
+            value: "#009900" //green
         },
         {
-            value: "F0D43A" //yellow
+            value: "#b30086" //lilac
         },
         {
-            value:"#95ADBE"
-        },
-        {
-            value:"247E6C"
+            value:"#ff9900" //golden
         }
     ];
     const [category, setCategory] = useState([]);
@@ -43,36 +40,37 @@ function FaqCategory(props) {
     };
 
     const toggleClass = open ? styles.faqCategoryOpen : styles.faqCategoryClose;
-
         return (
 
             <div
                 className={toggleClass}
                 key={index}
-                onClick={toggleFAQ}
             >
 
-                <div className={styles.categoryContainer}>
+                <div className={styles.categoryContainer}
+                    onClick={toggleFAQ}
+                >
                     <div className={styles.imgContainerCategory}
-                    style={{
-                        backgroundColor: colors[index].value 
+                    style ={{
+                        backgroundColor: colors[index].value
                     }}
                     >
                     </div>
                     <div className={styles.faqCategory}>
                         <h1>{category}</h1>
                     </div>
-                    <ol className={styles.faqsFromCategory}>{
-                        questions.filter(filter => filter.category == category).map((question, index) => (
-                            <li key={question.id}>
-                                <FaqCard
-                                    question={question}
-                                    index={index}
-                                />
-                            </li>
-                        ))
-                    }
-                    </ol>
+                </div>
+                <div className={styles.faqsFromCategory}> {
+        
+                    questions.filter(filter => filter.category == category).map((question, index) => (
+                        <div key={question.id}>
+                            <FaqCard
+                                question={question}
+                                index={index}
+                            />
+                        </div>
+                    ))
+                }
                 </div>
             </div>
         )
