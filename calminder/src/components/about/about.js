@@ -239,7 +239,7 @@ export const About = () =>
                         <br></br>
 
                         <h3>Yeva Bielinska — Programmer</h3>
-                        <p>Student: Intelligent technologies of micro- and nanoelectronics (Ukraine)</p>
+                        <p>Intelligent technologies of micro- and nanoelectronics (Ukraine)</p>
                         <p>Responsible for the development of the functionally of the front-end part of the site</p>
 
 
