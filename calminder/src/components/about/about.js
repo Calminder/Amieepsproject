@@ -7,6 +7,11 @@ import artboard77 from '../../resources/Artboard77AP.png';
 import artboard82 from '../../resources/Artboard82AP.png';
 import artboard83 from '../../resources/Artboard83AP.png';
 
+import ap_hogeschool_antwerpen from '../../resources/AP_Hogeschool_Antwerpen.png';
+import curso_de_musica from '../../resources/Curso_de_Musica.png';
+import dundalk_institute from '../../resources/Dundalk_Institute_of_Technology.jpg';
+import speel_je_wijs from '../../resources/Speel je wijs.jpg';
+import wnu from '../../resources/WNU.jpg';
 import Header from './header'
 
 export const About = () =>
@@ -54,7 +59,9 @@ export const About = () =>
                     </div>
                     <div className={styles.right}>
                         <img src={artboard63} />
-                        <img src={artboard75} />
+                        <div className = {styles.leaves}>
+                            <img src={artboard75} />
+                        </div>
                     </div>
                 </section>
                 <section className={styles.second_screen}>
@@ -82,7 +89,64 @@ export const About = () =>
                             school environments.</p>
                     </div>
                 </section>
-                <section className={styles.three_screen}>
+                <section className={styles.third_screen}>
+                    <div className={styles.title}>
+                        The different schools that participated in the A.M.i.E. project  
+                    </div>
+                    <div className = {styles.organisation}>
+                        <div className={styles.left}>
+                            <img src={ap_hogeschool_antwerpen}/>
+                        </div>
+                        <div className={styles.right}>
+                            <h1>AP University of Applied Sciences and Arts Antwerp, Belgium </h1>
+                            <p>A university college in Belgium that offers
+                            trainings in many different directions.
+                            One of the directions being specialised in teaching primary
+                            school children. Most of the students who participated
+                            in the AMIE project are from this division.</p>
+                        </div>
+                        <div className={styles.left}>
+                            <img src={curso_de_musica}/>
+                        </div>
+                        <div className={styles.right}>
+                            <h1>Curso de Música Silva Monteiro Porto, Portugal  </h1>
+                            <p>A private music school in Porto that offers training courses
+                            at the level of Pre-School, First Cycle, Basic Course of Music,
+                            Secondary Course of Instrument and Music Training</p>
+                        </div>
+                        <div className={styles.left}>
+                            <img src={dundalk_institute}/>
+                        </div>
+                        <div className={styles.right}> 
+                            <h1>Dundalk Institute of Technology, Ireland</h1>
+                            <p>A school in Ireland that is specialised
+                            in research and technology. Most of the students
+                            who participated in the project are specialised
+                            in camera technology and filming.</p>
+                        </div>
+                        <div className={styles.left}>
+                            <img src={speel_je_wijs}/>
+                        </div>
+                        <div className={styles.right}> 
+                            <h1>Speel je Wijs</h1>
+                            <p>A one-woman company specialised
+                            in STEAM, playful learning and mindfulness
+                            in an educational context.</p>
+                        </div>
+                        <div className={styles.left}>
+                            <img src={wnu}/>
+                        </div>
+                        <div className={styles.right}> 
+                            <h1>Western Norway University of Applied Sciences, Norway</h1>
+                            <p>A public school in Norway that offers trainings
+                            in many different directions. One of the directions
+                            being specialised in teaching primary school children.
+                            Most of the students who participated in the AMIE project
+                            had this speciality.</p>
+                        </div>
+                    </div>
+                </section>
+                <section className={styles.fourth_screen}>
                     <div className={styles.title}>
                         What is Calminder?
                     </div>
