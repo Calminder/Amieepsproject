@@ -5,9 +5,8 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { PlayButton, Timer } from 'react-soundplayer/components';
-import { withSoundCloudAudio } from 'react-soundplayer/addons';
 import { getCards } from "../../services/firebase.service";
+import {getFormattedText} from './textFormatting.js';
 import Header from './header';
 import Background from '../../resources/sky.jpg';
 const clientId = 'c5a171200f3a0a73a523bba14a1e0a29';
@@ -16,32 +15,7 @@ var boolPicture = true;
 var boolMusic = true;
 var boolVideo = true;
 let videoLink = "";
-/*
-const Player = withSoundCloudAudio(props =>
-{
-    let { track, currentTime } = props;
-
-    return (
-        <div className={styles.customplayer}>
-            <PlayButton
-                className={styles.customplayerbtn}
-                onPlayClick={() =>
-                {
-
-                }}
-                {...props} />
-            <h2 className={styles.customplayertitle}>
-                {track ? track.title : 'Loading...'}
-            </h2>
-            <Timer
-                className={styles.customplayertimer}
-                duration={track ? track.duration / 1000 : 0}
-                currentTime={currentTime}
-                {...props} />
-        </div>
-    );
-});
-*/
+const text = [];
 function Picture(props)
 {
     if (props.warn == "")
@@ -71,25 +45,41 @@ function Video(props)
         videoLink = props.warn;
     }
     return (
-        <div></div>
+
+        <div>
+
+        </div>
     );
 
+}
+function FormatText(props)
+{
+    console.log(props.text);
+    const items = props.text;
+    const listItems = items.map((item) =>
+        <li>{item}</li>
+    );
+    return (
+        <div>
+            <ul>{listItems}</ul>
+        </div>
+    );
 }
 
 export const Activity = () =>
 {
     const { id } = useParams(); /*specially for address bar */
     const [cardOpened, setCardOpened] = useState(false);
-
-    /*const card = getCardById(id);*/
     const [card, setCard] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [instructions, setInstructions] = useState([]);
     useEffect(async () =>
     {
         setLoading(true);
         const cards = await getCards(); //here is what I need , took from Firebase
         setCard(cards[id]);
-        setLoading(false)
+        setInstructions(getFormattedText(cards[id].instructions));
+        setLoading(false);
     }, []);
 
 
@@ -164,7 +154,8 @@ export const Activity = () =>
 
                         </div>
                         <div className={styles.value}>
-                            {card.instructions}
+                            <FormatText
+                                text = {instructions} />
                         </div>
 
                     </div>
@@ -201,7 +192,7 @@ export const Activity = () =>
                             <div className={styles.title}>
                                 <span className={styles.text}>
                                     Age
-                                     </span>
+                                </span>
                             </div>
                             <div className={styles.desc}>
                                 {card.age}
@@ -212,7 +203,7 @@ export const Activity = () =>
                             <div className={styles.title}>
                                 <span className={styles.text}>
                                     Materials
-                                     </span>
+                                </span>
                             </div>
                             <div className={styles.desc}>
                                 {card.materials}

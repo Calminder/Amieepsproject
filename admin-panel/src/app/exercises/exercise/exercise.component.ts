@@ -108,7 +108,7 @@ export class ExerciseComponent implements OnInit
           musicUrl: this.svc.exerciseForm.value.musicUrl,
           videoURL: this.svc.exerciseForm.value.videoURL
         };
-        //console.log(this.svc.exerciseForm.value.date);
+        console.log(this.svc.exerciseForm.value.instructions);
 
         this.svc.updateExercise(exerciseupdate);
         // if (String(this.svc.exerciseForm.value.date) != this.date) {
