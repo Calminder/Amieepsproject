@@ -9,13 +9,20 @@ import btn_simple from '../resources/btn_simple.png';
 import btn_rotate from '../resources/btn_rotate.png';
 import btn_multiple from '../resources/btn_multiple.png';
 import { getFullDate } from '../helpers/dateHendlers';
-import { CardsWeek } from "./CardsWeek";
 import { getCards } from '../services/firebase.service';
 import { getCardImageByCategory } from '../services/card.service'; 
 import Header from './header';
 //const selectCategory = getCardImageByCategory(category) || ''; //pair (image
 
+const titles = [];
 
+function dropDownMenuItem(props) {
+    return (
+        <div> 
+            {props.text}
+        </div>
+    )
+}
 export const List = () =>
 {
     const [mode, setMode] = useState('MULTIPLE');
@@ -37,13 +44,20 @@ export const List = () =>
 
     const [cards, setCards] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [query, setQuery] = useState("");
     useEffect(async () =>
     {
         setLoading(true);
         const result = await getCards(); /* getting Data from Firebase */
         setCards(result);
+        result.forEach(card => {if (!titles.includes(card.title)) {
+            titles.push(card.title.trim());
+        }} );
+        console.log(titles);
         setLoading(false)
     }, []);
+
+    const toggleMenu = (query.length>0) ? styles.dropDownMenuOpen : styles.dropDownMenuClose;
 
     return (
  
@@ -78,13 +92,32 @@ export const List = () =>
                         {categories[4].name}
                     </div>
                 </div>
+                <div className = {styles.searchBars}>
+                    <div className = {styles.searchForTitle}> 
+                        <input type="text" id = "titleSearch" placeholder = "Search for exercise" onChange={(search) => setQuery(search.target.value.trim().toLowerCase())}/>
+                    </div>
+                </div>
+                
+                <div className={toggleMenu}>
+                {
+                   /* titles.forEach(title => {
+                        if (title.substr(0, query.length).toLowerCase() == query) {
+                            <div className = {styles.dropDownMenuItem}> 
+                                <dropDownMenuItem
+                                    props = {title} />
+                            </div>
+                        }
+                    }) */
+                }
+                </div>
+                
                 <div className={styles.overflow}> 
                     {
                         mode === "MULTIPLE" &&
 
                         <div className = {styles.list}>
                         {   (category.length > 0) ? 
-                            cards.filter(filter => filter.category == category).map((card) => //creating cards array 
+                            cards.filter(filter => filter.category == category && filter.title.toLowerCase().includes(query)).map((card) => //creating cards array 
                             <Link to={`/activity/${cards.findIndex(v => v.title == card.title)}`}>
                                 <Card
                                     title={card.title}
@@ -101,7 +134,7 @@ export const List = () =>
                                 />
                             </Link>
                             ) :
-                            cards.map((card, index) => //creating cards array 
+                            cards.filter(filter => filter.title.toLowerCase().includes(query)).map((card, index) => //creating cards array 
                                 <Link to={`/activity/${index}`}>
                                     <Card
                                         title={card.title}

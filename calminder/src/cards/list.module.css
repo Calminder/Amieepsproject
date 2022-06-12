@@ -1,18 +1,17 @@
 .wrapper {
     position: absolute;
-    display: flex;
-    top: 50px;
+    top: 5%;
     width: 100%;
     height: 200%;
 }
-.overflowbackground{
+.wrapper .overflowbackground{
     margin: 0 auto;
-  /*  background-color: rgba(143, 19, 19, 0.4); */
     height: 100%;
     width: 100%;
-    margin-top: 15%;
+    margin-top: 10%;
     overflow: auto;
     font-family: 'Lato';
+    display: block;
 }
 
 .wrapper .overflowbackground .overflow {
@@ -21,8 +20,7 @@
     overflow: auto;
     margin: auto;
     padding: 0 15%;
-    margin-top: 0.5%;
-    /* background-color: rgba(245, 90, 0, 0.805); */
+    margin-top: 0%;
 }
 .wrapper .overflowbackground .overflow .list {
     display: flex;
@@ -32,16 +30,6 @@
     z-index: 15;
 }
 
-.wrapper .overflowBackground .overflow .listRotate {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px;
-    width: 200px;
-    margin: auto;
-    padding-top: 100px;
-    position: relative;
-}
 
 .wrapper .overflowbackground .textSection {
     position: relative;
@@ -61,16 +49,13 @@
 }
 
 .wrapper .overflowbackground .btnChoices {
- /*   background-color: #ff0707;  Green 
-    border-style: solid;
-    border-width: 2px; */
-   /* border-color: rgb(2, 3, 8); */
     color: white;
-    padding: 0.5% 15%;
+    padding: 0% 15%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 2fr 1fr;
-    gap: 10% 1%;
+    gap: 12% 1%;
+    margin-bottom: 2%;
     width: 100%;
     font-size: 32px;
 }
@@ -96,7 +81,40 @@
 .wrapper .overflowbackground .btnChoices .button:hover {
     background-color: rgb(13, 64, 185);
 }
-
+.wrapper .overflowbackground .searchBars {
+    padding: 0.5% 15%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 5%;
+}
+.wrapper .overflowbackground .searchBars .searchForTitle  {
+    padding: 2% 1%;
+ }
+.wrapper .overflowbackground .searchBars .searchForTitle input {
+   height: 100%;
+   font-size: 16px;
+   padding: 2% 1%;
+   width: auto;
+   border: 2px solid rgba(17, 103, 233, 0.371);
+}
+.wrapper .overflowbackground .dropDownMenuOpen {
+    height: 15%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    padding: 0.5% 15%;
+    row-gap: 5%;
+    z-index: 18;
+    margin-bottom: -15%;
+}
+.wrapper .overflowbackground .dropDownMenuClose {
+    display: none;
+}
+.wrapper .overflowbackground .dropDownMenuItem {
+    flex: 1;
+    background-color: orange;
+}
 .wrapper .controls {
     position: absolute;
     right: 30px;
