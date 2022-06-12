@@ -6,16 +6,15 @@ const instructionsFormatting = (text) => {
     typeof buf == "string" ? solidString = buf.trim() : solidString = "";
     if (solidString.length > 0)
     {
-        console.log("Well Done!");
         while (solidString.length > 0 ) {
             let position = solidString.lastIndexOf('.');
             do {
                 position--;
             }
-            while ((solidString.charCodeAt(position) < 47 || solidString.charCodeAt(position) > 58) || (solidString.charCodeAt(position+1) != 46));
-            if (solidString.charCodeAt(position) > 47 && solidString.charCodeAt(position) < 58 && solidString.charCodeAt(position+1)==46)
+            while (((solidString.charCodeAt(position) < 47 || solidString.charCodeAt(position) > 58) || (solidString.charCodeAt(position+1) != 46)) && (position > 0));
+            if (solidString.charCodeAt(position) > 47 && solidString.charCodeAt(position) < 58 && solidString.charCodeAt(position+1)==46 && position > 0)
             {
-                while (solidString.charCodeAt(position-1) > 47 && solidString.charCodeAt(position-1) < 58) {
+                while ((position > 0) && (solidString.charCodeAt(position-1) > 47 && solidString.charCodeAt(position-1) < 58)) {
                     position--;
                 }
             }

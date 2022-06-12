@@ -55,16 +55,23 @@ function Video(props)
 }
 function FormatText(props)
 {
-    console.log(props.text);
     const items = props.text;
-    const listItems = items.map((item) =>
-        <li>{item}</li>
-    );
-    return (
-        <div>
-            <ul>{listItems}</ul>
-        </div>
-    );
+    if (items.length > 0 ){
+        const listItems = items.map((item) =>
+            <li>{item}</li>
+        );
+        return (
+            <div>
+                <ul>{listItems}</ul>
+            </div>
+        );
+    }
+    else {
+        return (
+            <div>
+            </div>
+        );
+    }
 }
 
 export const Activity = () =>
@@ -209,8 +216,9 @@ export const Activity = () =>
                                 </span>
                             </div>
                             <div className={styles.desc}>
-                                <FormatText
-                                    text = {materials} />
+                                  <FormatText
+                                    text = {materials} /> 
+
                             </div>
                         </div>
 

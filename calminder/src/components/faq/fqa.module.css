@@ -62,7 +62,6 @@ header .popo {
     margin-bottom: 2.5%;
 }
 
-/* ////////////////////////////// */
 .faqCategories .faqCategoryClose .categoryContainer, .faqCategories .faqCategoryOpen .categoryContainer {
     display: grid;
     grid-template-columns: 10% auto;

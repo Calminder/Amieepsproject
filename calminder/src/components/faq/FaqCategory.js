@@ -15,7 +15,7 @@ function FaqCategory(props) {
             value: "#009900" //green
         },
         {
-            value: "#b30086" //lilac
+            value: "#b30086" //lila
         },
         {
             value:"#ff9900" //golden
@@ -26,17 +26,14 @@ function FaqCategory(props) {
     const [index] = useState(props.index);
     const [open, setOpen] = useState(false);
     ////////////////////////////////////////
-    ////////////
     useEffect(async () => {
         const result = await getFaqs();
         setQuestions(result);
         setCategory(props.category);
-        console.log("FAQ Category works!");
     }, []);
 
     const toggleFAQ  = () => {
         setOpen(!open);
-        console.log("FAQ Category works!");
     };
 
     const toggleClass = open ? styles.faqCategoryOpen : styles.faqCategoryClose;

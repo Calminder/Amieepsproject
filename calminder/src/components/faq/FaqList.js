@@ -31,7 +31,6 @@ export const FaqList = (props) =>
         const result = await getFaqs();
         setQuestions(result);
         setLoading(false);
-        console.log("FAQ list works!");
     }, []);
     return (
 
