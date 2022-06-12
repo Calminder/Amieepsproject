@@ -6,7 +6,8 @@ import { Link, useParams } from 'react-router-dom';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { getCards } from "../../services/firebase.service";
-import {getFormattedText} from './textFormatting.js';
+import {getFormattedInstructions} from './instructionsFormatting.js';
+import {getFormattedMaterials} from './materialsFormatting.js';
 import Header from './header';
 import Background from '../../resources/sky.jpg';
 const clientId = 'c5a171200f3a0a73a523bba14a1e0a29';
@@ -73,12 +74,14 @@ export const Activity = () =>
     const [card, setCard] = useState([]);
     const [loading, setLoading] = useState(false);
     const [instructions, setInstructions] = useState([]);
+    const [materials, setMaterials] = useState([]);
     useEffect(async () =>
     {
         setLoading(true);
         const cards = await getCards(); //here is what I need , took from Firebase
         setCard(cards[id]);
-        setInstructions(getFormattedText(cards[id].instructions));
+        setInstructions(getFormattedInstructions(cards[id].instructions));
+        setMaterials(getFormattedMaterials(cards[id].materials));
         setLoading(false);
     }, []);
 
@@ -206,7 +209,8 @@ export const Activity = () =>
                                 </span>
                             </div>
                             <div className={styles.desc}>
-                                {card.materials}
+                                <FormatText
+                                    text = {materials} />
                             </div>
                         </div>
 

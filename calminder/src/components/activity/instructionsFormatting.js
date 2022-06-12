@@ -1,5 +1,5 @@
 
-const textFormatting = (text) => {
+const instructionsFormatting = (text) => {
     const paragraphs = [];
     let solidString = "";
     let buf = text;
@@ -30,4 +30,4 @@ const textFormatting = (text) => {
     return paragraphs;
 };
 
-export const getFormattedText = (text) => textFormatting(text);
+export const getFormattedInstructions = (text) => instructionsFormatting(text);
