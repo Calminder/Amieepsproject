@@ -15,7 +15,6 @@ function UniqueCategories (props) {
             categories.push(item.category);
         }
     })
-    console.log(categories,' ',count);
     return (
         <div></div>
     );
