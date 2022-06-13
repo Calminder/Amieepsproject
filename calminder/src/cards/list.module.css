@@ -97,24 +97,6 @@
    width: auto;
    border: 2px solid rgba(17, 103, 233, 0.371);
 }
-.wrapper .overflowbackground .dropDownMenuOpen {
-    height: 15%;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-content: space-between;
-    padding: 0.5% 15%;
-    row-gap: 5%;
-    z-index: 18;
-    margin-bottom: -15%;
-}
-.wrapper .overflowbackground .dropDownMenuClose {
-    display: none;
-}
-.wrapper .overflowbackground .dropDownMenuItem {
-    flex: 1;
-    background-color: orange;
-}
 .wrapper .controls {
     position: absolute;
     right: 30px;

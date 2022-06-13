@@ -12,9 +12,8 @@ import { getFullDate } from '../helpers/dateHendlers';
 import { getCards } from '../services/firebase.service';
 import { getCardImageByCategory } from '../services/card.service'; 
 import Header from './header';
-//const selectCategory = getCardImageByCategory(category) || ''; //pair (image
+//const selectCategory = getCardImageByCategory(category) || ''; //pair (image, category)
 
-const titles = [];
 
 function dropDownMenuItem(props) {
     return (
@@ -50,10 +49,6 @@ export const List = () =>
         setLoading(true);
         const result = await getCards(); /* getting Data from Firebase */
         setCards(result);
-        result.forEach(card => {if (!titles.includes(card.title)) {
-            titles.push(card.title.trim());
-        }} );
-        console.log(titles);
         setLoading(false)
     }, []);
 
@@ -97,19 +92,7 @@ export const List = () =>
                         <input type="text" id = "titleSearch" placeholder = "Search for a keyword" onChange={(search) => setQuery(search.target.value.trim().toLowerCase())}/>
                     </div>
                 </div>
-                
-                <div className={toggleMenu}>
-                {
-                   /* titles.forEach(title => {
-                        if (title.substr(0, query.length).toLowerCase() == query) {
-                            <div className = {styles.dropDownMenuItem}> 
-                                <dropDownMenuItem
-                                    props = {title} />
-                            </div>
-                        }
-                    }) */
-                }
-                </div>
+    
                 
                 <div className={styles.overflow}> 
                     {
@@ -123,7 +106,6 @@ export const List = () =>
                                     title={card.title}
                                     description={card.description}
                                     image={card.url}
-                                /*    requirmens={card.requirmens} */
                                     age={card.age}
                                     materials={card.materials}
                                     activeDay={card.activeDay}
@@ -140,7 +122,6 @@ export const List = () =>
                                         title={card.title}
                                         description={card.description}
                                         image={card.url}
-                                    /*    requirmens={card.requirmens}  */
                                         age={card.age}
                                         materials={card.materials}
                                         activeDay={card.activeDay}
@@ -162,8 +143,3 @@ export const List = () =>
         </div>
        )
 };
-
-
-// const controls = () => {
-
-// }
