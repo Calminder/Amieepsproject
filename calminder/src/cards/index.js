@@ -94,7 +94,7 @@ export const List = () =>
                 </div>
                 <div className = {styles.searchBars}>
                     <div className = {styles.searchForTitle}> 
-                        <input type="text" id = "titleSearch" placeholder = "Search for exercise" onChange={(search) => setQuery(search.target.value.trim().toLowerCase())}/>
+                        <input type="text" id = "titleSearch" placeholder = "Search for a keyword" onChange={(search) => setQuery(search.target.value.trim().toLowerCase())}/>
                     </div>
                 </div>
                 
@@ -117,7 +117,7 @@ export const List = () =>
 
                         <div className = {styles.list}>
                         {   (category.length > 0) ? 
-                            cards.filter(filter => filter.category == category && filter.title.toLowerCase().includes(query)).map((card) => //creating cards array 
+                            cards.filter(filter => filter.category == category && (filter.title.toLowerCase().includes(query) || filter.description.toLowerCase().includes(query) || filter.instructions.toLowerCase().includes(query) || filter.duration.toLowerCase().includes(query) )).map((card) => //creating cards array 
                             <Link to={`/activity/${cards.findIndex(v => v.title == card.title)}`}>
                                 <Card
                                     title={card.title}
@@ -134,7 +134,7 @@ export const List = () =>
                                 />
                             </Link>
                             ) :
-                            cards.filter(filter => filter.title.toLowerCase().includes(query)).map((card) => //creating cards array 
+                            cards.filter(filter => filter.title.toLowerCase().includes(query) || filter.description.toLowerCase().includes(query) || filter.instructions.toLowerCase().includes(query) || filter.duration.toLowerCase().includes(query)).map((card) => //creating cards array 
                                 <Link to={`/activity/${cards.findIndex(v => v.title == card.title)}`}>
                                     <Card
                                         title={card.title}
