@@ -139,7 +139,7 @@ export const Activity = () =>
                         allow="accelerometer;
                         gyroscope;
                         picture-in-picture"
-                        allowfullscreen></iframe>
+                        allowfullscreen></iframe> 
                     </div>
                     <div className={styles.goal}>
                         <h1 className={styles.title}>
