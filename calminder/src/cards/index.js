@@ -5,23 +5,12 @@ import { Card } from './card';
 import { categories } from '../constants/cards';
 import styles from './list.module.css';
 import { Link } from 'react-router-dom';
-import btn_simple from '../resources/btn_simple.png';
-import btn_rotate from '../resources/btn_rotate.png';
-import btn_multiple from '../resources/btn_multiple.png';
+import iconloop from '../resources/icon-loop.png';
 import { getFullDate } from '../helpers/dateHendlers';
 import { getCards } from '../services/firebase.service';
 import { getCardImageByCategory } from '../services/card.service'; 
 import Header from './header';
 //const selectCategory = getCardImageByCategory(category) || ''; //pair (image, category)
-
-
-function dropDownMenuItem(props) {
-    return (
-        <div> 
-            {props.text}
-        </div>
-    )
-}
 export const List = () =>
 {
     const [mode, setMode] = useState('MULTIPLE');
@@ -90,6 +79,7 @@ export const List = () =>
                 <div className = {styles.searchBars}>
                     <div className = {styles.searchForTitle}> 
                         <input type="text" id = "titleSearch" placeholder = "Search for a keyword" onChange={(search) => setQuery(search.target.value.trim().toLowerCase())}/>
+                        <img src = {iconloop}/>
                     </div>
                 </div>
     
