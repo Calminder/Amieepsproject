@@ -134,8 +134,8 @@ export const List = () =>
                                 />
                             </Link>
                             ) :
-                            cards.filter(filter => filter.title.toLowerCase().includes(query)).map((card, index) => //creating cards array 
-                                <Link to={`/activity/${index}`}>
+                            cards.filter(filter => filter.title.toLowerCase().includes(query)).map((card) => //creating cards array 
+                                <Link to={`/activity/${cards.findIndex(v => v.title == card.title)}`}>
                                     <Card
                                         title={card.title}
                                         description={card.description}
