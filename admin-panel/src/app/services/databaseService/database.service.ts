@@ -4,13 +4,33 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { from } from 'rxjs';
 import { IQuestion } from '../interfaces/question';
 import { IExercise } from '../interfaces/exercise';
-
+import {IMusicTrack} from '../interfaces/musicTrack';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DatabaseService
 {
+    musicTrackForm: FormGroup = new FormGroup({
+    $key: new FormControl(null),
+    title: new FormControl('', Validators.required),
+    link: new FormControl('', Validators.required)
+  });
+
+  initializemusicTrackForm()
+  {
+    this.musicTrackForm.setValue({
+      $key: null,
+      title: '',
+      link: ''
+    });
+  }
+
+  poulatemusicTrackForm(musicTrack: any)
+  {
+    this.musicTrackForm.setValue(musicTrack);
+  }
+  ////////////////
   questionForm: FormGroup = new FormGroup({
     $key: new FormControl(null),
     title: new FormControl('', Validators.required),
@@ -20,7 +40,7 @@ export class DatabaseService
     sourceCheck: new FormControl(false)
   });
 
-  initializequestionFrom()
+  initializequestionForm()
   {
     this.questionForm.setValue({
       $key: null,
@@ -50,7 +70,7 @@ export class DatabaseService
     extra: new FormControl('')
   });
 
-  initializeexerciseFrom()
+  initializeexerciseForm()
   {
     this.exerciseForm.setValue({
       $key: null,
@@ -70,8 +90,43 @@ export class DatabaseService
     this.exerciseForm.setValue(exercise);
   }
   constructor(private angularFirestore: AngularFirestore) { }
-  // Faq crud service
+  getMusicTrackDoc(id: any)
+  {
+    return this.angularFirestore.collection('music-tracks')
+      .doc(id).valueChanges();
+  }
+  getMusicTracksList(){
+    return this.angularFirestore.collection('music-tracks')
+    .snapshotChanges();
+  }
+  createMusicTrack(musicTrack: IMusicTrack)
+  {
+    return new Promise<any>(() =>
+    {
+      this.angularFirestore.collection('music-tracks')
+        .add(musicTrack)
+        .then(response => { console.log(response); }, error => console.log
+          (error));
+    });
+  }
 
+  updateMusicTrack(musicTrack: IMusicTrack)
+  {
+    return this.angularFirestore.collection('music-tracks')
+      .doc(musicTrack.$key)
+      .update({
+        title: musicTrack.title,
+        link: musicTrack.link,
+      });
+  }
+
+  deleteMusicTrack(musicTrack: IMusicTrack)
+  {
+    return this.angularFirestore.collection('music-tracks')
+      .doc(musicTrack.$key).delete();
+  };
+/////////
+  // Faq crud service
   getQuestionDoc(id: any)
   {
     return this.angularFirestore.collection('question-collection')
@@ -112,7 +167,7 @@ export class DatabaseService
         category: question.category
       });
   }
-
+/////////
   getExercise()
   {
     return this.angularFirestore.collection('Calminder-exercise')

@@ -66,6 +66,9 @@ import { AppDateAdapter, APP_DATE_FORMATS } from 'src/app/format-datepicker';
 
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { DropzoneDirective } from './dropzone.directive';
+import { MusicTracksComponent } from './music-tracks/music-tracks.component';
+import { MusicTrackListComponent } from './music-tracks/music-track-list/music-track-list.component';
+import { MusicTrackComponent } from './music-tracks/music-track/music-track.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +83,10 @@ import { DropzoneDirective } from './dropzone.directive';
     ExercisesComponent,
     ExerciseListComponent,
     ExerciseComponent,
-    DropzoneDirective
+    DropzoneDirective,
+    MusicTracksComponent,
+    MusicTrackListComponent,
+    MusicTrackComponent
   ],
   imports: [
     BrowserModule,

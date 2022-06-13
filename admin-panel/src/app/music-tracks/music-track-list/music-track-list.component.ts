@@ -7,18 +7,22 @@ import { DatabaseService } from 'src/app/services/databaseService/database.servi
 import { RealtimeDatabaseService } from 'src/app/services/realtimeDatabaseService/realtime-database.service';
 import { DialogService } from 'src/app/services/dialogService/dialog.service';
 import { NotificationService } from 'src/app/services/notificationService/notification.service';
-import { IExercise } from 'src/app/services/interfaces/exercise';
-import { ExerciseComponent } from '../exercise/exercise.component';
+import { IMusicTrack } from 'src/app/services/interfaces/musicTrack';
 import firebase from 'firebase';
-
+import {MusicTrackComponent} from '../music-track/music-track.component';
 @Component({
-  selector: 'app-exercise-list',
-  templateUrl: './exercise-list.component.html',
-  styleUrls: ['./exercise-list.component.scss']
+  selector: 'app-music-track-list',
+  templateUrl: './music-track-list.component.html',
+  styleUrls: ['./music-track-list.component.scss']
 })
-export class ExerciseListComponent implements OnInit
-{
+export class MusicTrackListComponent implements OnInit {
+/*
+  constructor() { }
 
+  ngOnInit(): void {
+  }
+*/
+  //////////////////// 
   public dataSource = new MatTableDataSource<any>();
   displayedColumns: string[] = [];
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
@@ -30,7 +34,7 @@ export class ExerciseListComponent implements OnInit
 
   async ngOnInit()
   {
-    this.svc.getExercise().subscribe(
+    this.svc.getMusicTracks().subscribe(
       r =>
       {
         let array = r.map(item =>
@@ -50,7 +54,7 @@ export class ExerciseListComponent implements OnInit
         this.dataSource.sort = this.sort;
         //this.dataSource.sortingDataAccessor
         this.dataSource.paginator = this.paginator;
-        this.displayedColumns = ["id", "title", "date", "actions"];
+        this.displayedColumns = ["id", "title", "date" , "actions"];
       });
 
   }
@@ -70,46 +74,27 @@ export class ExerciseListComponent implements OnInit
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = '60%';
-    dialogConfig.height = '90%';
-    this.dialog.open(ExerciseComponent, dialogConfig);
+    this.dialog.open(MusicTrackComponent, dialogConfig);
   }
   onEdit(row: any)
   {
     //console.log(row);
 
-    this.svc.poulateexerciseForm(row);
+    this.svc.poulatemusicTrackForm(row);
 
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.width = '60%';
-    dialogConfig.height = '90%';
-    this.dialog.open(ExerciseComponent, dialogConfig);
+    dialogConfig.width = '100%';
+    this.dialog.open(MusicTrackComponent, dialogConfig);
   }
 
   onDelete(key: any, row: any)
   {
-    this.dialogsvc.openConfirmDialog('Are you sure you want to delete the exercise').afterClosed().subscribe(res =>
+    this.dialogsvc.openConfirmDialog('Are you sure you want to delete the music track').afterClosed().subscribe(res =>
     {
       if (res) {
-        if (row.url != '') {
-          var httpsReference = firebase.storage().refFromURL(`${ row.url }`);
-          //this.files.push(httpsReference);
-          //console.log('dataform url', httpsReference);
-          var desertRef = firebase.storage().ref().child(httpsReference.name);
-
-          // Delete the file
-          desertRef.delete().then(() =>
-          {
-            // File deleted successfully
-          }).catch((error) =>
-          {
-            // Uh-oh, an error occurred!
-          });
-
-        }
-
-        this.svc.deleteExercise(key);
+        this.svc.deleteMusicTrack(key);
         this.notif.warn('Deleted');
       }
     });

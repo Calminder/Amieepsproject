@@ -53,7 +53,7 @@ export class QuestionComponent implements OnInit
         this.note.succes('was successfully updated!');
       }
       this.svc.questionForm.reset();
-      this.svc.initializequestionFrom();
+      this.svc.initializequestionForm();
       this.onClose();
     }
   }
@@ -61,7 +61,7 @@ export class QuestionComponent implements OnInit
   onClose()
   {
     this.svc.questionForm.reset();
-    this.svc.initializequestionFrom();
+    this.svc.initializequestionForm();
     this.dialogRef.close();
   }
 

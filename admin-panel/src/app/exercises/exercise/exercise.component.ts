@@ -123,10 +123,10 @@ export class ExerciseComponent implements OnInit
       //this.imageToFirebase.length = 0;
       //this.onRemove(this.imageToFirebase[0]);
       this.svc.exerciseForm.reset();
-      this.svc.initializeexerciseFrom();
+      this.svc.initializeexerciseForm();
       this.dialogRef.close();
       this.svc.exerciseForm.reset();
-      this.svc.initializeexerciseFrom();
+      this.svc.initializeexerciseForm();
       //this.onClose();
     }
   }
@@ -144,7 +144,7 @@ export class ExerciseComponent implements OnInit
     this.files.length = 0;
     //this.imageToFirebase.length = 0;
     this.svc.exerciseForm.reset();
-    this.svc.initializeexerciseFrom();
+    this.svc.initializeexerciseForm();
     this.dialogRef.close();
   }
 
