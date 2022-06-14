@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ReactPlayer from 'react-player';
 import { getCards } from "../../services/firebase.service";
 import {getFormattedInstructions} from './instructionsFormatting.js';
 import {getFormattedMaterials} from './materialsFormatting.js';
@@ -132,14 +133,12 @@ export const Activity = () =>
                     </section>
 
                     <div className = { boolVideo ? styles.NoVideoPlayer: styles.videoPlayer}>
-                        <iframe src = {videoLink}
-                        width="100%" height="100%"
-                        title = {card.title}
-                        frameborder="0" 
-                        allow="accelerometer;
-                        gyroscope;
-                        picture-in-picture"
-                        allowfullscreen></iframe> 
+                        <ReactPlayer 
+                        width='100%'
+                        height='100%'
+                        controls={true}
+                        url={videoLink}  
+                        />
                     </div>
                     <div className={styles.goal}>
                         <h1 className={styles.title}>
