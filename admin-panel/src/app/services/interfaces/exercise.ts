@@ -10,7 +10,6 @@ export interface IExercise
     wonder: string;
     materials: string;
     instructions: string;
-    image?: string;
     extra: string;
     url: string;
     musicUrl: string;

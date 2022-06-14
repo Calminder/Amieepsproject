@@ -108,7 +108,6 @@ export class ExerciseComponent implements OnInit
           musicUrl: this.svc.exerciseForm.value.musicUrl,
           videoURL: this.svc.exerciseForm.value.videoURL
         };
-        console.log(this.svc.exerciseForm.value.instructions);
 
         this.svc.updateExercise(exerciseupdate);
         // if (String(this.svc.exerciseForm.value.date) != this.date) {
@@ -132,9 +131,10 @@ export class ExerciseComponent implements OnInit
   }
   onClose()
   {
-    if (this.submit) {
+   /* if (this.submit) {
       this.onRemove(this.files[0]);
     }
+  */
     if (this.onDelete) {
       if (this.svc.exerciseForm.get('$key')?.value) {
         this.fileAfterRemove();
@@ -212,7 +212,7 @@ export class ExerciseComponent implements OnInit
             materials: this.svc.exerciseForm.value.materials,
             instructions: this.svc.exerciseForm.value.instructions,
             extra: this.svc.exerciseForm.value.extra,
-            url: await downloadURL,
+            url: this.downloadURL,
             musicUrl: this.svc.exerciseForm.value.musicUrl,
             videoURL: this.svc.exerciseForm.value.videoURL
           };

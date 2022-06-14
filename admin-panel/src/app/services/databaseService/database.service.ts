@@ -67,7 +67,9 @@ export class DatabaseService
     wonder: new FormControl('', Validators.required),
     materials: new FormControl('', Validators.required),
     instructions: new FormControl('', Validators.required),
-    extra: new FormControl('')
+    extra: new FormControl(''),
+    videoURL: new FormControl(''),
+    musicUrl: new FormControl('')
   });
 
   initializeexerciseForm()
@@ -82,7 +84,10 @@ export class DatabaseService
       wonder: '',
       materials: '',
       instructions: '',
-      extra: ''
+      url: '',
+      extra: '',
+      videoURL: '',
+      musicUrl: ''
     });
   }
   poulateexerciseForm(exercise: any)
@@ -198,8 +203,10 @@ export class DatabaseService
         wonder: exercise.wonder,
         materials: exercise.materials,
         instructions: exercise.instructions,
+        url: exercise.url,
         extra: exercise.extra,
-        videoURL: exercise.videoURL
+        videoURL: exercise.videoURL,
+        musicUrl: exercise.musicUrl
       });
   }
 
