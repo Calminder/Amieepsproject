@@ -54,7 +54,7 @@ export class MusicTrackListComponent implements OnInit {
         this.dataSource.sort = this.sort;
         //this.dataSource.sortingDataAccessor
         this.dataSource.paginator = this.paginator;
-        this.displayedColumns = ["id", "title", "date" , "actions"];
+        this.displayedColumns = ["id", "title", "actions"];
       });
 
   }
