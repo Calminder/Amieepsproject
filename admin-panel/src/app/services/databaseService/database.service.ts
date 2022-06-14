@@ -84,7 +84,6 @@ export class DatabaseService
       wonder: '',
       materials: '',
       instructions: '',
-      url: '',
       extra: '',
       videoURL: '',
       musicUrl: ''
@@ -203,7 +202,6 @@ export class DatabaseService
         wonder: exercise.wonder,
         materials: exercise.materials,
         instructions: exercise.instructions,
-        url: exercise.url,
         extra: exercise.extra,
         videoURL: exercise.videoURL,
         musicUrl: exercise.musicUrl

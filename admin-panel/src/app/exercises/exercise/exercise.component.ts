@@ -131,10 +131,11 @@ export class ExerciseComponent implements OnInit
   }
   onClose()
   {
-   /* if (this.submit) {
+    
+    if (this.submit) {
       this.onRemove(this.files[0]);
     }
-  */
+    
     if (this.onDelete) {
       if (this.svc.exerciseForm.get('$key')?.value) {
         this.fileAfterRemove();
