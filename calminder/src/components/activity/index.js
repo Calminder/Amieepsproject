@@ -103,9 +103,9 @@ export const Activity = () =>
             <div className={styles.shadow}>
                 <Header></Header>
                 <Video warn={card.videoURL} />
+                <Picture warn={card.url} />
                 <div className={styles.wrapper}>
                     <div className={ (cardOpened && boolVideo) ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
-                        <Picture warn={card.url} />
                         <div className={styles.cardActive}>
                             <div className={styles.title}>
                                 {card.title}  
