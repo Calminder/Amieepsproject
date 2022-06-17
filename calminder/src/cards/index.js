@@ -44,7 +44,6 @@ export const List = () =>
     const toggleMenu = (query.length>0) ? styles.dropDownMenuOpen : styles.dropDownMenuClose;
 
     return (
- 
         <div className={styles.wrapper}>
             <Header></Header> 
             <div className={styles.overflowbackground}>
@@ -52,8 +51,8 @@ export const List = () =>
                     <p> Mindfulness is beneficial for children of all ages as they learn how to bring a gentle,
                         accepting attitude to the present moment. 
                         Mindfulness together with art will create a stimulating environment for children to learn and develop.
-                         On this Calminder website exercises are provided to help implement <strong>A</strong>rts and <strong>M</strong>indfulness <strong>i</strong>n <strong>E</strong>ducation.
-                          The exercises invite the children to recognise and accept their feelings and express them into artworks. Let's get started!  
+                        On this Calminder website exercises are provided to help implement <strong>A</strong>rts and <strong>M</strong>indfulness <strong>i</strong>n <strong>E</strong>ducation.
+                        The exercises invite the children to recognise and accept their feelings and express them into artworks. Let's get started!  
                     </p>
                 </div>
                 <div class={styles.btnChoices}>
@@ -82,8 +81,6 @@ export const List = () =>
                         <img src = {iconloop}/>
                     </div>
                 </div>
-    
-                
                 <div className={styles.overflow}> 
                     {
                         mode === "MULTIPLE" &&
@@ -126,6 +123,8 @@ export const List = () =>
                     }
                 
                 </div>
+                    
+                
 
             </div>
         
