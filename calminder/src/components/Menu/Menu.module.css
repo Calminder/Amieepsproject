@@ -6,6 +6,7 @@
     z-index: 9;
     display: grid;
     grid-template-columns: auto;
+    cursor: pointer;
 }
 .burgerWrapper .burgerbtnClose {
     box-sizing: border-box;
