@@ -14,10 +14,12 @@
     padding: 0.5vmin 0.2vmin;
     flex-direction: column;
     row-gap: 1vmin;
+    background-color: #52cfaf;
+    border-radius: 2px;
 }
 .burgerWrapper .burgerbtnClose .line_blue {
     height: 1vmin;
-    background-color: #000fb0;
+    background-color: #1d29b0;
     border-radius: 20px;
 }
 /*       */
