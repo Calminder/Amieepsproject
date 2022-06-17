@@ -248,7 +248,7 @@
     left:-20px;
     
   
-    position: fixed;
+    position: absolute;
     background-image: url("../../resources/logo_amie.png");
     background-position: center;
     background-size: 200px;
