@@ -35,7 +35,7 @@
 }
 
 article {
-    margin: 14vmax auto 0;
+    margin: 18vmax auto 0;
     position: absolute ; 
     background-image: url("../../resources/blue_line.png");
     background-position: absolute;
@@ -187,7 +187,7 @@ header .popo {
 } 
 .faqCategories .faqCategoryOpen .faqsFromCategory .faq .answerContainer .faqAnswer {
     font-family:'Lato';
-    font-size:22px;
+    font-size:4vmin;
     color:white;
     max-height: 0;
     overflow-y: hidden;
