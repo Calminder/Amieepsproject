@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FaqCard from "./FaqCard";
 import { useEffect, useState } from 'react';
-import styles from './fqa.module.css';
+import styles from './faq.module.css';
 import Header from './header';
 import { getFaqs } from '../../services/firebase.service';
 import FaqCategory from './FaqCategory';

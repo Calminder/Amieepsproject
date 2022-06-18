@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./fqa.module.css";
+import styles from "./faq.module.css";
 function Header()
 {
     return (
