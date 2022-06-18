@@ -30,12 +30,12 @@ export const Music = (props) =>
                         <p>The music is created by professional musicians around Europe who are involved in the AMIE project. The music is often made in co-creation with students with no Background in music.
                             The musicians took mindfulness as the inspiration and main theme for composing or improvising. 
                             <br></br>You can enjoy the music with your students and use it:
-                                <ol>
-                                    <li>As a mindful listening exercise</li>
-                                    <li>As inspiration or an intro for your own musical activities.</li>
-                                    <li>As background music while doing other creative and/or mindfulness exercises.</li>
-                                </ol>
                         </p>
+                        <ol>
+                            <li>As a mindful listening exercise</li>
+                            <li>As inspiration or an intro for your own musical activities.</li>
+                            <li>As background music while doing other creative and/or mindfulness exercises.</li>
+                        </ol>
                     </div>
                     <div className={styles.musicTracksLayout}>
                     {

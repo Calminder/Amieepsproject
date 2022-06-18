@@ -1,7 +1,7 @@
 .shadow {
     position: absolute;
     width: 100vw;
-    height: 250vh;
+    height: auto; /*250vh*/
     background-color: rgba(0, 0, 0, 0.461);
     font-family: 'Baloo 2';
 }
