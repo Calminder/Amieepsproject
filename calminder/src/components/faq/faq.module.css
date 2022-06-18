@@ -6,27 +6,43 @@
 .logo{
     right: 0;
     left: 0;
-    top: 10px;
+    top: 0.1vh;
     margin: 0 auto;
     position: absolute;
     background-image: url("../../resources/logo_calminder.png");
     background-position: center;
-    background-size: 150px;
+    background-size: 50%;
     background-repeat: no-repeat;
     z-index: 11;
-    width: 150px;
-    height: 150px;
+    width: 22vmax;
+    height: 10vmax;
+}
+.amielogo{
+    top: -1vh;
+    left:1.5vw;
+    
+  
+    position: absolute;
+    background-image: url("../../resources/logo_amie.png");
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    
+    z-index: 100 !important;
+    width: 31.2vmin;
+    height: 20vmin;
+    overflow: hidden;
 }
 
 article {
-    margin: 200px auto 0;
-    position: absolute ;
-    background-image: url("../../resources/blue_line.png"); 
+    margin: 14vmax auto 0;
+    position: absolute ; 
+    background-image: url("../../resources/blue_line.png");
     background-position: absolute;
     background-size: 100%;
     background-repeat: no-repeat;
-    height: 60%;
-    width: 90%;
+    height: 8vh;
+    width: 95vw;
     z-index: -5;
    
 }
@@ -35,22 +51,22 @@ header{
     display: flex;
     justify-content: center;
     align-content: center;
-    padding: 15px;
+    padding: 2vmin;
 }
 
 header .popo {
-    margin-top: 150px;
+    margin-top: 10vmax;
     position: relative ;
     font-family: 'Baloo 2';
     color:#FFAF20;
-    font-size: 40px;
-    font-weight: 200;
+    font-size: 5.5vmin;
+   /* font-weight: 200; */
 }
 
 .faqCategories {
     display: flex;
     flex-direction: column;
-    margin-top: 4%;
+    margin-top: 6vmax;
     margin-left: auto;
     margin-right: auto;
     z-index: 20;
@@ -69,18 +85,18 @@ header .popo {
 }
 
 .faqCategories .faqCategoryClose .categoryContainer .faqCategory, .faqCategories .faqCategoryOpen .categoryContainer .faqCategory {
-    padding: 1.9% 2% 2%;
-    
+    padding: 0.9% 1% 1%;
     background-color: rgb(3, 65, 151); /* #FFAF20; */
     border-top-right-radius: 35px;
     font-family: 'Baloo 2';
-    font-size: 20px;
+    font-size: 5.5vmin;
     color:white;
-    height: auto;
+    height: 15vmin;
     text-align: left;
 }
 
 .faqCategories .faqCategoryClose .categoryContainer .imgContainerCategory {
+    height: 15vmin;
     border-bottom-left-radius: 35px;
     background-image: url("../../resources/arrow90.png");
     background-size: 55%;
@@ -88,6 +104,7 @@ header .popo {
     background-repeat: no-repeat;
 }
 .faqCategories .faqCategoryOpen .categoryContainer .imgContainerCategory {
+    height: 15vmin;
     border-bottom-left-radius: 35px;
     background-image: url("../../resources/arrow.png");
     background-size: 55%;
@@ -101,7 +118,7 @@ header .popo {
 .faqCategories .faqCategoryOpen .faqsFromCategory {
     display: flex;
     flex-direction: column;
-    row-gap: 40px;
+    row-gap: 4vmin; 
     margin: 2% 0 1.5%;
 }
 .faqCategories .faqCategoryOpen .faqsFromCategory .faq, .faqCategories .faqCategoryOpen .faqsFromCategory .faqOpen {
@@ -116,7 +133,6 @@ header .popo {
 
 .faqCategories .faqCategoryOpen .faqsFromCategory .faq .questionContainer .imgContainerQuestion {
     border-bottom-left-radius: 35px;
-    font-size: 2em;
     text-align: center;
     background-color: rgb(3, 65, 151);
     background-image: url("../../resources/arrow90.png");
@@ -126,7 +142,6 @@ header .popo {
 }
 .faqCategories .faqCategoryOpen .faqsFromCategory .faqOpen .questionContainer .imgContainerQuestion {
     border-bottom-left-radius: 35px;
-    font-size: 2em;
     text-align: center;
     background-color: #000066;
     background-image: url("../../resources/arrow.png");
@@ -135,11 +150,13 @@ header .popo {
     background-repeat: no-repeat;
 }
 .faqCategories .faqCategoryOpen .faqsFromCategory .faq .questionContainer .faqQuestion, .faqCategories .faqCategoryOpen .faqsFromCategory .faqOpen .questionContainer .faqQuestion {
+    /* max-height: 12vmin;
+    overflow: auto; */
     padding: 1.5% 2% 1%;
     background-color: #FFAF20;
     border-top-right-radius: 35px;
     font-family: 'Baloo 2';
-    font-size: 20px;
+    font-size: 4vmin;
     color:white;
     text-align: left;
 
@@ -155,7 +172,7 @@ header .popo {
     background-color: #275E87;
     background-image: url("../../resources/star.png");
     background-position: center;
-    background-size: 30%;
+    background-size: 40%;
     background-repeat: no-repeat;
     border-bottom-left-radius: 35px;
 
@@ -166,7 +183,7 @@ header .popo {
     font-family:'Lato';
     padding: 2% 1% 1%;
     border-bottom-right-radius: 35px;
-    font-size: 22px;
+    font-size: 4vmin;
 } 
 .faqCategories .faqCategoryOpen .faqsFromCategory .faq .answerContainer .faqAnswer {
     font-family:'Lato';
@@ -179,20 +196,4 @@ header .popo {
 ::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
-}
-.amielogo{
-    top: -45px;
-    left:-20px;
-    
-  
-    position: fixed;
-    background-image: url("../../resources/logo_amie.png");
-    background-position: center;
-    background-size: 200px;
-    background-repeat: no-repeat;
-    
-    z-index: 100 !important;
-    width: 250px;
-    height: 150px;
-    overflow: hidden;
 }
