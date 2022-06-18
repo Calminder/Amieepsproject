@@ -184,8 +184,7 @@ export const About = () =>
                             be found in Irma Smegen's books which
                             will be published the coming years.</p>
 
-                        <p>Visit "mindful at school" at <a target="_blank" href="https://www.irmasmegen.com/en/mindful-at-school/">
-                            www.mindfulatschool.com </a>
+                        <p>Visit "mindful at school" at <a target="_blank" href="https://www.irmasmegen.com/en/mindful-at-school/"> www.mindfulatschool.com </a>
                         </p>
 
 
@@ -196,10 +195,10 @@ export const About = () =>
                             "float": "right"
                         }} src={artboard82} />
                     </div>
-                </section> */
+                </section> 
                 <section >
                     <div className={styles.teams}>
-                        <h1><u>A.M.i.E. team 2020/2021</u></h1>
+                        <h1>A.M.i.E. team 2020/2021</h1>
                         
                         <h3>Wallace Helsen — Teacher/ Research Team</h3>
                         <p>Primary education teacher in training (Belgium) </p>
@@ -246,7 +245,7 @@ export const About = () =>
                         <br></br>
                         <br></br>
                         <br></br>
-                        <h1><u>A.M.i.E. team 2021/2022</u></h1>
+                        <h1>A.M.i.E. team 2021/2022</h1>
 
                         <h3>Indy Sluijs — Team leader/Text writer</h3>
                         <p>Communication student (The Netherlands)  </p>
