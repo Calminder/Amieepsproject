@@ -55,6 +55,7 @@
 }
 .shadow .wrapper .goal .value {
     font-size: 4vmin;
+    list-style-type: none;
     font-family:'Lato';
     font-weight: 500;
     height: fit-content;
@@ -163,7 +164,7 @@
     font-size: 4vmin;
     font-weight: 500;
     font-family:'Lato';
-
+    list-style-type: none;
 }
 .shadow .wrapper .info .item .desc .scrolltext{
     height: auto;
