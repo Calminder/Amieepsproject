@@ -187,8 +187,7 @@ export const Activity = () =>
                             <div className={styles.title}>
                                 <span className={styles.text}>
                                     Duration
-                            </span>
-
+                                </span>
                             </div>
                             <div className={styles.desc}>
                                 {card.duration}
