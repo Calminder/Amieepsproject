@@ -4,6 +4,7 @@
     height: auto; /*250vh*/
     background-color: rgba(0, 0, 0, 0.461);
     font-family: 'Baloo 2';
+    z-index: 8;
 }
 
 .shadow .wrapper {
@@ -89,24 +90,25 @@
 }
 
 /* */
-.shadow .cardActiveWrapper {
+.cardActiveWrapper {
     position: fixed;
     left: 0px;
     top: 0px;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.711);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 20;
+    font-family: 'Baloo 2';
 }
 
-.shadow .cardCloseWrapper {
+.cardCloseWrapper {
     display: none;
 }
 
-.shadow .cardActiveWrapper .cardActive {
+.cardActiveWrapper .cardActive {
     border-radius: 38px;
     position: relative;
     width: 100vw;
@@ -121,19 +123,19 @@
     z-index: 11;
 }
 
-.shadow .cardActiveWrapper .cardActive .title {
+.cardActiveWrapper .cardActive .title {
     text-align: left;
-    font-size: 8vmin;
+    font-size: 5vmin;
     padding: 1vmin;
 }
-.shadow .cardActiveWrapper .cardActive .bgImage {
+.cardActiveWrapper .cardActive .bgImage {
     background-size: contain;
     background-repeat: no-repeat;
     background-clip: padding-box;
     background-position: center;
 }
-.shadow .cardActiveWrapper .cardActive .close{
-    font-size: 8vmin;
+.cardActiveWrapper .cardActive .close{
+    font-size: 5vmin;
     text-align: right;
 }
 

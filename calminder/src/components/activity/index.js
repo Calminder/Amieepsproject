@@ -99,27 +99,26 @@ export const Activity = () =>
     return (
         // this file doesn't correspond to the file in "cards" folder
         card ?
-
+        <>
+            <div className={ (cardOpened && boolVideo) ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
+                <div className={styles.cardActive}>
+                    <div className={styles.title}>
+                        {card.title}  
+                    </div>   
+                    <div className={styles.bgImage}
+                    style={{
+                        backgroundImage: boolPicture ? `url(${Background})` : `url(${(card.url)})`, 
+                    }}
+                    >
+                    </div>
+                    <div className={styles.close} onClick={() => setCardOpened(false)}>X</div>
+                </div>
+            </div>
             <div className={styles.shadow}>
                 <Header></Header>
                 <Video warn={card.videoURL} />
                 <Picture warn={card.url} />
                 <div className={styles.wrapper}>
-                    <div className={ (cardOpened && boolVideo) ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
-                        <div className={styles.cardActive}>
-                            <div className={styles.title}>
-                                {card.title}  
-                            </div>   
-                            <div className={styles.bgImage}
-                            style={{
-                                backgroundImage: boolPicture ? `url(${Background})` : `url(${(card.url)})`, 
-                            }}
-                            >
-                            </div>
-                            <div className={styles.close} onClick={() => setCardOpened(false)}>X</div>
-                        </div>
-                    </div>
-
                     <section className={ boolVideo ? styles.card : styles.video}
                         onClick={() => setCardOpened(true)}
                         style={{
@@ -236,6 +235,6 @@ export const Activity = () =>
 
                 </div>
             </div>
-            : null
+        </> : null
     )
 }
