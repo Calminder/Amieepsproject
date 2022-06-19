@@ -38,7 +38,7 @@
 .burgerWrapper .container .burgerbtnWhite {
     box-sizing: border-box;
     display: flex;
-    padding: 0.5vmin 2.4vmin;
+    padding: 0.5vmin 2.8vmin;
     padding-bottom: 1vmin;
     flex-direction: column;
     row-gap: 1vmin;
