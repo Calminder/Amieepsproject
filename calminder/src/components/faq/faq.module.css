@@ -89,14 +89,14 @@ header .popo {
     background-color: rgb(3, 65, 151); /* #FFAF20; */
     border-top-right-radius: 35px;
     font-family: 'Baloo 2';
-    font-size: 5.5vmin;
+    font-size: 3.5vmin;
     color:white;
-    height: 15vmin;
+    height: 10vmin; 
     text-align: left;
 }
 
 .faqCategories .faqCategoryClose .categoryContainer .imgContainerCategory {
-    height: 15vmin;
+    height: 10vmin;
     border-bottom-left-radius: 35px;
     background-image: url("../../resources/arrow90.png");
     background-size: 55%;
@@ -104,7 +104,7 @@ header .popo {
     background-repeat: no-repeat;
 }
 .faqCategories .faqCategoryOpen .categoryContainer .imgContainerCategory {
-    height: 15vmin;
+    height: 10vmin;
     border-bottom-left-radius: 35px;
     background-image: url("../../resources/arrow.png");
     background-size: 55%;
@@ -156,7 +156,7 @@ header .popo {
     background-color: #FFAF20;
     border-top-right-radius: 35px;
     font-family: 'Baloo 2';
-    font-size: 4vmin;
+    font-size: 3vmin;
     color:white;
     text-align: left;
 
@@ -183,7 +183,7 @@ header .popo {
     font-family:'Lato';
     padding: 2% 1% 1%;
     border-bottom-right-radius: 35px;
-    font-size: 4vmin;
+    font-size: 3vmin;
 } 
 .faqCategories .faqCategoryOpen .faqsFromCategory .faq .answerContainer .faqAnswer {
     font-family:'Lato';

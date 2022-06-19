@@ -18,7 +18,7 @@
     grid-template-rows: auto 1fr;
     column-gap: 3%;
     color: white;
-    background-color: rgba(0, 0, 0, 0.477);
+    background-color: rgba(0, 0, 0, 0.306);
     border-radius: 20px;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .shadow .wrapper .goal .title {
-    font-size: 8vmin;
+    font-size: 6vmin;
     width: 80%;
     margin-bottom: 0.5vmin;
 }
@@ -51,12 +51,12 @@
     margin-bottom: 2vmin;
 }
 .shadow .wrapper .goal .title2 .text2 {
-    font-size: 5vmin;
+    font-size: 4vmin;
     margin-left: 7vmin;
-
+    overflow: auto;
 }
 .shadow .wrapper .goal .value {
-    font-size: 4vmin;
+    font-size: 3.2vmin;
     list-style-type: none;
     font-family:'Lato';
     font-weight: 500;
@@ -126,7 +126,7 @@
 
 .cardActiveWrapper .cardActive .title {
     text-align: left;
-    font-size: 5vmin;
+    font-size: 5.5vmin;
     padding: 1vmin;
 }
 .cardActiveWrapper .cardActive .bgImage {
@@ -136,7 +136,7 @@
     background-position: center;
 }
 .cardActiveWrapper .cardActive .close{
-    font-size: 5vmin;
+    font-size: 5.5vmin;
     text-align: right;
 }
 
@@ -159,15 +159,17 @@
 }
 
 .shadow .wrapper .info .item .title .text {
-    font-size: 5vmin;
+    /* here */
+    font-size: 4vmin;
     margin-left: 7vmin;
 }
 
 .shadow .wrapper .info .item .desc {
-    font-size: 4vmin;
+    font-size: 3.2vmin;
     font-weight: 500;
     font-family:'Lato';
     list-style-type: none;
+    overflow: auto;
 }
 .shadow .wrapper .info .item .desc .scrolltext{
     height: auto;
