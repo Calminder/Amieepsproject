@@ -63,7 +63,10 @@ function FormatText(props)
         );
         return (
             <div>
-                <ul>{listItems}</ul>
+                <ul
+                style ={{ listStyleType:"none"}}>
+                    {listItems}
+                </ul>
             </div>
         );
     }
