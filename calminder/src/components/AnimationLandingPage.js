@@ -79,15 +79,12 @@ export function AnimationLandingPage() {
     
     <section 
       style={{
-        height: "100vh",
+        heigth: "100vh",
         position: "relative",
       }}
       ref={ref}
     >
       
-      
-      <Menu />
-    
       {textures.layouts.map((texture, index) => {
         return (
           <Layer
@@ -99,7 +96,7 @@ export function AnimationLandingPage() {
         )
       })
       }
-      <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 5}}>
+      <div style={{position: "absolute", width: "100%", height: "100%",  zIndex: 5}}>
         <Router>
           <Switch>
             <Route path="/" exact>
@@ -119,6 +116,7 @@ export function AnimationLandingPage() {
             </Route>
           </Switch>
         </Router>
+        <Menu />
       </div>
     </section>
   )
