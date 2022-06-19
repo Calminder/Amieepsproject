@@ -184,6 +184,7 @@ header .popo {
     padding: 2% 1% 1%;
     border-bottom-right-radius: 35px;
     font-size: 3vmin;
+    list-style-type: none;
 } 
 .faqCategories .faqCategoryOpen .faqsFromCategory .faq .answerContainer .faqAnswer {
     font-family:'Lato';
