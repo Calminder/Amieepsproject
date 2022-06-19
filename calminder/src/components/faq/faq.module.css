@@ -91,12 +91,12 @@ header .popo {
     font-family: 'Baloo 2';
     font-size: 3.5vmin;
     color:white;
-    height: 10vmin; 
+    height: 13vmin; 
     text-align: left;
 }
 
 .faqCategories .faqCategoryClose .categoryContainer .imgContainerCategory {
-    height: 10vmin;
+    height: 13vmin;
     border-bottom-left-radius: 35px;
     background-image: url("../../resources/arrow90.png");
     background-size: 55%;
@@ -104,7 +104,7 @@ header .popo {
     background-repeat: no-repeat;
 }
 .faqCategories .faqCategoryOpen .categoryContainer .imgContainerCategory {
-    height: 10vmin;
+    height: 13vmin;
     border-bottom-left-radius: 35px;
     background-image: url("../../resources/arrow.png");
     background-size: 55%;
