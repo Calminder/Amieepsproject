@@ -115,9 +115,9 @@ export const Activity = () =>
                 </div>
             </div>
             <div className={styles.shadow}>
-                <Header></Header>
                 <Video warn={card.videoURL} />
                 <Picture warn={card.url} />
+                <Header></Header>
                 <div className={styles.wrapper}>
                     <section className={ boolVideo ? styles.card : styles.video}
                         onClick={() => setCardOpened(true)}

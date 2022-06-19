@@ -1,8 +1,8 @@
 
 .burgerWrapper {
     position: fixed;
-    top: 20vmin;
-    left: 1vmin;
+    top: 18vmin;
+    left: 2vmin;
     z-index: 9;
     display: grid;
     grid-template-columns: auto;

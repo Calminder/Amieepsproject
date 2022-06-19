@@ -1,3 +1,4 @@
+
 .shadow {
     position: absolute;
     width: 100vw;
@@ -9,7 +10,7 @@
 
 .shadow .wrapper {
     margin: 0 auto;
-    margin-top: 10%;
+    margin-top: 20vmin;
     width: 80%;
     height: 80%;
     display: grid;
@@ -95,7 +96,7 @@
     left: 0px;
     top: 0px;
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.711);
     display: flex;
     align-items: center;
@@ -172,10 +173,10 @@
     height: auto;
 }
 
-.logo {
+.shadow .logo {
     right: 0;
     left: 0;
-    top: 0.1vh;
+    top: 0.3vmin;
     margin: 0 auto;
     position: absolute;
     background-image: url("../../resources/logo_calminder.png");
@@ -186,9 +187,9 @@
     width: 22vmax;
     height: 10vmax;
 }
-.amielogo {
-    top: -1vh;
-    left: 1.5vw;
+.shadow .amielogo {
+    top: -0.1vmin;
+    left: 2vmin;
     
   
     position: absolute;

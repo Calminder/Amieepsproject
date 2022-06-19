@@ -6,7 +6,7 @@
 .logo{
     right: 0;
     left: 0;
-    top: 0.1vh;
+    top: 0.3vmin;
     margin: 0 auto;
     position: absolute;
     background-image: url("../../resources/logo_calminder.png");
@@ -18,8 +18,8 @@
     height: 10vmax;
 }
 .amielogo{
-    top: -1vh;
-    left:1.5vw;
+    top: -0.1vmin;
+    left: 2vmin;
     
   
     position: absolute;
@@ -35,7 +35,7 @@
 }
 
 article {
-    margin: 18vmax auto 0;
+    margin: 15vmax auto 0;
     position: absolute ; 
     background-image: url("../../resources/blue_line.png");
     background-position: absolute;
@@ -193,7 +193,3 @@ header .popo {
     overflow-y: hidden;
 } 
 /* */
-::-webkit-scrollbar {
-    width: 0;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
-}
