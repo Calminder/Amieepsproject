@@ -14,4 +14,4 @@ The collaborators of this repository are:
   
     *Yurii Herasin - Programmer (Front-End & Back-End).
     
-    * - used Calminder GitHub account for commiting to the "master" branch of the repository
+    * - used Calminder GitHub account for commiting changes to the "master" branch of the repository
