@@ -9,4 +9,4 @@ The collaborator of this branch is:
   
     *Yurii Herasin - Programmer (Front-End & Back-End).
     
-    * - used Calminder GitHub account for commiting code changes to the "master" branch of the repository
+    * - used Calminder GitHub account for commiting code changes to the "master 2021-2022" branch of the repository
