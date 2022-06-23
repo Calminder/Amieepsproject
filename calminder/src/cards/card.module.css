@@ -1,48 +1,58 @@
 .flipCard {
-    background-color: transparent;
-    width: 160px;
-    height: 250px;
-    perspective: 1000px;
-    z-index: 4;
-    display: flex;
-    align-self: flex-start;
-    flex: auto;
-    margin-top: 20px;
+  background-color: transparent;
+  width: 10vw; /* width of one card of the list 160px*/
+  height: 15.6vw; /* height of one card of the list 250px*/
+  perspective: 500px;
+  z-index: 4;
+  display: flex;
+  align-self: flex-start;
+  flex: auto;
+  margin-top: 5%;
+  overflow-y: clip;
 }
 
 .flipCardInner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-  }
-  
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.2s;
+  transform-style: preserve-3d; /* enables 3D transformation */
+}
 
-  .flipCard:hover .flipCardInner {
-    transform: rotateY(180deg);
-  }
-  
 
-  .flipCardFront, .flipCardBack {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 8px;
-    padding: 10px;
-    box-sizing: border-box;
-  }
+.flipCard:hover .flipCardInner {
+  transform: rotateY(180deg);
+}
 
-  .flipCardFront {
-    /* background-color: #bbb; */
-    background-color: gray;
-    color: black;
-  }
 
-  .flipCardBack {
-    background-color: dodgerblue;
-    color: white;
-    transform: rotateY(180deg);
-  }
+.flipCardFront, .flipCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* hides the mirror image of the front face being displayed. */
+  border-radius: 8px;  /*border radius of the card */
+  padding: 5%;
+  box-sizing: border-box; /* how the width and height of an element are calculated: should they include padding and borders, or not. */
+}
+
+.flipCardFront {
+  /* background-color: #bbb; */
+  background-color: rgba(213, 6, 6, 0.082);
+  color: black;
+}
+
+.flipCardBack {
+  background-color: rgb(72, 100, 199);
+  color: white;
+  transform: rotateY(180deg);
+
+}
+.flipCardBacktitle{
+  font-family:'Baloo 2' ;
+  font-size: 1.3vw;
+}
+.flipCardBacktext{
+  font-family: 'Lato';
+  font-size: 1vw;
+}

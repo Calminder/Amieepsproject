@@ -2,30 +2,52 @@ import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IQuestion } from '../interfaces/question';
 import { IExercise } from '../interfaces/exercise';
+import {IMusicTrack} from '../interfaces/musicTrack';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 
 
 @Injectable({
   providedIn: 'root'
 })
+// this service can be seen in the whole application
 export class RealtimeDatabaseService
 {
+  musicTrackForm: FormGroup = new FormGroup({
+    $key: new FormControl(null),
+    title: new FormControl('', Validators.required),
+    link: new FormControl('', Validators.required)
+  });
+  initializemusicTrackForm()
+  {
+    this.musicTrackForm.setValue({
+      $key: null,
+      title: '',
+      link: ''
+    });
+  }
+  poulatemusicTrackForm(musicTrack: any)
+  {
+    this.musicTrackForm.setValue(musicTrack);
+  }
+  ///////////////////////////////////
   questionForm: FormGroup = new FormGroup({
     $key: new FormControl(null),
     title: new FormControl('', Validators.required),
     answer: new FormControl('', Validators.required),
     source: new FormControl(''),
-    sourceCheck: new FormControl(false)
+    sourceCheck: new FormControl(false),
+    category: new FormControl(0)
   });
 
-  initializequestionFrom()
+  initializequestionForm()
   {
     this.questionForm.setValue({
       $key: null,
       title: '',
       answer: '',
       source: '',
-      sourceCheck: false
+      sourceCheck: false,
+      category: 0
     });
   }
   poulatequestionForm(Faq: any)
@@ -46,10 +68,11 @@ export class RealtimeDatabaseService
     instructions: new FormControl('', Validators.required),
     extra: new FormControl(''),
     url: new FormControl(''),
-    musicUrl: new FormControl('')
+    musicUrl: new FormControl(''),
+    videoURL: new FormControl('')
   });
 
-  initializeexerciseFrom()
+  initializeexerciseForm()
   {
     this.exerciseForm.setValue({
       $key: null,
@@ -64,9 +87,11 @@ export class RealtimeDatabaseService
       instructions: '',
       extra: '',
       url: '',
-      musicUrl: ''
+      musicUrl: '',
+      videoURL: ''
     });
   }
+  //'url' parameter is for photos
   poulateexerciseForm(exercise: IExercise)
   {
     this.exerciseForm.setValue({
@@ -82,16 +107,43 @@ export class RealtimeDatabaseService
       instructions: exercise.instructions,
       extra: exercise.extra,
       url: exercise.url,
-      musicUrl: exercise.musicUrl
+      musicUrl: exercise.musicUrl,
+      videoURL: exercise.videoURL
     });
   }
 
   questionList!: AngularFireList<any>;
   exerciseList!: AngularFireList<any>;
-
+  musicTrackList!: AngularFireList<any>;
   constructor(private firebase: AngularFireDatabase) { }
+/////////////////
+  getMusicTracks()
+  {
+    this.musicTrackList = this.firebase.list('music-tracks');
+    return this.musicTrackList.snapshotChanges();
+  }
 
+  createMusicTrack(musicTrack: IMusicTrack)
+  {
+    this.musicTrackList.push({
+      title: musicTrack.title,
+      link: musicTrack.link,
+    });
+  }
 
+  updateMusicTrack(musicTrack: IMusicTrack)
+  {
+    this.musicTrackList.update(musicTrack.$key, {
+      title: musicTrack.title,
+      link: musicTrack.link
+    });
+  }
+
+  deleteMusicTrack(id: any)
+  {
+    this.musicTrackList.remove(id);
+  };
+ ///////////////
   getQuestions()
   {
     this.questionList = this.firebase.list('questions');
@@ -104,8 +156,8 @@ export class RealtimeDatabaseService
       title: question.title,
       answer: question.answer,
       source: question.source,
-      sourceCheck: question.sourceCheck
-
+      sourceCheck: question.sourceCheck,
+      category: question.category
     });
   }
 
@@ -115,7 +167,8 @@ export class RealtimeDatabaseService
       title: question.title,
       answer: question.answer,
       source: question.source,
-      sourceCheck: question.sourceCheck
+      sourceCheck: question.sourceCheck,
+      category: question.category
     });
   }
 
@@ -123,7 +176,7 @@ export class RealtimeDatabaseService
   {
     this.questionList.remove(id);
   };
-
+////////////////
   getExercise()
   {
     this.exerciseList = this.firebase.list('Calminder-exercise');
@@ -144,7 +197,8 @@ export class RealtimeDatabaseService
       extra: exercise.extra,
       url: exercise.url,
       date: exercise.date,
-      musicUrl: exercise.musicUrl
+      musicUrl: exercise.musicUrl,
+      videoURL: exercise.videoURL
     });
 
   }
@@ -163,8 +217,8 @@ export class RealtimeDatabaseService
       instructions: exercise.instructions,
       extra: exercise.extra,
       url: exercise.url,
-      musicUrl: exercise.musicUrl
-
+      musicUrl: exercise.musicUrl,
+      videoURL: exercise.videoURL
     });
   }
 
@@ -173,17 +227,4 @@ export class RealtimeDatabaseService
     this.exerciseList.remove(id);
   };
 
-
-  // formatDate(date: Date): string
-  // {
-  //   const day = date.getDate();
-  //   const month = date.getMonth() + 1;
-  //   const year = date.getFullYear();
-  //   return `${ day }-${ month }-${ year }`;
-
-  //   //date.setDate(date.getDate() + 2);
-  //   //console.log(date);
-
-  //   //return String(date);
-  // }
 }

@@ -1,7 +1,6 @@
 
 export const getSeason = () => {
     const month = new Date().getMonth();
-    console.log(month)
     let season = '';
 
     switch(month) {

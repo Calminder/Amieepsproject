@@ -5,10 +5,10 @@ import { Plane, useTexture } from "@react-three/drei";
 
 export function Layer(props) {
   const scale = 1;
-  const planeSize = [200, 100];
+  const planeSize = [800, 400];
   const ref = useRef();
-  const [movement] = useState(() => new THREE.Vector3());
-  const [temp] = useState(() => new THREE.Vector3());
+  const [movement] = useState(() => new THREE.Vector3()); // Vector for 3D modelling
+  const [temp] = useState(() => new THREE.Vector3()); // Vector for 3D modelling
 
   useFrame((state, delta) => {
     movement.lerp(temp.set(state.mouse.x, state.mouse.y * 0.2, 0), 0.2);
@@ -33,7 +33,7 @@ export function Layer(props) {
   });
 
   const texture = useTexture(props.texture);
-  console.log()
+
   return (
     <group ref={ref}>
       <Plane scale={scale} args={planeSize} position-z={props.z}>

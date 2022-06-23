@@ -5,4 +5,5 @@ export interface IQuestion
     answer: string;
     source: string;
     sourceCheck: boolean;
+    category: string;
 }

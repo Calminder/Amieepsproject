@@ -1,3 +1,4 @@
-import { cards } from '../constants/cards';
+import { categories } from '../constants/cards';
 
-export const getCardById = (id) =>  {console.log(cards);return cards.find(card => card.id == id) }
+export const getCardImageByCategory = (category) => categories.find(c => c.name === category);
+// c  - returns a pair: [image, category]

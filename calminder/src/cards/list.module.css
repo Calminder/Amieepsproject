@@ -1,22 +1,118 @@
 
 .wrapper {
     position: absolute;
-    display: flex;
-    top: 50px;
+    top: 5vh;
+    width: 100vw;
+    height: auto; /* 200vh */
+    overflow-y: auto;
+}
+.wrapper .overflowbackground{
+    margin: 0 auto;
+    height: auto;
     width: 100%;
+    margin-top: 20vmin;
+    padding-left: 12%;
+    padding-right: 12%;
+    overflow: auto;
+    font-family: 'Lato';
+    display: block;
 }
 
 .wrapper .overflow {
-    height: 85vh;
-    width: 900px;
+    box-sizing: border-box;
+    height: auto;
+    width: 76%;
+    margin-top: 12vmin;
     overflow: auto;
     margin: auto;
-    background-color: rgba(255, 255 ,255, .4);
-
+    padding-top: 0;
+    margin-bottom: 18vmax;
 }
 .wrapper .overflow .list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 20px;
+    align-content: space-between;
+    padding-top: 0 ;
+   /* column-gap: 6%; */
+    padding-right: 4%;
+    padding-left: 4%;
+    z-index: 15;
+}
+
+
+.wrapper .overflowbackground .textSection {
+    position: relative;
+    display: block;
+    color: rgb(255,255,255);
+    width: 70%;
+    height: auto;
+    text-align: center;
+    font-size: 1.5vw;
+    background-color: rgba(13, 81, 241, 0.735);
+    border-radius: 20px;
+    margin-top: 2vmin;
+    margin-bottom: 0.5vmin;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 1%;
+}
+
+.wrapper .overflowbackground .btnChoices {
+    color: white;
+    padding: 0% 15%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 1vmin 1%;
+    margin-bottom: 2vmin;
+    width: 100%;
+    font-size: 1.7vw;
+}
+.wrapper .overflowbackground .btnChoices .ButtonAll {
+    grid-area: 1 / 1 / span 1 / span 5;
+    text-align: center;
+    background-color: rgba(13, 81, 241, 0.735);
+    padding: 2vmin;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.wrapper .overflowbackground .btnChoices .ButtonAll:hover {
+    background-color: rgb(13, 64, 185);
+}
+.wrapper .overflowbackground .btnChoices .button {
+    border-width: 1px;
+    border-color: rgb(2, 3, 8);
+    background-color: rgba(13, 81, 241, 0.735);
+    border-radius: 15px;
+    padding: 2vmin 1%;
+    text-align: center;
+    cursor: pointer;
+}
+.wrapper .overflowbackground .btnChoices .button:hover {
+    background-color: rgb(13, 64, 185);
+}
+.wrapper .overflowbackground .searchBars {
+    padding: 0% 15%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+}
+.wrapper .overflowbackground .searchBars .searchForTitle  {
+    padding: 0% 1%;
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    height: 100%;
+ }
+.wrapper .overflowbackground .searchBars .searchForTitle input {
+   padding: 2% 1.5%;
+   height: 5vmin;
+   font-size: 1.7vw;
+   width: 100%;
+   border: 2px solid rgba(17, 103, 233, 0.371);
+}
+.wrapper .overflowbackground .searchBars .searchForTitle img {
+    height: 5vmin;
+    width: 50%;
+    cursor: pointer;
 }

@@ -1,62 +1,94 @@
-import React, { createRef, useEffect, useState } from "react";
-import { debounce } from "lodash";
-import { getSeasonTextures } from "./texturePicker.js";
-import { getSeason } from "./SeasonsArray.js";
+import React, { createRef, useEffect, useState } from 'react';
+import { debounce } from 'lodash';
+import { getSeasonTextures } from './texturePicker.js';
+import { getSeason } from './SeasonsArray.js';
 import { List }  from '../cards';
-import { Faq } from './faq';
 import { Activity } from './activity';
-
+import FaqList from './faq/FaqList';
+import { Menu } from './Menu/Menu';
+import {Music} from './music/music';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-} from "react-router-dom";
+  useLocation
+} from 'react-router-dom';
+import {About} from "./about/about";
+
 
 const Layer = ({ texture, depth, parent, offset }) => {
+  const ref = createRef();
   const [style, setStyle] = useState({
-    position: "absolute",
-    height: "100vh",
-    width: "100vw",
-    top: "0px",
+    position: "fixed",
+    width: "100%",
     left: "0px",
     zIndex: depth,
-    transition: "all 1s"
-  })
+    ...texture.style,
+    transition: "all 1s",
+  });
 
   useEffect(() => {
-    parent.current.addEventListener('mousemove', debounce(paralaxEffect))
-  }, [offset])
+    if(!texture.static) {
+      parent.current.addEventListener('mousemove', debounce(paralaxEffect));
+    }
+  }, [offset]);
+
+  const getRandomInt = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
 
 
   const paralaxEffect = (event) => {
     const { clientX, clientY } = event;
-    console.log(clientX, clientY);
-    setStyle({...style, top: clientY / (10*depth), left: clientX / 50*depth})
-  }
+    if(texture.name === "Spring plants layout" || texture.name === "Winter plants layout" || texture.name === "Autumn plants layout" || texture.name === "Summer plants layout") {
+      let bottom = clientY / (10*depth);
+      if(bottom > 30) {
+        bottom  = getRandomInt(0, 30);
+      } 
+      setStyle({...style, bottom, left: clientX / 50*depth})
+    }
+    else {
+      setStyle({...style, top: clientY / (10*depth), left: clientX / 50*depth})
+    }
+  };
 
-  return <img src={texture} style={style} />
-}
+  return <img src={texture.value} style={style} className={texture.className} />
+};
+
+
 
 export function AnimationLandingPage() {
   const ref = createRef();
   const season = getSeason();
   const textures = getSeasonTextures(season);
   const [offset, setOffset] = useState({x: 0, y: 0});
+  useEffect(() => {
+    setInterval(() => {
+      const page = window.location.pathname.includes('/activity') || window.location.pathname.includes('/faq');
+      const plants = document.querySelector('.plants');
+      if (page)  plants.style.zIndex = 5;
+      else plants.style.zIndex = 7;
+    }, 100);
+
+  }, [])
+
 
   return (
+    
     <section 
       style={{
-        height: "100vh",
-        width: "100vw",
+        heigth: "100vh",
         position: "relative",
-        overflow: "hidden"
       }}
       ref={ref}
     >
-      {Object.keys(textures).map((key, index) => {
+      
+      {textures.layouts.map((texture, index) => {
         return (
           <Layer
-            texture={textures[key]}
+            texture={texture}
             depth={index}
             parent={ref}
             offset={offset}
@@ -64,20 +96,27 @@ export function AnimationLandingPage() {
         )
       })
       }
-      <div style={{position: "absolute", width: "100%", height: "100%", zIndex: 5}}>
+      <div style={{position: "absolute", width: "100%", height: "100%",  zIndex: 5}}>
         <Router>
           <Switch>
             <Route path="/" exact>
             <List />
             </Route>
             <Route path="/faq" exact>
-              <Faq />
+              <FaqList />
             </Route>
             <Route path="/activity/:id" exact>
               <Activity />
             </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/music">
+              <Music/>
+            </Route>
           </Switch>
         </Router>
+        <Menu />
       </div>
     </section>
   )
