@@ -1,31 +1,55 @@
 import React from 'react';
-import styles from "./fqa.module.css";
+import styles from "./faq.module.css";
 import { useEffect, useState } from 'react';
-
-
+import {getFormattedText} from './textFormatting.js';
+function FormatText(props)
+{
+    const items = props.text;
+    if (items.length > 0 ){
+        const listItems = items.map((item) =>
+            <li>{item}</li>
+        );
+        return (
+            <div>
+                <ul 
+                style ={{ listStyleType:"none"}}>
+                    {listItems}
+                </ul>
+            </div>
+        );
+    }
+    else {
+        return (
+            <div>
+            </div>
+        );
+    }
+}
 function FaqCard(props) {
     const [question, setQuestion] = useState({});
+    const [answer, setAnswer] = useState([]);
     const [index] = useState(props.index);
-
+    const [open, setOpen] = useState(false);
     useEffect(() => {
         setQuestion(props.question);
+        setAnswer(getFormattedText(props.question.answer));
+        console.log(answer);
     }, []);
-
+    // here is an error
     const toggleFAQ  = () => {
-        setQuestion({...question, open: !question.open})
+        setOpen(!open);
     };
 
-    const toggleClass = question.open ? styles.faqOpen : styles.faq;
+    const toggleClass = open ? styles.faqOpen : styles.faq;
 
         return (
-
             <div
                 className={toggleClass}
                 key={index}
-                onClick={toggleFAQ}
             >
 
-                <div className={styles.questionContainer}>
+                <div className={styles.questionContainer}
+                onClick={toggleFAQ}>
                     <div className={styles.imgContainerQuestion}>
                         
                     </div>
@@ -35,12 +59,13 @@ function FaqCard(props) {
                 </div>
                 
                 <div className={styles.answerContainer}>
-                    <div className={styles.shadow}></div>
                     <div className={styles.imgContainerAnswer}>
 
                     </div>
                     <div className={styles.faqAnswer} >
-                        {question.answer}
+                        <FormatText
+                            text = {answer}
+                        />  
                     </div>
                 </div>
             </div>

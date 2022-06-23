@@ -4,26 +4,48 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { from } from 'rxjs';
 import { IQuestion } from '../interfaces/question';
 import { IExercise } from '../interfaces/exercise';
-
+import {IMusicTrack} from '../interfaces/musicTrack';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DatabaseService
 {
+    musicTrackForm: FormGroup = new FormGroup({
+    $key: new FormControl(null),
+    title: new FormControl('', Validators.required),
+    link: new FormControl('', Validators.required)
+  });
+
+  initializemusicTrackForm()
+  {
+    this.musicTrackForm.setValue({
+      $key: null,
+      title: '',
+      link: ''
+    });
+  }
+
+  poulatemusicTrackForm(musicTrack: any)
+  {
+    this.musicTrackForm.setValue(musicTrack);
+  }
+  ////////////////
   questionForm: FormGroup = new FormGroup({
     $key: new FormControl(null),
     title: new FormControl('', Validators.required),
     answer: new FormControl('', Validators.required),
+    category: new FormControl('', Validators.required),
     source: new FormControl(''),
     sourceCheck: new FormControl(false)
   });
 
-  initializequestionFrom()
+  initializequestionForm()
   {
     this.questionForm.setValue({
       $key: null,
       title: '',
+      category: '',
       answer: '',
       source: '',
       sourceCheck: false
@@ -45,10 +67,12 @@ export class DatabaseService
     wonder: new FormControl('', Validators.required),
     materials: new FormControl('', Validators.required),
     instructions: new FormControl('', Validators.required),
-    extra: new FormControl('')
+    extra: new FormControl(''),
+    videoURL: new FormControl(''),
+    musicUrl: new FormControl('')
   });
 
-  initializeexerciseFrom()
+  initializeexerciseForm()
   {
     this.exerciseForm.setValue({
       $key: null,
@@ -60,7 +84,9 @@ export class DatabaseService
       wonder: '',
       materials: '',
       instructions: '',
-      extra: ''
+      extra: '',
+      videoURL: '',
+      musicUrl: ''
     });
   }
   poulateexerciseForm(exercise: any)
@@ -68,8 +94,43 @@ export class DatabaseService
     this.exerciseForm.setValue(exercise);
   }
   constructor(private angularFirestore: AngularFirestore) { }
-  // Faq crud service
+  getMusicTrackDoc(id: any)
+  {
+    return this.angularFirestore.collection('music-tracks')
+      .doc(id).valueChanges();
+  }
+  getMusicTracksList(){
+    return this.angularFirestore.collection('music-tracks')
+    .snapshotChanges();
+  }
+  createMusicTrack(musicTrack: IMusicTrack)
+  {
+    return new Promise<any>(() =>
+    {
+      this.angularFirestore.collection('music-tracks')
+        .add(musicTrack)
+        .then(response => { console.log(response); }, error => console.log
+          (error));
+    });
+  }
 
+  updateMusicTrack(musicTrack: IMusicTrack)
+  {
+    return this.angularFirestore.collection('music-tracks')
+      .doc(musicTrack.$key)
+      .update({
+        title: musicTrack.title,
+        link: musicTrack.link,
+      });
+  }
+
+  deleteMusicTrack(musicTrack: IMusicTrack)
+  {
+    return this.angularFirestore.collection('music-tracks')
+      .doc(musicTrack.$key).delete();
+  };
+/////////
+  // Faq crud service
   getQuestionDoc(id: any)
   {
     return this.angularFirestore.collection('question-collection')
@@ -106,10 +167,11 @@ export class DatabaseService
       .update({
         title: question.title,
         answer: question.answer,
-        source: question.source
+        source: question.source,
+        category: question.category
       });
   }
-
+/////////
   getExercise()
   {
     return this.angularFirestore.collection('Calminder-exercise')
@@ -140,7 +202,9 @@ export class DatabaseService
         wonder: exercise.wonder,
         materials: exercise.materials,
         instructions: exercise.instructions,
-        extra: exercise.extra
+        extra: exercise.extra,
+        videoURL: exercise.videoURL,
+        musicUrl: exercise.musicUrl
       });
   }
 

@@ -12,5 +12,5 @@ const componentData = exercise =>
         return exerciseList;
     });
 };
-
+// gives the whole list of exercises with attributes form Firebase
 export const getData = () => componentData();

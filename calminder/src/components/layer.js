@@ -7,8 +7,8 @@ export function Layer(props) {
   const scale = 1;
   const planeSize = [800, 400];
   const ref = useRef();
-  const [movement] = useState(() => new THREE.Vector3());
-  const [temp] = useState(() => new THREE.Vector3());
+  const [movement] = useState(() => new THREE.Vector3()); // Vector for 3D modelling
+  const [temp] = useState(() => new THREE.Vector3()); // Vector for 3D modelling
 
   useFrame((state, delta) => {
     movement.lerp(temp.set(state.mouse.x, state.mouse.y * 0.2, 0), 0.2);

@@ -1,88 +1,110 @@
 .wrapper {
-  width: 95%;
+  width: 95vw;
+  height: auto;
   margin: auto;
   background-color: rgba(11, 114, 170, 0.448);
-  padding: 3% 2% 10% 2%;
-  margin-top: 15%;
+  padding: 3vmin 2vw 10vmin 2vw;
+  margin-top: 25vmin;
   border-radius: 20px;
   .first_screen {
     width: 100%;
-    display: inline-block;
-    flex-wrap: wrap;
-    p {
-      margin-bottom: 3%;
-    }
+    height: auto;
+    display: block;
+    font-family: "Lato";
     .title {
       font-family: "Baloo 2";
       //sfdsdfsdfs
-      font-size: 55px;
+      font-size: 7vmin;
       color: #ffffff;
       //background-color: rgb(252, 186, 3);
       width: 100%;
-      padding-bottom: 3%;
+      padding-bottom: 3vmin;
       text-align: center;
     }
     .main {
       width: 100%;
-      font-size: 40px;
-      font-family: "Lato";
+      padding: 0 3vmin;
+      font-size: 3.5vmin;
       color: rgb(255, 255, 255);
-      background-color: #a05d8c00;
-      margin: 1.5% 1%;
-      h1 {
-        margin-top: 2%;
-        margin-bottom: 1.5%;
-      }
+      margin: 1.5vmin 1vmin;
       p {
-        font-size: 25px;
+        margin-bottom: 3vmin;
       }
       ol {
-        padding: 25px;
+        padding: 3vmin;
+        padding-left: 5vmin;
       }
     }
+    .musicTracksLayout {
+      width: 100%;
+      padding: 0 3vmin;
+      font-size: 3vmin; 
+      .musicTracks {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4vmin;
+        margin-left: auto;
+        margin-right: auto;
+        color: #ffffff;
+        width: 100%;
+        .musicTrack {
+          display: grid;
+          grid-template-rows: 15vmin auto;
+          gap: 2vmin;
+          .trackTitle {
+            font-size: 4vmin;
+          }
+          .trackPlayer {
+            padding: 10vmin;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .teams {
+    margin: 0 auto;
+    margin-bottom: 15vmax;
+    margin-top: 1vmin;
+    width: 100%;
+    font-size: 3.5vmin;
+    text-align: center;
+    font-family: "Baloo 2";
+    color: white;
+  }
+  .teams p {
+    font-family: "Lato";
   }
 }
 
 .logo {
   right: 0;
   left: 0;
-  top: 10px;
+  top: 0.3vmin;
   margin: 0 auto;
   position: absolute;
   background-image: url("../../resources/logo_calminder.png");
   background-position: center;
-  background-size: 150px;
+  background-size: 50%;
   background-repeat: no-repeat;
-  z-index: 100;
-  width: 150px;
-  height: 150px;
+  z-index: 11;
+  width: 22vmax;
+  height: 10vmax;
 }
 .amielogo {
-  top: -45px;
-  left: -20px;
+  top: -0.1vmin;
+  left: 2vmin;
 
-  position: fixed;
+  position: absolute;
   background-image: url("../../resources/logo_amie.png");
   background-position: center;
-  background-size: 200px;
+  background-size: 100%;
   background-repeat: no-repeat;
 
   z-index: 100 !important;
-  width: 250px;
-  height: 150px;
+  width: 31.2vmin;
+  height: 20vmin;
   overflow: hidden;
 }
 
-.teams {
-  margin: 0 auto;
-  text-align: center;
-  font-family: "Baloo 2";
-  color: white;
-  margin-bottom: 200px;
-  margin-top: 50px;
-  width: 70%;
-  font-size: 22px;
-}
-.teams p {
-  font-family: "Lato";
-}
+

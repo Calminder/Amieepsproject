@@ -5,39 +5,19 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { PlayButton, Timer } from 'react-soundplayer/components';
-import { withSoundCloudAudio } from 'react-soundplayer/addons';
+import ReactPlayer from 'react-player';
 import { getCards } from "../../services/firebase.service";
+import {getFormattedInstructions} from './instructionsFormatting.js';
+import {getFormattedMaterials} from './materialsFormatting.js';
 import Header from './header';
 import Background from '../../resources/sky.jpg';
 const clientId = 'c5a171200f3a0a73a523bba14a1e0a29';
 // const resolveUrl = 'https://soundcloud.com/qvenaozv6yzq/grapevocal/s-wSrH0TN9QJv?fbclid=IwAR1O9bmVk5v969rAe8tTv0-Njjs4cZgevTXZR9B_CwUhrseD1WzWdgo4NTg';
 var boolPicture = true;
 var boolMusic = true;
-const Player = withSoundCloudAudio(props =>
-{
-    let { track, currentTime } = props;
-
-    return (
-        <div className={styles.customplayer}>
-            <PlayButton
-                className={styles.customplayerbtn}
-                onPlayClick={() =>
-                {
-
-                }}
-                {...props} />
-            <h2 className={styles.customplayertitle}>
-                {track ? track.title : 'Loading...'}
-            </h2>
-            <Timer
-                className={styles.customplayertimer}
-                duration={track ? track.duration / 1000 : 0}
-                currentTime={currentTime}
-                {...props} />
-        </div>
-    );
-});
+var boolVideo = true;
+let videoLink = "";
+const text = [];
 function Picture(props)
 {
     if (props.warn == "")
@@ -54,76 +34,113 @@ function Picture(props)
     );
 
 }
-function Music(props)
-{
-    console.log("begin", props.warn)
-    if (props.warn == "" || props.warn == undefined || props.warn == "/")
-    {
-        boolMusic = true;
-        console.log("true", props.warn)
-        return (
-            <div></div>
 
-        );
+function Video(props)
+{
+    if (props.warn == "")
+    {
+        return boolVideo = true;
     }
     else
     {
-        console.log("false", props.warn)
-        boolMusic = false;
-        return (
-            <Player
-                clientId={clientId}
-                resolveUrl={String(props.warn)}
-                onReady={() => console.log('')}
-            />
+        boolVideo = false;
+        videoLink = props.warn;
+    }
+    return (
 
+        <div>
+
+        </div>
+    );
+
+}
+function FormatText(props)
+{
+    const items = props.text;
+    if (items.length > 0 ){
+        const listItems = items.map((item) =>
+            <li>{item}</li>
+        );
+        return (
+            <div>
+                <ul
+                style ={{ listStyleType:"none"}}>
+                    {listItems}
+                </ul>
+            </div>
+        );
+    }
+    else {
+        return (
+            <div>
+            </div>
         );
     }
 }
+
 export const Activity = () =>
 {
-    const { id } = useParams();
+    const { id } = useParams(); /*specially for address bar */
     const [cardOpened, setCardOpened] = useState(false);
-
-    /*const card = getCardById(id);*/
     const [card, setCard] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [instructions, setInstructions] = useState([]);
+    const [materials, setMaterials] = useState([]);
     useEffect(async () =>
     {
         setLoading(true);
         const cards = await getCards(); //here is what I need , took from Firebase
         setCard(cards[id]);
-        setLoading(false)
+        setInstructions(getFormattedInstructions(cards[id].instructions));
+        setMaterials(getFormattedMaterials(cards[id].materials));
+        setLoading(false);
     }, []);
 
 
     /* const { title, duration, requirmens, age, materials, description, goal } = card;*/
 
     return (
-
+        // this file doesn't correspond to the file in "cards" folder
         card ?
-
+        <>
+            <div className={ (cardOpened && boolVideo) ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
+                <div className={styles.cardActive}>
+                    <div className={styles.title}>
+                        {card.title}  
+                    </div>   
+                    <div className={styles.bgImage}
+                    style={{
+                        backgroundImage: boolPicture ? `url(${Background})` : `url(${(card.url)})`, 
+                    }}
+                    >
+                    </div>
+                    <div className={styles.close} onClick={() => setCardOpened(false)}>X</div>
+                </div>
+            </div>
             <div className={styles.shadow}>
+                <Video warn={card.videoURL} />
+                <Picture warn={card.url} />
                 <Header></Header>
-                <Music warn={card.musicUrl}/>
-
                 <div className={styles.wrapper}>
-                    <div className={cardOpened ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
-                        <Picture warn={card.url} />
-                        <div className={styles.cardActive}>
-                            <div className={styles.title}>
-                                {card.title}  
-                            </div>   
-                            <div className={styles.bgImage}
-                            style={{
-                                backgroundImage: boolPicture ? `url(${Background})` : `url(${(card.url)})`, //импорт неба, как картинки для упражнения
-                            }}
-                            >
+                    <section className={ boolVideo ? styles.card : styles.video}
+                        onClick={() => setCardOpened(true)}
+                        style={{
+                            backgroundImage: boolPicture ? `url(${Background})` : `url(${(card.url)})`,
+                            backgroundSize: "contain",
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat'
+                        }}
+                    >
 
-                            </div>
-                            <div className={styles.close} onClick={() => setCardOpened(false)}>X</div>
-                            
-                        </div>
+                    </section>
+
+                    <div className = { boolVideo ? styles.NoVideoPlayer: styles.videoPlayer}>
+                        <ReactPlayer 
+                        width='100%'
+                        height='100%'
+                        controls={true}
+                        url={videoLink}  
+                        />
                     </div>
                     <div className={styles.goal}>
                         <h1 className={styles.title}>
@@ -148,27 +165,11 @@ export const Activity = () =>
 
                         </div>
                         <div className={styles.value}>
-                            {card.instructions}
+                            <FormatText
+                                text = {instructions} />
                         </div>
 
                     </div>
-
-                    <section className={styles.card}
-                        onClick={() => setCardOpened(true)}
-                        style={{
-                            backgroundImage: boolPicture ? `url(${Background})` : `url(${(card.url)})`,
-                            backgroundSize: "contain",
-                            backgroundPosition: 'center',
-                            backgroundRepeat: 'no-repeat'
-                        }}
-                    >
-                        <div className={styles.output}>
-                            <div className={styles.title}></div>
-                            <div className={styles.desc}></div>
-                        </div>
-
-                    </section>
-
 
                     <div className={styles.info}>
                         <div className={styles.item}>
@@ -188,8 +189,7 @@ export const Activity = () =>
                             <div className={styles.title}>
                                 <span className={styles.text}>
                                     Duration
-                            </span>
-
+                                </span>
                             </div>
                             <div className={styles.desc}>
                                 {card.duration}
@@ -202,7 +202,7 @@ export const Activity = () =>
                             <div className={styles.title}>
                                 <span className={styles.text}>
                                     Age
-                                     </span>
+                                </span>
                             </div>
                             <div className={styles.desc}>
                                 {card.age}
@@ -213,10 +213,12 @@ export const Activity = () =>
                             <div className={styles.title}>
                                 <span className={styles.text}>
                                     Materials
-                                     </span>
+                                </span>
                             </div>
                             <div className={styles.desc}>
-                                {card.materials}
+                                  <FormatText
+                                    text = {materials} /> 
+
                             </div>
                         </div>
 
@@ -224,7 +226,7 @@ export const Activity = () =>
                             <div className={styles.title}>
                                 <span className={styles.text}>
                                     Extra
-                            </span>
+                                </span>
                             </div>
                             <div className={styles.desc}>
                                 <div className={styles.scrolltext}>
@@ -236,6 +238,6 @@ export const Activity = () =>
 
                 </div>
             </div>
-            : null
+        </> : null
     )
 }

@@ -4,10 +4,9 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { AngularFireAuthGuard, redirectLoggedInTo, redirectUnauthorizedTo, } from '@angular/fire/auth-guard';
-import { QuestionComponent } from './questions/question/question.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { ExercisesComponent } from './exercises/exercises.component';
-
+import { MusicTracksComponent } from './music-tracks/music-tracks.component';
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectLoggedInToItems = () => redirectLoggedInTo(['home']);
 
@@ -36,6 +35,12 @@ const routes: Routes = [
         canActivate: [AngularFireAuthGuard],
         data: { authGuardPipe: redirectUnauthorizedToLogin }
       },
+      {
+        path: 'music-track',
+        component: MusicTracksComponent,
+        canActivate: [AngularFireAuthGuard],
+        data: { authGuardPipe: redirectUnauthorizedToLogin }
+      }
     ]
   },
   {

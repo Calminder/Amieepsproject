@@ -1,6 +1,7 @@
 {
   "hosting": {
-    "public": "dist",
+    "site": "admin-calminder",
+    "public": "dist/admin-panel",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -13,12 +14,7 @@
       }
     ]
   },
-  "emulators": {
-    "hosting": {
-      "port": 5000
-    },
-    "ui": {
-      "enabled": true
-    }
+  "database": {
+    "rules": "database.rules.json"
   }
 }

@@ -1,41 +1,24 @@
 export const categories = [
     {
-        // yes
         name: 'Music',
         image: 'categories/music.jpg'
     },
-    {
-        // yes
-        name: 'Visual Art',
+    { 
+        name: 'Creating',
         image: 'categories/creating.jpg'
     },
     {
-        // yes
-        name: 'Drama',
+        name: 'Expressions',
         image: 'categories/expressions.jpg'
     },
     {
-        // yes
-        name: 'Dance - Movement',
+        name: 'Movement',
         image: 'categories/dance-movement.jpg'
     },
     
     {
-        //
-        name: 'Digital art', // we don't need it
-        image: 'categories/4.jpg'
-    },
-    
-    {
-        // yes
-        name: 'Writing',
+        name: 'Experiments',
         image: 'categories/experiments.jpg'
-    },
-    
-    {
-        //
-        name: 'stories - poetry', //we don't need it
-        image: 'categories/2.jpg'
     },
     
 ];

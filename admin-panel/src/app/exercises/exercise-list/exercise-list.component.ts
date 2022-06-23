@@ -89,7 +89,7 @@ export class ExerciseListComponent implements OnInit
 
   onDelete(key: any, row: any)
   {
-    this.dialogsvc.openConfirmDialog('Are you sure you want to delete the question').afterClosed().subscribe(res =>
+    this.dialogsvc.openConfirmDialog('Are you sure you want to delete the exercise').afterClosed().subscribe(res =>
     {
       if (res) {
         if (row.url != '') {

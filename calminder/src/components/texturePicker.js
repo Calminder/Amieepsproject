@@ -26,7 +26,6 @@ const seasons = {
         name: 'Spring clouds layout',
         value: cloudsUrl,
         static:true,
-
       },
       {
         name: 'Spring plants layout',
@@ -34,7 +33,7 @@ const seasons = {
         className: 'plants',
         static: true,
         style: {
-          zIndex: 2,
+          zIndex: 7,
           bottom: '0px',
         },
       },
@@ -43,7 +42,9 @@ const seasons = {
         value: treesUrl,
         static: true,
         style: {
-          height: '100%',
+          margin: '0px',
+          height: '100vh',
+          width: '100%'
         }
       }
     ]
@@ -52,7 +53,11 @@ const seasons = {
     layouts: [
       {
         name: 'Winter background layout',
-        value: bg_winterUrl
+        value: bg_winterUrl,
+        style: {
+          width: '100%',
+          height: '100%',
+        }
       },
       {
         name: 'Winter clouds layout',
@@ -73,7 +78,8 @@ const seasons = {
         value: trees_winterUrl,
         static: true,
         style: {
-          margin: '100000px',
+          margin: '0px',
+          height: '100%'
         }
       }
     ]
@@ -82,7 +88,11 @@ const seasons = {
     layouts: [
       {
         name: 'Summer background layout',
-        value: bg_summerUrl
+        value: bg_summerUrl,
+        style: {
+          width: '100%',
+          height: '100%',
+        }
       },
       {
         name: 'Summer clouds layout',
@@ -103,9 +113,11 @@ const seasons = {
         value: treesUrl,
         static: true,
         style: {
-          margin: '100000px',
+          margin: '0',
+          height: '100%'
         }
       },
+      /*
       {
         name: 'Summer sun flare layout',
         value: sun_flare_summerUrl,
@@ -113,13 +125,18 @@ const seasons = {
           zIndex: 7
         },
       }
+      */
     ]
   },
   Autumn: {
     layouts: [
       {
         name: 'Autumn background layout',
-        value: bg_autumnUrl
+        value: bg_autumnUrl,
+        style: {
+          width: '100%',
+          height: '100%',
+        }
       },
       {
         name: 'Autumn clouds layout',
@@ -132,7 +149,7 @@ const seasons = {
         static: true,
         style: {
           zIndex: 7,
-          bottom: '0px',
+          bottom: '0px'
         },
       },
       {
@@ -140,7 +157,8 @@ const seasons = {
         value: trees_autumnUrl,
         static: true,
         style: {
-          margin: '100000px',
+          margin: '0',
+          height: '100%'
         }
       },
     ]

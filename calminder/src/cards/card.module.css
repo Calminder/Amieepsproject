@@ -1,13 +1,13 @@
 .flipCard {
   background-color: transparent;
-  width: 160px; /* width of one card of the list */
-  height: 250px; /* height of one card of the list */
+  width: 10vw; /* width of one card of the list 160px*/
+  height: 15.6vw; /* height of one card of the list 250px*/
   perspective: 500px;
   z-index: 4;
   display: flex;
   align-self: flex-start;
   flex: auto;
-  margin-top: 20px;
+  margin-top: 5%;
   overflow-y: clip;
 }
 
@@ -32,7 +32,7 @@
   height: 100%;
   backface-visibility: hidden; /* hides the mirror image of the front face being displayed. */
   border-radius: 8px;  /*border radius of the card */
-  padding: 10px;
+  padding: 5%;
   box-sizing: border-box; /* how the width and height of an element are calculated: should they include padding and borders, or not. */
 }
 
@@ -50,8 +50,9 @@
 }
 .flipCardBacktitle{
   font-family:'Baloo 2' ;
-  font-size: 18px;
+  font-size: 1.3vw;
 }
 .flipCardBacktext{
   font-family: 'Lato';
+  font-size: 1vw;
 }

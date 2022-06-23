@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./fqa.module.css";
+import styles from "./faq.module.css";
 function Header()
 {
     return (
@@ -8,9 +8,8 @@ function Header()
             <div className={styles.amielogo}></div>
 
             <header>
-                <div className={styles.popo}>FAQ</div>
-                <article >
-
+                <div className={styles.popo}>FAQ Categories</div>
+                <article>
                 </article>
             </header>
 

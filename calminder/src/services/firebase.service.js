@@ -20,3 +20,15 @@ export const getCards = () => {
         });
     })
 };
+
+
+export const getMusicTracks = () => {
+    return new Promise((resolve, reject) => {
+        firebase.database().ref('music-tracks').on('value', snapshot => {
+            let array = [];
+            snapshot.forEach(snap => {
+             array.push(snap.val())});
+            return resolve(array);
+        });
+    })
+};
