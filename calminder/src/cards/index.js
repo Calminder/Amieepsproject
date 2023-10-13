@@ -52,7 +52,8 @@ export const List = () =>
                         accepting attitude to the present moment. 
                         Mindfulness together with art will create a stimulating environment for children to learn and develop.
                         On this Calminder website exercises are provided to help implement <strong>A</strong>rts and <strong>M</strong>indfulness <strong>i</strong>n <strong>E</strong>ducation.
-                        The exercises invite the children to recognise and accept their feelings and express them into artworks. Let's get started!  
+                        The exercises invite the children to recognise and accept their feelings and express them into artworks. You will also find music especially composed for use as mindfulness exercises, link to our FAQ, pedagogical framework and our online course about arts and mindfulness.
+                        <br></br> Let's get started!
                     </p>
                 </div>
                 <div class={styles.btnChoices}>
