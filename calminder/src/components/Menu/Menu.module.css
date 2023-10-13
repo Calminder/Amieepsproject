@@ -1,7 +1,7 @@
 
 .burgerWrapper {
     position: fixed;
-    top: 18vmin;
+    top: 8vmin;
     left: 2vmin;
     z-index: 9;
     display: grid;
@@ -30,7 +30,7 @@
     /* width: 228px; */
     padding: 2vmin 2vmin;
     display: grid;
-    grid-template-columns: 15vmin;
+    grid-template-columns: auto;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     font-family: 'lato';
@@ -41,7 +41,7 @@
     padding: 0.5vmin 2.8vmin;
     padding-bottom: 1vmin;
     flex-direction: column;
-    row-gap: 1vmin;
+    row-gap: 0.5vmin;
 }
 .burgerWrapper .container .burgerbtnWhite .line {
     height: 1vmin;
@@ -59,7 +59,7 @@
 }
 .burgerWrapper .container .menu_content ul .menuli {
     box-sizing: border-box;
-    margin-top: 4vmin;
+    margin-top: 0.15vmin;
 }
 
 .burgerWrapper .container .menu_content ul .menuli a {
