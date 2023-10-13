@@ -1,0 +1,31 @@
+.wrapper {
+    width: 80vw;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.377);
+    padding: 3vmin 2vmin 10vmin 2vmin;
+    margin-top: 18vh;
+    border-radius: 15px;
+    .first_screen {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        p {
+            margin-bottom: 4vmin;
+        }
+        .title {
+            font-family: 'Baloo 2';
+            font-size: 7vmin;
+            text-align: center;
+            color: #ebebf5;
+            width: 100%;
+            padding-bottom: 5vmin;
+        }
+        .full {
+            font-size: 3.5vmin;
+            font-family:'Lato';
+            text-align: center;
+            color: white;
+        }
+    }
+
+}
