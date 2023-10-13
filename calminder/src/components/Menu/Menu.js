@@ -6,19 +6,27 @@ export const Menu = () =>
     const items = [
         {
             value: 'Home',
-            href: '/',
+            href: '/'
         },
         {
             value: 'About',
-            href: '/about',
+            href: '/about'
         },
         {
             value: 'FAQ',
-            href: '/faq',
+            href: '/faq'
         },
         {
            value: 'Music',
-           href: '/music',
+           href: '/music'
+        },
+        {
+            value: 'Course',
+            href: '/course'
+        },
+        {
+            value: 'Framework',
+            href: '/framework'
         }
     ];
     const [open, setOpen] = useState(false);
