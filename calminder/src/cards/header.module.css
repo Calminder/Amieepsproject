@@ -2,7 +2,7 @@ header {
     width: 100vw;
     margin: auto;
 }
-.logo{
+.logo {
     right: 0;
     left: 0;
     top: 0.3vmin;
@@ -18,17 +18,81 @@ header {
 }
 
 .amielogo {
-    top: -0.1vmin;
-    left: 2vmin;
-    
-  
+    top: 0.5vmax;
+    left: 18vmin;
     position: absolute;
     background-image: url("../resources/logo_amie.png");
     background-position: center;
-    background-size: 100%;
+    background-size: contain;
     background-repeat: no-repeat;
     z-index: 100 !important;
-    width: 31.2vmin;
-    height: 10vmin;
+    width: 18vmin;
+    height: 8vmax;
     overflow: hidden;
+}
+
+.social_media_links_first {
+    top: 12vmax;
+    left: 2vmin;
+    position: absolute;
+    display: flex;
+    gap: 10%;
+}
+
+.social_media_links_first .youtube {
+    width: 10vmin;
+    height: 5vmax;
+    background-image: url("../resources/youtube_logo.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.social_media_links_first .instagram {
+    width: 10vmin;
+    height: 5vmax;
+    background-image: url("../resources/instagram_logo.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.erasmuslogo {
+    top: -2vmax;
+    right: 5.5vmin;
+    position: absolute;
+    background-image: url("../resources/logo_erasmus.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 110 !important;
+    width: 35vmin;
+    height: 8vmax;
+    overflow: hidden;
+}
+
+.social_media_links_last {
+    top: 12vmax;
+    right: 8vmin;
+    position: absolute;
+    display: flex;
+    gap: 10%;
+}
+
+.social_media_links_last .facebook {
+    width: 10vmin;
+    height: 5vmax;
+    background-image: url("../resources/facebook_logo.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.social_media_links_last .website {
+    width: 10vmin;
+    height: 5vmax;
+    background-image: url("../resources/website_logo.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
