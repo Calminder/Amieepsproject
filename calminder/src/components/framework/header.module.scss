@@ -1,0 +1,46 @@
+header {
+    width: 100vw;
+    margin: auto;
+}
+.logo {
+    right: 0;
+    left: 0;
+    top: 0.3vmin;
+    margin: 0 auto;
+    position: absolute;
+    background-image: url("../../resources/logo_calminder.png");
+    background-position: center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    z-index: 11;
+    width: 22vmax;
+    height: 10vmax;
+}
+
+.amielogo {
+    top: 0.5vmax;
+    left: 18vmin;
+    position: absolute;
+    background-image: url("../../resources/logo_amie.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 100 !important;
+    width: 18vmin;
+    height: 8vmax;
+    overflow: hidden;
+}
+
+.erasmuslogo {
+    top: -2vmax;
+    right: 5.5vmin;
+    position: absolute;
+    background-image: url("../../resources/logo_erasmus.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 110 !important;
+    width: 35vmin;
+    height: 8vmax;
+    overflow: hidden;
+}

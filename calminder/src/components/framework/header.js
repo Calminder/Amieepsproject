@@ -1,19 +1,13 @@
 import React from 'react';
-import styles from "./faq.module.css";
+import styles from "./header.module.scss";
 function Header()
 {
     return (
-        <>
+        <header>
             <div className={styles.logo}></div>
             <div className={styles.amielogo}></div>
             <div className={styles.erasmuslogo}></div>
-            <header>
-                <div className={styles.popo}>FAQ Categories</div>
-                <article>
-                </article>
-            </header>
-
-        </>
+        </header>
 
 
     )

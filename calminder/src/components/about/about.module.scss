@@ -1,7 +1,7 @@
 .wrapper {
     width: 80vw;
     margin: auto;
-    background-color: rgba(0, 0, 0, 0.399);
+    background-color: rgba(0, 0, 0, 0.377);
     padding: 3vmin 2vmin 10vmin 2vmin;
     margin-top: 18vh;
     border-radius: 15px;
@@ -11,6 +11,12 @@
         flex-wrap: wrap;
         p {
             margin-bottom: 4vmin;
+        }
+        .full {
+            font-size: 3.5vmin;
+            font-family:'Lato';
+            text-align: center;
+            color: white;
         }
         .title {
             font-family: 'Baloo 2';
@@ -93,17 +99,16 @@
                 font-family: 'Lato';
                 color: white;
                 text-align: center;
-                margin-bottom: 3vmin;
                 h1 {
-                    padding-bottom: 2vmin;
+                    font-size: 5vmin;
+                    text-decoration: underline;
                 }
                 h2 {
-                    text-decoration: underline;
-                    margin-top: 1vmin;
-                    margin-bottom: 3vmin;
+                    font-size: 3.5vmin;
+                    margin-top: 0.35vmin;
                 }
                 p {
-                    padding-top: 2vmin;
+                    padding-top: 1.75vmin;
                 }
                 .separator {
                     width: 100%;
@@ -192,21 +197,30 @@
         height: 10vmax;
     }
     .amielogo {
-        top: -0.1vmin;
-        left: 2vmin;
-        
-      
+        top: 0.5vmax;
+        left: 18vmin;
         position: absolute;
         background-image: url("../../resources/logo_amie.png");
         background-position: center;
-        background-size: 100%;
+        background-size: contain;
         background-repeat: no-repeat;
-        
         z-index: 100 !important;
-        width: 31.2vmin;
-        height: 20vmin;
+        width: 18vmin;
+        height: 8vmax;
         overflow: hidden;
     }
-
+    .erasmuslogo {
+        top: -2vmax;
+        right: 5.5vmin;
+        position: absolute;
+        background-image: url("../../resources/logo_erasmus.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 110 !important;
+        width: 35vmin;
+        height: 8vmax;
+        overflow: hidden;
+    }
 
     
