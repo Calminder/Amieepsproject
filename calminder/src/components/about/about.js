@@ -23,6 +23,16 @@ export const About = () =>
             </Header>
             <div className={styles.wrapper}>
                 <section className={styles.first_screen}>
+                    <div className = {styles.full}>
+                        <p>Welcome to the official web page for the
+                        Erasmus+ Strategic Partnership “Arts and Mindfulness in Education” (<b>AMiE</b>).
+                        The aim of the project is to provide European teachers, students, and artists
+                        with inspirational and supportive tools regarding the introduction of mindfulness
+                        in pre-primary and primary education (age group 3 to 12).
+                        AMiE is unique in that it uses the power of art and creative processes
+                        as a starting point for the introduction of mindfulness working with children.
+                        The project is co-funded by the EUs Erasmus+ program.</p>
+                    </div>
                     <div className={styles.title}>
                         Why mindfulness in education?
                     </div>
@@ -39,7 +49,7 @@ export const About = () =>
                            Another form of exercise is not using a specific focus yet training to stay aware of where the
                             attention moves to. A third group of exercises are often called 'informal exercises':
                            we train ourselves by paying more attention to specific actions, situations and interactions in our daily lives.
-                           For example, we drink tea, brush our hair, or walk to the next room with our full awareness. </p>
+                           For example, we drink tea, brush our hair, or walk to the next room with our full awareness.</p>
 
                         <p>With guidance and training, mindfulness
                             can develop into a way of living that
@@ -66,7 +76,7 @@ export const About = () =>
                 </section>
                 <section className={styles.second_screen}>
                     <div className={styles.title}>
-                        A.M.i.E. Project
+                        A.M.i.E. Project: innovational project, organising, student involvement, outputs
                     </div>
                     <div className={styles.left}>
                         <img src={artboard77} />
@@ -76,7 +86,8 @@ export const About = () =>
                             (A.M.i.E.) is an international project,
                             implemented in partnership with the Erasmus+
                             programme. The aim of the project is to
-                            provide teachers worldwide with inspirational,
+                            provide teachers, students and artists
+                            worldwide with inspirational,
                             innovative and supportive tools
                             aiding the integration of mindfulness in
                             primary and pre-primary curricula in an
@@ -87,6 +98,21 @@ export const About = () =>
                             arts and creative processes to cultivate
                             mindfulness in primary and pre-primary
                             school environments.</p>
+                        <p>The AMiE project is an innovation project and
+                            this page is a co-creation between the partners
+                            involved in the project together with students
+                            from AP, DkIT and HVL. This website contains the outputs
+                            of the project. You will find exercises in arts and mindfulness,
+                            Frequently asked questions about arts and mindfulness,
+                            video lessons, music especially composed for use with mindfulness,
+                            our pedagogical framework and a link to our online course
+                            about mindfulness.</p>
+                        <p><i>The AMiE logo is created by Thao Cao Minh Nguyen. She is a current
+                            sophomore at Dundalk Institute of Technology (Dkit).
+                            As a kid, she loves drawing and singing, which is why she majors in Creative Media,
+                            the course that covers both visual and auditory aspects. Once graduated,
+                            she would be happy to get paid in Graphic Design, Web Design,
+                            as well as Video and Audio Production.</i></p>
                     </div>
                 </section>
                 <section className={styles.third_screen}>
@@ -106,9 +132,9 @@ export const About = () =>
                             in the AMIE project are from this division.</p>
                         </div>
                         <div className = {styles.educators}>
-                            <h2>Teachers</h2>
-                            <h1>Lieven Vercauteren</h1>
-                            <h1>Jeroen Crobeck</h1>
+                            <h1>Teachers</h1>
+                            <h2>Lieven Vercauteren</h2>
+                            <h2>Jeroen Crobeck</h2>
                             <p>Jeroen’s personal experience with mindfulness during his bio-engineering studies inspired him
                             to follow a different professional path. With the intention of bringing mindfulness in education
                             he went on to become a science teacher. Now he teaches both science and mindfulness to students,
@@ -120,7 +146,7 @@ export const About = () =>
                             <p>Together they offered both physical and online mindfulness training for the AMIE teachers
                             and students throughout the project and shared their knowledge and experience in many ways.
                             They coordinated the development of this calminder website, the FAQ and the SPOC on the Udemy platform
-                            in co-creation with European student teams Furthermore they were responsible for the organisation of the last IP and AMIE conference in Antwerp, Belgium.</p>
+                            in co-creation with European student teams. Furthermore they were responsible for the organisation of the last IP and AMIE conference in Antwerp, Belgium.</p>
                             <div className = {styles.separator}></div>
                         </div>
                         <div className={styles.left}>
@@ -133,35 +159,35 @@ export const About = () =>
                             Secondary Course of Instrument and Music Training</p>
                         </div>
                         <div className = {styles.educators}>
-                            <h2>Teachers</h2>
-                            <h1>Luisa Caiano</h1>
+                            <h1>Teachers</h1>
+                            <h2>Luisa Caiano</h2>
                             <p>Luisa is a pianist and director of Curso de Música Silva Monteiro.
                             In the AMiE Project she was internal coordinator of the Portuguese team for the project
                             and also coordinated the project from July to October 2022. She participated in all project
                             activities delivering workshops and working on the outputs. </p>
-                            <h1>André Ramos</h1>
+                            <h2>André Ramos</h2>
                             <p>André is composer and flute teacher in CMSM.
                             He was coordinating the output “pedagogical framework”. He also composed music
                             specially for the output “Mindful music making”, recorded and edited the Portuguese
                             video lessons and contributed for the other outputs. He participated in all project activities.</p>
-                            <h1>Andreia Volta e Sousa</h1>
+                            <h2>Andreia Volta e Sousa</h2>
                             <p>Andreia is a soprano and choir teacher in CMSM. She worked mainly
                             on the “pedagogical framework” output, recorded video lessons with her classes
                             and music for the “mindful music making” output. She participated in all IP’s delivering workshops and
                             working on the project outputs.</p>
-                            <h1>Teresa Seiça</h1>
+                            <h2>Teresa Seiça</h2>
                             <p>Teresa is a music education and choir teacher in CMSM. She worked mainly
                             on the “pedagogical framework” output and recorded music for the “mindful music making”
                             with her classes. She participated in all IP’s delivering workshops and working on the project outputs.</p>
-                            <h1>Rita Barbosa</h1>
+                            <h2>Rita Barbosa</h2>
                             <p>Rita is a guitar teacher in CMSM. She volunteered in working with the refugees in Bosnia
                             with the AMiE team, for the Drop in the Ocean institution. She participated in 2 IP’s delivering workshops
                             and worked on the project outputs.</p>
-                            <h1>Maria José Barros</h1>
+                            <h2>Maria José Barros</h2>
                             <p>Maria is a music education teacher for children from 4 to 9 years.
                             In this project she wrote some songs and experiment exercices with her students.
                             She has also participated in two IP delivering workhops. She also worked on project outputs.</p>
-                            <h1>Liliana Rocha</h1>
+                            <h2>Liliana Rocha</h2>
                             <p>Liliana is music education and choir teacher in CMSM. In this project she participated
                             in two IP delivering workhops. She also worked on project outputs.</p>
                             <div className = {styles.separator}></div>
@@ -177,36 +203,21 @@ export const About = () =>
                             in camera technology and filming.</p>
                         </div>
                         <div className = {styles.educators}>
-                            <h2>Teachers</h2>
-                            <h1>Dr Jemma McGourty</h1>
+                            <h1>Teachers</h1>
+                            <h2>Dr Jemma McGourty</h2>
                             <p>Jemma is a chartered psychologist and lectures in Dundalk Institute of Technology in Ireland.
                             Jemma teaches on the Early Childhood Studies degree with an expertise in child development and psychological wellbeing
                             and mental health.</p>
-                            <h1>Mr Noel Smyth</h1>
+                            <h2>Mr Noel Smyth</h2>
                             <p>As a Digital Media Lecturer at Dundalk Institute of Technology in Ireland, Noel brings a wealth of knowledge
                             and experience in all stages of film and TV production. With a strong background in the industry,
                             Noel is equipped to provide students with valuable insights and the practical skills necessary for success
                             in the ever-evolving world of digital media.</p>
-                            <h1>Annalisa Monticelli</h1>
+                            <h2>Annalisa Monticelli</h2>
                             <p>Annalisa is a pianist, singer, conductor, and researcher. She is a highly sought-after musician
                             who has performed, taught, and recorded in Europe, Asia, North, and South America as a soloist
                             and with a variety of ensembles. Annalisa brings her broad expertise to a variety of subjects and programmes
                             in DkIT and is Programme Director for the Musical Theatre Programme.</p>
-                            <h1>Teresa Seiça</h1>
-                            <p>Teresa is a music education and choir teacher in CMSM. She worked mainly
-                            on the “pedagogical framework” output and recorded music for the “mindful music making”
-                            with her classes. She participated in all IP’s delivering workshops and working on the project outputs.</p>
-                            <h1>Rita Barbosa</h1>
-                            <p>Rita is a guitar teacher in CMSM. She volunteered in working with the refugees in Bosnia
-                            with the AMiE team, for the Drop in the Ocean institution. She participated in 2 IP’s delivering workshops
-                            and worked on the project outputs.</p>
-                            <h1>Maria José Barros</h1>
-                            <p>Maria is a music education teacher for children from 4 to 9 years.
-                            In this project she wrote some songs and experiment exercices with her students.
-                            She has also participated in two IP delivering workhops. She also worked on project outputs.</p>
-                            <h1>Liliana Rocha</h1>
-                            <p>Liliana is music education and choir teacher in CMSM. In this project she participated
-                            in two IP delivering workhops. She also worked on project outputs.</p>
                             <div className = {styles.separator}></div>
                         </div>
                         <div className={styles.left}>
@@ -219,8 +230,8 @@ export const About = () =>
                             in an educational context.</p>
                         </div>
                         <div className = {styles.educators}>
-                            <h2>Teachers</h2>
-                            <h1>Irma Smegen</h1>
+                            <h1>Teachers</h1>
+                            <h2>Irma Smegen</h2>
                             <p>Irma Smegen is a mindfulness and compassion trainer, with a background in pre-primary,
                              primary and arts- education. She has been working with children her entire life. Along the way,
                              she has balanced various roles: as a primary school and kindergarten teacher, day care leader and drama teacher.
@@ -246,15 +257,15 @@ export const About = () =>
                             had this speciality.</p>
                         </div>
                         <div className = {styles.educators}>
-                            <h2>Teachers</h2>
-                            <h1>Jonas Selås Olsen</h1>
+                            <h1>Teachers</h1>
+                            <h2>Jonas Selås Olsen</h2>
                             <p>Jonas is an “all genres” guitarist and musician, working at the Department of Arts Education,
                              Western Norway University of Applied Sciences (HVL). His subjects include ensemble,
                              studio and music technology, pedagogy, music theory and performance. He is currently project coordinator
                              for AMIE (Arts and Mindfulness in Education) and was part of the SPACE Erasmus+ project,
                              but also projects such as «Write a Science Opera» and «Global Science Opera» where he has been
                              a workshop leader in many different countries.</p>
-                            <h1>Frode Hammersland</h1>
+                            <h2>Frode Hammersland</h2>
                             <p>Frode is a bass player and associate professor, working
                              at the Department of Arts Education, Western Norway University of Applied Sciences (HVL).
                              He holds a master in music performance, is an active musician and works
@@ -262,7 +273,7 @@ export const About = () =>
                              He takes part in both the WASO project and IMTE project. His study on improvisation
                              focuses on how improvisation can be used as a mediating tool for the integration of performance and music theory.
                              Frode has composed music for the mindful music output and been doing workshops throughout the project.</p>
-                            <h1>Marte Aadland Simonsen</h1>
+                            <h2>Marte Aadland Simonsen</h2>
                             <p>Marte is an assistant professor in the arts and crafts education
                              at Western Norway University of Applied Sciences (HVL) and teaches mainly
                              within the kindergarten teacher education. Her educational background
@@ -272,7 +283,7 @@ export const About = () =>
                              in the creation of sensory rooms and how we can use the materials available physical/digital tools
                              in a creative way that safeguards children’s natural, playful and physical behavior,
                              and that promotes interaction and inclusion.</p>
-                            <h1>Anne-Beate Ulveseth Lilletvedt </h1>
+                            <h2>Anne-Beate Ulveseth Lilletvedt </h2>
                             <p>Anne-Beate is an assistant professor in drama at HVL, Stord,
                              and is also working as a dance pedagogy in the course activities
                              at Spinae Company/Foreininga Spinae Sunnhordland. She has a varying daily life
@@ -337,7 +348,7 @@ export const About = () =>
                 </section> 
                 <section >
                     <div className={styles.teams}>
-                        <h1>A.M.i.E. team 2019/2020</h1>
+                        <h1>A.M.i.E. student team 2019/2020</h1>
                         
                         <h3>Carmen Segura Jerez — Teacher/research team</h3>
                         <p>Preschool Educator (Spain)</p>
@@ -370,7 +381,7 @@ export const About = () =>
                         <br></br>
                         <br></br>
                         
-                        <h1>A.M.i.E. team 2020/2021</h1>
+                        <h1>A.M.i.E. student team 2020/2021</h1>
                         
                         <h3>Wallace Helsen — Teacher/ Research Team</h3>
                         <p>Primary education teacher in training (Belgium) </p>
@@ -397,7 +408,7 @@ export const About = () =>
                         <p>Responsible for the website's pedagogical perspective, the design of the explorations and collecting and answering FAQs.</p>
                         <br></br>
 
-                        <h3>Alexander Aleksidze — UI/UX Designer/ Graphic designer</h3>
+                        <h3>Alexander Aleksidze — UI/UX Designer/Graphic designer</h3>
                         <p>Media Arts student (Georgia)</p>
                         <p>The UI/UX designer is responsible for the visual style
                            and the user friendliness of the website. The Graphic Designer is responsible
@@ -418,7 +429,7 @@ export const About = () =>
                         <br></br>
                         <br></br>
 
-                        <h1>A.M.i.E. team 2021/2022</h1>
+                        <h1>A.M.i.E. student team 2021/2022</h1>
 
                         <h3>Indy Sluijs — Team leader/Text writer</h3>
                         <p>Communication student (The Netherlands)  </p>
@@ -450,7 +461,7 @@ export const About = () =>
                         <br></br>
                         <br></br>
 
-                        <h1>A.M.i.E. team 2022/2023</h1>
+                        <h1>A.M.i.E. student team 2022/2023</h1>
 
                         <h3>Aitor Carazo — Social Innovator</h3>
                         <p>Communication student (Spain)</p>
