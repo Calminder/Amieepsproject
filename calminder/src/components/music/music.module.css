@@ -144,30 +144,40 @@ font-size: 22px;
 .logo {
     right: 0;
     left: 0;
-    top: 10px;
+    top: 0.3vmin;
     margin: 0 auto;
     position: absolute;
     background-image: url("../../resources/logo_calminder.png");
     background-position: center;
-    background-size: 150px;
+    background-size: 50%;
     background-repeat: no-repeat;
-    z-index: 100;
-    width: 150px;
-    height: 150px;
+    z-index: 11;
+    width: 22vmax;
+    height: 10vmax;
 }
 .amielogo {
-    top: -45px;
-    left:-20px;
-    
-  
-    position: fixed;
+    top: 0.5vmax;
+    left: 13vw;
+    position: absolute;
     background-image: url("../../resources/logo_amie.png");
     background-position: center;
-    background-size: 200px;
+    background-size: contain;
     background-repeat: no-repeat;
-    
     z-index: 100 !important;
-    width: 250px;
-    height: 150px;
+    width: 35vmin;
+    height: 10vmax;
     overflow: hidden;
 }
+.erasmuslogo {
+    top: 0.5vmax;
+    right: 6vw;
+    position: absolute;
+    background-image: url("../../resources/logo_erasmus.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 110 !important;
+    width: 35vmin;
+    height: 8vmax;
+    overflow: hidden;
+  }

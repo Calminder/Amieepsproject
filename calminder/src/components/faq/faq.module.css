@@ -19,20 +19,20 @@
 }
 .amielogo {
     top: 0.5vmax;
-    left: 18vmin;
+    left: 13vw;
     position: absolute;
     background-image: url("../../resources/logo_amie.png");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 100 !important;
-    width: 18vmin;
-    height: 8vmax;
+    width: 35vmin;
+    height: 10vmax;
     overflow: hidden;
 }
 .erasmuslogo {
-    top: -2vmax;
-    right: 5.5vmin;
+    top: 0.5vmax;
+    right: 6vw;
     position: absolute;
     background-image: url("../../resources/logo_erasmus.png");
     background-position: center;

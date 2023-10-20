@@ -92,31 +92,29 @@
   height: 10vmax;
 }
 .amielogo {
-  top: -2vmax;
-  left: 0.5vmin;
-
+  top: 0.5vmax;
+  left: 13vw;
   position: absolute;
   background-image: url("../../resources/logo_amie.png");
   background-position: center;
-  background-size: 100%;
+  background-size: contain;
   background-repeat: no-repeat;
-
   z-index: 100 !important;
-  width: 31.2vmin;
-  height: 20vmin;
+  width: 35vmin;
+  height: 10vmax;
   overflow: hidden;
 }
 .erasmuslogo {
-  top: -3vmax;
-  right: 2vmin;
+  top: 0.5vmax;
+  right: 6vw;
   position: absolute;
   background-image: url("../../resources/logo_erasmus.png");
   background-position: center;
-  background-size: 100%;
+  background-size: contain;
   background-repeat: no-repeat;
   z-index: 110 !important;
-  width: 31.2vmin;
-  height: 20vmin;
+  width: 35vmin;
+  height: 8vmax;
   overflow: hidden;
 }
 
