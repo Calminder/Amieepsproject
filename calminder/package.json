@@ -8,6 +8,7 @@
   ],
   "main": "src/index.js",
   "dependencies": {
+    "@react-pdf/renderer": "^3.1.14",
     "@react-three/drei": "4.1.8",
     "@react-three/fiber": "6.0.14",
     "@react-three/postprocessing": "2.0.3",
@@ -16,6 +17,7 @@
     "postprocessing": "6.21.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-pdf": "^7.5.1",
     "react-player": "^2.10.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
