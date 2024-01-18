@@ -69,10 +69,12 @@ export function AnimationLandingPage() {
   useEffect(() => {
     setInterval(() => {
       const page = window.location.pathname.includes('/activity') || window.location.pathname.includes('/faq');
-      const plants = document.querySelector('.plants');
-      if (page)  plants.style.zIndex = 5;
-      else plants.style.zIndex = 7;
-    }, 100);
+      const plants = document.querySelector(".plants"); // null all the time
+      if (plants) {
+        if (page)  plants.style.zIndex = 5;
+        else plants.style.zIndex = 7;
+      }
+    }, 1000);
 
   }, [])
 
@@ -82,12 +84,12 @@ export function AnimationLandingPage() {
     <section 
       style={{
         heigth: "100vh",
-        position: "relative",
+        position: "relative"
       }}
       ref={ref}
     >
       
-      {textures.layouts.map((texture, index) => {
+      {textures?.layouts.map((texture, index) => {
         return (
           <Layer
             texture={texture}
