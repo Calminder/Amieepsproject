@@ -33,7 +33,6 @@ function FaqCard(props) {
     useEffect(() => {
         setQuestion(props.question);
         setAnswer(getFormattedText(props.question.answer));
-        console.log(answer);
     }, []);
     // here is an error
     const toggleFAQ  = () => {

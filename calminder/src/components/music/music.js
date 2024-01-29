@@ -12,7 +12,7 @@ export const Music = (props) =>
     useEffect(async () =>
     {
         setLoading(true);
-        const tracks = await getMusicTracks(); //here is what I need , took from Firebase
+        const tracks = await getMusicTracks();
         setMusicTracks(tracks);
         setLoading(false);
     }, []);
