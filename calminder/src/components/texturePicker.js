@@ -122,7 +122,7 @@ const seasons = {
         name: 'Summer sun flare layout',
         value: sun_flare_summerUrl,
         style: {
-          zIndex: 7
+          zIndex: 8
         },
       }
       */

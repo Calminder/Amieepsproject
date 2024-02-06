@@ -70,6 +70,7 @@ export function AnimationLandingPage() {
     setInterval(() => {
       const page = window.location.pathname.includes('/activity') || window.location.pathname.includes('/faq');
       const plants = document.querySelector(".plants"); // null all the time
+      console.log("Plants: ", plants);
       if (plants) {
         if (page)  plants.style.zIndex = 5;
         else plants.style.zIndex = 7;

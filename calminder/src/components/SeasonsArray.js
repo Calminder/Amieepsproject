@@ -1,8 +1,7 @@
 
 export const getSeason = () => {
-    const month = new Date().getMonth();
+    const month = new Date().getMonth() + 1;
     let season = '';
-
     switch(month) {
         case 12:
         case 1:
